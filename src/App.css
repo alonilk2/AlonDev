@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
+
+html, body {
+  height: 100%;
+  background-color: #111111;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg {
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bg:after {
+  content: " ";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 1;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  font-family: "Encode Sans SC", sans-serif;
+  position: relative;
+  justify-content: end;
+}
+.header .title {
+  position: absolute;
+  font-size: 26px;
+  transform-origin: 50% 50% 0px;
+  height: 55px;
+  left: 80px;
+  top: 10px;
+}
+.btn {
+  background-color: transparent !important;
+  color: white;
+  border: none;
+  font-family: "Encode Sans", sans-serif;
+  margin-right: 80px;
+  font-size: 20px;
+
+}
+@keyframes custom-animation-white {
+  0% {
+    transform: translate3d(0px, -110px, 0px);
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+    color: white;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes custom-animation-gradient {
+  0% {
+    /* transform: translate3d(-100px, 0px, 0px); */
+    animation-timing-function: ease-in-out;
+    background-position: 0% 50%;
+  }
+  20% {
+    background-position: 10% 50%;
+  }
+  40% {
+    background-position: 20% 50%;
+    opacity: 0;
+  }
+  100% {
+    /* transform: translate3d(0px, 0px, 0px); */
+    animation-timing-function: ease-in-out;
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,transparent, transparent, #dd2476, #ff512f );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,transparent, transparent, #dd2476, #ff512f ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: 90% 50%;
+    opacity: 1;
+  }
+}
+@keyframes animation-horizontal {
+  0% {
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translate(-2000px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+}
+.delay-1 {
+  animation-delay: 1s !important;
+}
+.delay-2 {
+  animation-delay: 1.4s !important;
+}
+.custom-animation-white {
+  animation: 1.5s ease-in-out 0s 1 normal forwards running custom-animation-white;
+}
+.custom-animation-gradient {
+  animation: 1.5s ease-in-out 0s 1 normal forwards running custom-animation-gradient;
+}
+.animation-horizontal {
+  animation: 1s ease-in-out 0s 1 normal forwards running animation-horizontal;
+}
+.content {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+}
+.content-title {
+  text-align: center;
+  font-size: 90px;
+  font-family: "Encode Sans", sans-serif;
+  margin-top: 350px;
+  margin-bottom: 15px;
+  -webkit-animation-fill-mode:forwards; 
+  animation-fill-mode:forwards;
+}
+.content-title-temp {
+  text-align: center;
+  font-size: 90px;
+  font-family: "Encode Sans", sans-serif;
+  margin-top: 800px;
+  margin-bottom: 15px;
+  -webkit-animation-fill-mode:forwards; 
+  animation-fill-mode:forwards;
+  z-index: 2;
+  opacity: 0;
+}
+.content-title-2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 90px;
+  font-family: "Encode Sans", sans-serif;
+  opacity: 0;
+
 }
 
-.App-link {
-  color: #61dafb;
+.full-stack {
+  position: absolute;
+  top: 550px;
+  z-index: 0;
+}
+.developer {
+  position: absolute;
+  top: 550px;
+  right: 700px;
+}
+.white-txt {
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
