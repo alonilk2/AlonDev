@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
   height: 100%;
   background-color: #111111;
   background-size: cover;
@@ -7,10 +7,11 @@ html, body {
 
 .bg {
   height: 100vh;
+  position: relative;
 }
 
 .bg:after {
-  content: " ";
+  content: ' ';
   position: fixed;
   top: -50%;
   left: -50%;
@@ -18,31 +19,54 @@ html, body {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background: url('http://assets.iceable.com/img/noise-transparent.png') repeat
+    0 0;
   background-repeat: repeat;
-  animation: bg-animation .2s infinite;
+  animation: bg-animation 0.2s infinite;
   opacity: 1;
 }
 
 @keyframes bg-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
+  }
 }
 
 .header {
   height: 100px;
   display: flex;
   flex-direction: row;
-  font-family: "Encode Sans SC", sans-serif;
+  font-family: 'Encode Sans SC', sans-serif;
   position: relative;
   justify-content: end;
 }
@@ -58,10 +82,9 @@ html, body {
   background-color: transparent !important;
   color: white;
   border: none;
-  font-family: "Encode Sans", sans-serif;
+  font-family: 'Encode Sans', sans-serif;
   margin-right: 80px;
   font-size: 20px;
-
 }
 @keyframes custom-animation-white {
   0% {
@@ -93,9 +116,17 @@ html, body {
   100% {
     /* transform: translate3d(0px, 0px, 0px); */
     animation-timing-function: ease-in-out;
-    background: #00F260;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,transparent, transparent, #dd2476, #ff512f );  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right,transparent, transparent, #dd2476, #ff512f ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #00f260; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #dd2476,
+      #ff512f
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #dd2476,
+      #ff512f
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,13 +134,46 @@ html, body {
     opacity: 1;
   }
 }
+@keyframes custom-animation-gradient-broken {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes animation-horizontal {
   0% {
     transform: translate(0px, 0px);
     animation-timing-function: ease-in-out;
+    color: white;
   }
   100% {
-    transform: translate(-2000px, 0px);
+    transform: translate(-100%, 0px);
     animation-timing-function: ease-in-out;
   }
 }
@@ -120,10 +184,30 @@ html, body {
   animation-delay: 1.4s !important;
 }
 .custom-animation-white {
-  animation: 1.5s ease-in-out 0s 1 normal forwards running custom-animation-white;
+  animation: 1.5s ease-in-out 0s 1 normal forwards running
+    custom-animation-white;
 }
 .custom-animation-gradient {
-  animation: 1.5s ease-in-out 0s 1 normal forwards running custom-animation-gradient;
+  animation: 1.5s ease-in-out 0s 1 normal forwards running
+    custom-animation-gradient;
+}
+.infinite {
+  background: #00f260; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #dd2476,
+    #ff512f
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #dd2476,
+    #ff512f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 3s ease-in-out 0s 1 normal forwards running
+    custom-animation-gradient-broken;
+  animation-iteration-count: infinite;
 }
 .animation-horizontal {
   animation: 1s ease-in-out 0s 1 normal forwards running animation-horizontal;
@@ -132,51 +216,81 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  position: absolute;
+  /* top: 0; */
+  left: 0;
 }
 .content-title {
-  text-align: center;
   font-size: 90px;
-  font-family: "Encode Sans", sans-serif;
-  margin-top: 350px;
-  margin-bottom: 15px;
-  -webkit-animation-fill-mode:forwards; 
-  animation-fill-mode:forwards;
+  font-family: 'Encode Sans', sans-serif;
+  /* margin-top: 370px;
+  margin-bottom: 15px; */
+  margin-left: 5%;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  margin-top: 15%;
 }
-.content-title-temp {
-  text-align: center;
+.content-title-project {
   font-size: 90px;
-  font-family: "Encode Sans", sans-serif;
-  margin-top: 800px;
-  margin-bottom: 15px;
-  -webkit-animation-fill-mode:forwards; 
-  animation-fill-mode:forwards;
-  z-index: 2;
-  opacity: 0;
+  font-family: 'Encode Sans', sans-serif;
+  /* margin-top: 370px;
+  margin-bottom: 15px; */
+  margin-left: 5%;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 .content-title-2 {
   margin-top: 15px;
   margin-bottom: 15px;
-  text-align: center;
-  font-size: 90px;
-  font-family: "Encode Sans", sans-serif;
+  font-size: 130px;
+  font-family: 'Encode Sans', sans-serif;
   opacity: 0;
-
 }
 
 .full-stack {
   position: absolute;
-  top: 550px;
+  top: 500px;
+  left: 120px;
   z-index: 0;
 }
 .developer {
   position: absolute;
-  top: 550px;
-  right: 700px;
+  top: 500px;
+  right: 1000px;
 }
-.white-txt {
+.footer {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  color: white;
+  font-size: 100px;
+  font-weight: bolder;
+  transform: translate(-50%, -20%);
+}
+.horizontal-line {
+  
+}
+.horizontal-line-scope {
+  background: linear-gradient(
+    to right,
+    #dd2476,
+    #ff512f
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content-body-project {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  flex-flow: column;
+}
+.content-body {
+  display: flex;
+  flex-direction: row;
 
 }
-
+.screenshot {
+  justify-self: center;
+  align-self: center;
+}
