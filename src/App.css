@@ -138,25 +138,37 @@ body {
   0% {
     opacity: 1;
   }
-  10% {
+  5% {
+    opacity: 1;
+  }
+  15% {
     opacity: 1;
   }
   20% {
     opacity: 0;
   }
+  25% {
+    opacity: 0;
+  }
   30% {
     opacity: 1;
+  }  
+  35% {
+    opacity: 0;
   }
   40% {
+    opacity: 1;
+  }
+  45% {
     opacity: 0;
   }
   50% {
     opacity: 0;
   }
-  60% {
+  55% {
     opacity: 1;
   }
-  70% {
+  60% {
     opacity: 1;
   }
   80% {
@@ -205,7 +217,7 @@ body {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: 3s ease-in-out 0s 1 normal forwards running
+  animation: 2.8s ease-in 0s 1 normal forwards running
     custom-animation-gradient-broken;
   animation-iteration-count: infinite;
 }
@@ -221,7 +233,7 @@ body {
   left: 0;
 }
 .content-title {
-  font-size: 90px;
+  font-size: 100px;
   font-family: 'Encode Sans', sans-serif;
   /* margin-top: 370px;
   margin-bottom: 15px; */
@@ -242,11 +254,16 @@ body {
 .content-title-2 {
   margin-top: 15px;
   margin-bottom: 15px;
-  font-size: 130px;
+  font-size: 100px;
   font-family: 'Encode Sans', sans-serif;
   opacity: 0;
 }
-
+.trail { /* className for the trail elements */
+  position: absolute;
+  height: 6px; width: 6px;
+  border-radius: 3px;
+  background: teal;
+}
 .full-stack {
   position: absolute;
   top: 500px;
@@ -256,7 +273,7 @@ body {
 .developer {
   position: absolute;
   top: 500px;
-  right: 1000px;
+  right: 1280px;
 }
 .footer {
   position: absolute;

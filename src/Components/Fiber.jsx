@@ -14,7 +14,7 @@ function Fiber(props){
                 {' '}
                 SGDHFJGM,
               </h1> */}
-              <img className='screenshot' src={fiberImg} width={'1400px'}/>
+              <img className='screenshot' src={fiberImg} width={'1200px'}/>
             </div>
 
           </section>
