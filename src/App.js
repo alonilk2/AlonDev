@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, {
+  useEffect,
+  useState,
+  Suspense,
+  useRef,
+  useLayoutEffect
+} from 'react'
 import logo from './logo.svg'
 import './App.css'
 import '@fontsource/encode-sans-sc/700.css'
@@ -10,78 +16,21 @@ import Home from './Components/Home'
 import Techstore from './Components/Techstore'
 import Cellu from './Components/Cellu'
 import Fiber from './Components/Fiber'
+import Box from './Components/Box'
 
-const PAGENUM = 4;
+
+const PAGENUM = 4
 function App () {
   const [scrollPosition, setScrollPosition] = useState(0)
   const scrollRef = useRef(0)
   const scrollState = useScrollState(PAGENUM)
-  const trailRefs = useRef([]);
-  const lastMousePosition = useRef({ x: 0, y: 0 });
-  const rAFIndex = useRef(0);
-  const [isDragging, setIsDragging] = useState(1);
+  const rAFIndex = useRef(0)
+  const [isDragging, setIsDragging] = useState(1)
 
-
-
-
-  useEffect(() => {
-    console.log(scrollState)
-    scrollRef.current = scrollState
-  }, [scrollState])
-
-
-  function registerMousePosition({ clientX, clientY }) {
-    lastMousePosition.current.x = clientX;
-    lastMousePosition.current.y = clientY;
-  }
-
-  function drawCircles() {
-    for (let i = 0; i < 60; i++) {
-      trailRefs.current.push(React.createRef());
-    }
-
-    return [...Array(60)].map((item, index) => {
-      const ease = index * 0.005;
-      return (
-        <div
-          style={{ position: "absolute", transition: `transform ${ease}s`, color: "red", fontSize: "20px" }}
-          ref={trailRefs.current[index]}
-        >
-AB
-        </div>
-      );
-    });
-  }
-
-  function updateCollectedLettersPosition() {
-    for (let i = 0; i < 60; i++) {
-      const xpos = lastMousePosition.current.x;
-      const ypos = lastMousePosition.current.y;
-      const ease = i * 0.005;
-      trailRefs.current[
-        i
-      ].current.style.transform = `translate(${xpos-20}px, ${ypos-120}px)`;
-    }
-  }
-
-  useEffect(() => {
-    function update() {
-      if (isDragging) {
-        rAFIndex.current = requestAnimationFrame(update);
-      }
-      updateCollectedLettersPosition();
-    }
-
-    // cancel the existing rAF
-    cancelAnimationFrame(rAFIndex.current);
-
-    document.addEventListener("mousemove", registerMousePosition);
-    rAFIndex.current = requestAnimationFrame(update);
-
-    return () => {
-      document.removeEventListener("mousemove", registerMousePosition);
-    };
-  }, [isDragging]);
+    useEffect(() => {
+      console.log(scrollState)
+      scrollRef.current = scrollState
+    }, [scrollState])
 
 
   const renderPages = () => {
@@ -90,7 +39,9 @@ AB
       case 0:
         return (
           <>
+          
             <Home className='content custom-animation-white' />
+
             <Techstore className='content animation-horizontal' />
           </>
         )
@@ -145,8 +96,9 @@ AB
         break
     }
   }
+
   return (
-    <div className='bg'>
+    <div className='App'>
       <header className='header'>
         <h3 className='title custom-animation-gradient'>Alon Barenboim</h3>
         <button className='btn custom-animation-white'>Portfolio</button>
@@ -155,15 +107,37 @@ AB
       </header>
       {/* <Zoom> */}
       {renderPages()}
-      {drawCircles()}
 
-      {/* </Zoom> */}
       <footer className='footer'>
-        <p>
-          <span className={scrollState == 0 ? 'horizontal-line-scope' : 'horizontal-line'}>___</span>
-          <span className={scrollState == 1 ? 'horizontal-line-scope' : 'horizontal-line'}>___</span>
-          <span className={scrollState == 2 ? 'horizontal-line-scope' : 'horizontal-line'}>___</span>
-          <span className={scrollState == 3 ? 'horizontal-line-scope' : 'horizontal-line'}>___</span>
+        <p className="footer-p">
+          <span
+            className={
+              scrollState == 0 ? 'horizontal-line-scope' : 'horizontal-line'
+            }
+          >
+            ___
+          </span>
+          <span
+            className={
+              scrollState == 1 ? 'horizontal-line-scope' : 'horizontal-line'
+            }
+          >
+            ___
+          </span>
+          <span
+            className={
+              scrollState == 2 ? 'horizontal-line-scope' : 'horizontal-line'
+            }
+          >
+            ___
+          </span>
+          <span
+            className={
+              scrollState == 3 ? 'horizontal-line-scope' : 'horizontal-line'
+            }
+          >
+            ___
+          </span>
         </p>
       </footer>
     </div>
