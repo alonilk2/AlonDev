@@ -3,6 +3,7 @@ import Particles from 'react-tsparticles'
 import { loadFull } from 'tsparticles'
 
 export default function useSpace () {
+  
   const particlesInit = useCallback(async main => {
     await loadFull(main)
   }, [])
