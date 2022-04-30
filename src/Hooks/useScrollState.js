@@ -6,11 +6,11 @@ function useScrollState (PAGENUM) {
   const handleScroll = e => {
     if (e.deltaY > 0)
       setPageScrollState(pageScrollState =>
-        pageScrollState > 0 ? pageScrollState - 1 : pageScrollState
+        pageScrollState > -PAGENUM ? pageScrollState - 1 : pageScrollState
       )
     else
       setPageScrollState(pageScrollState =>
-        pageScrollState < PAGENUM-1 ? pageScrollState + 1 : pageScrollState
+        pageScrollState < 0 ? pageScrollState + 1 : pageScrollState
       )
   }
   useEffect(() => {

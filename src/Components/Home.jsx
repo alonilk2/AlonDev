@@ -1,64 +1,89 @@
-import React, {Suspense,useLayoutEffect,useEffect} from 'react';
-import { Canvas,useFrame } from '@react-three/fiber'
-import { useGLTF, OrbitControls, ScrollControls, useScroll,useAnimations } from '@react-three/drei'
-
+import React, { Suspense, useLayoutEffect, useEffect, useRef } from 'react'
+import Fade from 'react-reveal/Fade'
 import * as THREE from 'three'
-function Globe({...props}) {
- // This hook gives you offets, ranges and other useful things
-  const scroll = useScroll()
+import { Canvas, useFrame } from '@react-three/fiber'
+import {
+  useGLTF,
+  OrbitControls,
+  ScrollControls,
+  useScroll,
+  useAnimations
+} from '@react-three/drei'
 
+function Globe ({ ...props }) {
+  const scroll = useScroll()
+  const boxRef = useRef()
+  const scaleFlag = useRef(false)
   const { scene, nodes, materials, animations } = useGLTF('scene.gltf')
-  // const { actions } = useAnimations(animations, scene)
-  // console.log(scroll)
-  // useLayoutEffect(() => Object.values(nodes).forEach((node) => (node.receiveShadow = node.castShadow = true)))
-  // useEffect(() => void (actions['animation_0'].play().paused = false), [actions])
+  const { ref, names, actions, clips } = useAnimations(animations, scene)
+
+  useLayoutEffect(() =>
+    Object.values(nodes).forEach(
+      node => (node.receiveShadow = node.castShadow = true)
+    )
+  )
+  //   useEffect(() => void (actions[0].play().paused = false), [actions])
   // useFrame((state, delta) => {
-  //   const action = actions['animation_0']
+  //   const action = actions[0]
   //   // The offset is between 0 and 1, you can apply it to your models any way you like
   //   const offset = 1- scroll.offset
   //   action.time = THREE.MathUtils.damp(action.time, (action.getClip().duration / 2) * offset, 100, delta)
   //   state.camera.position.set(Math.sin(offset) * -10, Math.atan(offset * Math.PI * 2) * 5, Math.cos((offset * Math.PI) / 3) * -10)
   // })
-  return <primitive object={scene} scale={3} {...props} />
+  useFrame(() => {
+    boxRef.current.rotation.y += 0.001
+    if (
+      (boxRef.current.scale.x < 3 && !scaleFlag.current) ||
+      boxRef.current.scale.x < 2
+    ) {
+      scaleFlag.current = false
+      boxRef.current.scale.z += 0.001
+      boxRef.current.scale.x += 0.001
+      boxRef.current.scale.y += 0.001
+    } else {
+      scaleFlag.current = true
+      boxRef.current.scale.z -= 0.001
+      boxRef.current.scale.x -= 0.001
+      boxRef.current.scale.y -= 0.001
+    }
+  })
+
+  return <primitive object={scene} ref={boxRef} scale={2} {...props} />
 }
 
-function Home(props){
+function Home (props) {
+  return (
+    <>
+      <section className={props.className}>
+        <div className='col' style={{ marginTop: '5%' }}>
+          {/* <Fade> */}
+          <h3
+            className='content-title content-title-project'
+            style={{ textAlign: 'center', margin: '0% 5%' }}
+          >
+            Hi, I'm Alon
+          </h3>
+          <h1 className='content-title linear-wipe'>FULL-STACK ENGINEER</h1>
+          {/* </Fade> */}
+        </div>
 
-    return (
-        <>
-          <section className={props.className}>
-            <div className='content-body'>
-              <h1 className='content-title delay-1'>Software Engineer &</h1>
+        <Canvas
+          camera={{ position: [0, 2, 7] }}
+          style={{
+            zIndex: 0,
+            position: 'absolute',
+            width: '100%'
+          }}
+        >
+          <ambientLight intensity={1} />
 
-              <h1 className='content-title-2 full-stack infinite delay-2'>
-                Full-Stack
-              </h1>
-              <h1 className='content-title-2 developer custom-animation-white'>
-                {' '}
-                Developer
-              </h1>
-                    <Canvas camera={{ position: [0,3, 5] }} style={{zIndex: 0, position: 'absolute', width:'100%', right: -700}}>
-
-
-        <OrbitControls />
-        
-        <Suspense fallback={null}>
-                <ScrollControls pages={3}>
-
-        
-          <Globe />
-                  </ScrollControls>
-
-        </Suspense>
-        
-      </Canvas>
-            </div>
-
-
-          </section>
-        </>    
-        
-    )
+          <Suspense fallback={null}>
+            <Globe />
+          </Suspense>
+        </Canvas>
+      </section>
+    </>
+  )
 }
 
-export default Home;
+export default Home
