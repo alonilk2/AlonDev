@@ -9,7 +9,7 @@ import Express from '../Images/Expressjs.png'
 import '../App.css'
 import CrossfadeCarousel from '@notbaldrick/react-crossfade-carousel'
 
-function Techstore (props) {
+function IMBarber (props) {
   return (
     <>
       <section className={props.className} style={{margin: '0 2%'}}>
@@ -83,4 +83,4 @@ function Techstore (props) {
   )
 }
 
-export default Techstore
+export default IMBarber

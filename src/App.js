@@ -13,16 +13,15 @@ import '@fontsource/encode-sans/700.css'
 import HorizontalScroll from 'react-scroll-horizontal'
 import useScrollState from './Hooks/useScrollState'
 import Home from './Components/Home'
-import Techstore from './Components/Techstore'
+import IMBarber from './Components/IMBarber'
 import Cellu from './Components/Cellu'
 import Compound from './Components/Compound'
-import Box from './Components/Box'
 import Slide from 'react-reveal/Slide'
 import Menu from './Components/MenuComponent'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import useWindowSize from './Hooks/useWindowSize'
 import useSpace from './Hooks/useSpace'
-import Fade from 'react-reveal/Fade'
+import Reveal from 'react-reveal/Reveal'
 let show = [true, false, false, false]
 
 const PAGENUM = 4
@@ -44,39 +43,65 @@ const Pages = () => {
     <div>
       {scrollRef.current < scrollState ? (
         <>
-          <Fade top opposite when={scrollState === 0}>
-            <Home className='content-body' style={{ overflow: 'hidden' }} />
-          </Fade>
-          <Fade top opposite when={scrollState === -1}>
-            <Techstore
-              className='content-body'
-              style={{ overflow: 'hidden' }}
-            />
-          </Fade>
-          <Fade top opposite when={scrollState === -2}>
-            <Cellu className='content-body' style={{ overflow: 'hidden' }} />
-          </Fade>
-          <Fade top opposite when={scrollState === -3}>
-            <h1>ABC</h1>
-          </Fade>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === 0}
+          >
+            <Home className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -1}
+          >
+            <IMBarber className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -2}
+          >
+            <Cellu className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -3}
+          >
+            <Compound className='content-body' />
+          </Reveal>
         </>
       ) : (
         <>
-          <Fade bottom opposite when={scrollState === 0}>
-            <Home className='content-body' style={{ overflow: 'hidden' }} />
-          </Fade>
-          <Fade bottom opposite when={scrollState === -1}>
-            <Techstore
-              className='content-body'
-              style={{ overflow: 'hidden' }}
-            />
-          </Fade>
-          <Fade bottom opposite when={scrollState === -2}>
-            <Cellu className='content-body' style={{ overflow: 'hidden' }} />
-          </Fade>
-          <Fade bottom opposite when={scrollState === -3}>
-            <Compound className='content-body' style={{ overflow: 'hidden' }} />
-          </Fade>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === 0}
+          >
+            <Home className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -1}
+          >
+            <IMBarber className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -2}
+          >
+            <Cellu className='content-body' />
+          </Reveal>
+          <Reveal
+            effect='animate__animated animate__fadeInUp fadeInUp'
+            effectOut='animate__animated animate__fadeOutLeft'
+            when={scrollState === -3}
+          >
+            <Compound className='content-body' />
+          </Reveal>
         </>
       )}
 

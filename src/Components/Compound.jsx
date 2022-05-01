@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactIcon from '../Images/React-icon.png'
-import Sequelize from '../Images/sequelize.svg'
-import Postgre from '../Images/psql.png'
-import Node from '../Images/nodejs.svg'
-import Express from '../Images/Expressjs.png'
+import metamask from '../Images/metamask.png'
+import Hardhat from '../Images/hardhat.png'
+import Ethers from '../Images/ethers.png'
+import Alchemy from '../Images/alchemy.png'
 import '../App.css'
 import CrossfadeCarousel from '@notbaldrick/react-crossfade-carousel'
 
@@ -37,20 +37,20 @@ function Compound (props) {
                 <p className='row stack-title'>React.js</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Node} alt='node.js' />
-                <p className='stack-title'>Node.js</p>
+                <img className='tech-logo' src={Ethers} alt='Ethers.js' style={{transform: 'scale(1.5)', marginBottom: '20px'}} />
+                <p className='stack-title'>Ethers.js</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Sequelize} alt='Sequelize' />
-                <p className='stack-title'>Sequelize</p>
+                <img className='tech-logo' src={metamask} alt='metamask' />
+                <p className='stack-title'>MetaMask</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Postgre} alt='PostgreSQL' />
-                <p className='stack-title'>PostgreSQL</p>
+                <img className='tech-logo' src={Hardhat} alt='HardhatSQL' />
+                <p className='stack-title'>Hardhat</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Express} alt='Express.js' />
-                <p className='stack-title'>Express.js</p>
+                <img className='tech-logo' src={Alchemy} alt='Alchemy' />
+                <p className='stack-title'>Alchemy</p>
               </div>
             </div>
             <h1

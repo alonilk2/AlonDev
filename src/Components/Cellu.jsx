@@ -2,22 +2,27 @@ import React from 'react'
 import CelluImg from '../Images/cellu.png'
 import ReactIcon from '../Images/React-icon.png'
 import Node from '../Images/nodejs.svg'
+import Java from '../Images/java.png'
+
 import Maps from '../Images/maps.png'
 import '../App.css'
 import CrossfadeCarousel from '@notbaldrick/react-crossfade-carousel'
 
-function Techstore (props) {
+function Cellu (props) {
   return (
     <>
-      <section className={props.className}>
+      <section className={props.className} style={{zIndex:2}}>
         <div className='content-body-project'>
-          <div className='col-5'  style={{
+          <div
+            className='col-5'
+            style={{
               margin: '5% 2%',
               display: 'flex',
               flexDirection: 'column',
               textAlign: 'center',
               alignItems: 'center'
-            }}>
+            }}
+          >
             <h1 className='content-title-project delay-1'>Cellu 5G</h1>
             <p className='description'>
               Cellu is an Android application which allows users to locate
@@ -32,21 +37,47 @@ function Techstore (props) {
                 <img
                   className='row tech-logo'
                   src={ReactIcon}
-                  style={{width: '33%'}}
+                  style={{ width: '50%' }}
                   alt='react'
                 />
                 <p className='row stack-title'>React Native</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Node} alt='node.js' style={{width: '33%'}}/>
+                <img
+                  className='tech-logo'
+                  src={Node}
+                  alt='node.js'
+                  style={{ width: '40%' }}
+                />
                 <p className='stack-title'>Node.js</p>
               </div>
               <div className='col tech-col'>
-                <img className='tech-logo' src={Maps} alt='Google Maps API' style={{width: '33%'}}/>
+                <img
+                  className='tech-logo'
+                  src={Maps}
+                  alt='Google Maps API'
+                  style={{ width: '50%' }}
+                />
                 <p className='stack-title'>Google Maps API</p>
               </div>
+              <div className='col tech-col'>
+                <img
+                  className='tech-logo'
+                  src={Java}
+                  alt='Java'
+                  style={{ width: '40%' }}
+                />
+                <p className='stack-title'>Java</p>
+              </div>
             </div>
-            <h1 className='content-title-visit delay-1 '>Visit IM.Barber</h1>
+            <a style={{zIndex:2}} href='https://play.google.com/store/apps/details?id=com.cellu&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+              <img
+                alt='Get it on Google Play'
+                src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+                width={300}
+                style={{marginTop: '15%'}}
+              />
+            </a>
           </div>
 
           <div class='col image-cropper cf4a' style={{ borderRadius: '25px' }}>
@@ -68,4 +99,4 @@ function Techstore (props) {
   )
 }
 
-export default Techstore
+export default Cellu
