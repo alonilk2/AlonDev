@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import Container from 'react-bootstrap/Container'
 import useWindowSize from '../Hooks/useWindowSize'
-
 export default function MenuComponent () {
   const size = useWindowSize()
 
@@ -15,7 +14,7 @@ export default function MenuComponent () {
   useEffect(()=>{
     setTimeout(()=>{
       setShowTitle(true)
-    },6000)
+    },6500)
   },[])
 
   if (size.width > 768) {

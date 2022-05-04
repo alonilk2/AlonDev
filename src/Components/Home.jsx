@@ -1,18 +1,36 @@
-import React, {
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Suspense, useEffect, useRef, useState, useMemo } from "react";
 import Fade from "react-reveal/Fade";
-import * as THREE from "three";
-import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  ScrollControls,
-} from "@react-three/drei";
+import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
 import BlackHole from "./BlackHole";
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
+import * as THREE from 'three'
 
+extend({ EffectComposer, RenderPass, UnrealBloomPass })
+
+function Bloom({ children }) {
+  const { gl, camera, size } = useThree();
+  const [scene, setScene] = useState();
+  const composer = useRef();
+  const aspect = useMemo(() => new THREE.Vector2(size.width, size.height), [
+    size
+  ]);
+  useEffect(
+    () => void scene && composer.current.setSize(size.width, size.height),
+    [size]
+  );
+  useFrame(() => scene && composer.current.render(), 1);
+  return (
+    <>
+      <scene ref={setScene}>{children}</scene>
+      <effectComposer ref={composer} args={[gl]}>
+        <renderPass attachArray="passes" scene={scene} camera={camera} />
+        <unrealBloomPass attachArray="passes" args={[aspect, 3, 0.8, 0]} />
+      </effectComposer>
+    </>
+  );
+}
 function Home(props) {
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
@@ -36,13 +54,18 @@ function Home(props) {
       setTimeout(() => {
         setShowTitleGradient(true);
       }, 5500);
-
     }
   });
 
   return (
     <>
       <section className={props.className} style={{ flexDirection: "column" }}>
+      <iframe style={{
+        height: '70%',
+        width: '20%',
+        marginLeft: '-7%'
+      }}
+      src="https://embed.lottiefiles.com/animation/14325"></iframe>
         <div
           style={{
             width: "100%",
@@ -93,11 +116,13 @@ function Home(props) {
             width: "100%",
           }}
         >
-          <ambientLight intensity={1} />
-
-          <Suspense fallback={null}>
-            <BlackHole />
-          </Suspense>
+          {/* <Bloom> */}
+            {" "}
+            <ambientLight intensity={1} />
+            <Suspense fallback={null}>
+              <BlackHole />
+            </Suspense>
+          {/* </Bloom> */}
         </Canvas>
       </section>
     </>

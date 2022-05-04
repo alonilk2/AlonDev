@@ -10,7 +10,7 @@ body {
 
 .App {
   height: 100vh;
-  background-color: #111111;
+  background-color: #000000;
   font-family: 'Kaushan Script', cursive;
   font-weight: 900;
 }
@@ -120,7 +120,7 @@ body {
         #dd2476,
         #2f71ff);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 200%;
+    background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-position: 50% 100%;
@@ -232,7 +232,7 @@ body {
 }
 
 .custom-animation-gradient {
-  animation: 1.5s ease-in-out 0s 1 normal forwards running custom-animation-gradient;
+  animation: 1.5s ease-in 0s 1 normal forwards running custom-animation-gradient;
 }
 
 .custom-animation-gradient1 {
@@ -320,7 +320,7 @@ body {
   40% {
     opacity: 1;
   }
-  70% {
+  80% {
     left: 100px;
     top: -60px;
 
@@ -352,7 +352,29 @@ body {
 .content-title-visit {
   font-size: 45px;
 
-  margin: 10%;
+  padding:  2% 3%;
+  background: -webkit-linear-gradient(to right,
+  #dd2476,
+  #2f71ff);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right,
+  #dd2476,
+  #2f71ff);
+  border-radius: 25px;
+  font-family: 'Kaushan Script', cursive;
+  color: #111111;
+  font-weight: 700;
+  margin: 5%;
+}
+.content-title-visit:hover {
+  background: -webkit-linear-gradient(to right,
+  #dd2476,
+  #2f71ff);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right,
+  #ff9eca,
+  #86acff);
+  color: #111111;
 }
 
 .content-title-2 {
@@ -482,7 +504,7 @@ body {
   align-items: center;
   margin-top: 50px;
   position: relative;
-
+  width: 85%;
 }
 
 .tech-logo {
