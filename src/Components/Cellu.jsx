@@ -85,11 +85,11 @@ function Cellu (props) {
               interval={3000}
               transition={2000}
               images={[
-                'https://play-lh.googleusercontent.com/cJa1I2DlCMEWfuWI8BQr7wQZfuvOE2EeMvuS5yCEmDvz2OupxwhxFC2UbSBl6sqjesHS=w1920-h961-rw',
-                'https://play-lh.googleusercontent.com/66bwZ55WSYG-fKlJ3oOtlWiCf6OPelfW8pxwoyZPudsuf9v8jV8542Ms0C70JSGrxw=w1920-h961-rw',
-                'https://play-lh.googleusercontent.com/SmGTLMWN7o-yv0Q2GJan_HEw1ZAIprRr8yhaA6PT9oMILGVh9vXqffn7hGYXhhSuI0g=w1920-h961-rw',
-                'https://play-lh.googleusercontent.com/hJZV8K6Dro-CoGtrqgUtJpf7HulEbMbgmzPl5DxDs7iXEhoFM49h2ye_rLgU1827VtU=w1920-h961-rw',
-                'https://play-lh.googleusercontent.com/K3n_XiMyMfQapShDyNUkJWPNNx-8B_XbuOs_LKhdMWvgVhj-LKbGHY5uqSd64UoV0Qg=w1920-h961-rw'
+                'https://alonilk2.github.io/map1/3.png',
+                'https://alonilk2.github.io/map1/4.png',
+                'https://alonilk2.github.io/map1/5.png',
+                'https://alonilk2.github.io/map1/1.jpg',
+                'https://alonilk2.github.io/map1/2.jpg'
               ]}
             />
           </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -10,6 +10,13 @@ export default function MenuComponent () {
   const size = useWindowSize()
 
   const [toggle, setToggle] = useState(false)
+  const [showTitle, setShowTitle] = useState(false)
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setShowTitle(true)
+    },6000)
+  },[])
 
   if (size.width > 768) {
     return (
@@ -18,9 +25,9 @@ export default function MenuComponent () {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto navbar-container'>
             <div className='col left-menu'>
-              <h3 className='title custom-animation-gradient'>
+              {showTitle && <h3 className='title custom-animation-gradient'>
                 Alon Barenboim
-              </h3>
+              </h3>}
             </div>
             <div className='col right-menu'>
               <Nav.Link href='/' className='navbar-btn-txt'>
