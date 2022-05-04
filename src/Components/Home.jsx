@@ -1,26 +1,32 @@
-import React, { Suspense, useLayoutEffect, useEffect, useRef, useState } from 'react'
-import Fade from 'react-reveal/Fade'
-import * as THREE from 'three'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, {
+  Suspense,
+  useLayoutEffect,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import Fade from "react-reveal/Fade";
+import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
   ScrollControls,
   useScroll,
-  useAnimations
-} from '@react-three/drei'
+  useAnimations,
+} from "@react-three/drei";
 
 function Globe({ ...props }) {
-  const scroll = useScroll()
-  const boxRef = useRef()
-  const scaleFlag = useRef(false)
-  const { scene, nodes, materials, animations } = useGLTF('scene.gltf')
-  const { ref, names, actions, clips } = useAnimations(animations, scene)
+  const scroll = useScroll();
+  const boxRef = useRef();
+  const scaleFlag = useRef(false);
+  const { scene, nodes, materials, animations } = useGLTF("scene.gltf");
+  const { ref, names, actions, clips } = useAnimations(animations, scene);
   useLayoutEffect(() =>
     Object.values(nodes).forEach(
-      node => (node.receiveShadow = node.castShadow = true)
+      (node) => (node.receiveShadow = node.castShadow = true)
     )
-  )
+  );
   //   useEffect(() => void (actions[0].play().paused = false), [actions])
   // useFrame((state, delta) => {
   //   const action = actions[0]
@@ -30,106 +36,103 @@ function Globe({ ...props }) {
   //   state.camera.position.set(Math.sin(offset) * -10, Math.atan(offset * Math.PI * 2) * 5, Math.cos((offset * Math.PI) / 3) * -10)
   // })
   useFrame(() => {
-    boxRef.current.rotation.y += 0.001
+    boxRef.current.rotation.y += 0.001;
     if (
       (boxRef.current.scale.x < 3 && !scaleFlag.current) ||
       boxRef.current.scale.x < 2
     ) {
-      scaleFlag.current = false
-      boxRef.current.scale.z += 0.001
-      boxRef.current.scale.x += 0.001
-      boxRef.current.scale.y += 0.001
+      scaleFlag.current = false;
+      boxRef.current.scale.z += 0.001;
+      boxRef.current.scale.x += 0.001;
+      boxRef.current.scale.y += 0.001;
     } else {
-      scaleFlag.current = true
-      boxRef.current.scale.z -= 0.001
-      boxRef.current.scale.x -= 0.001
-      boxRef.current.scale.y -= 0.001
+      scaleFlag.current = true;
+      boxRef.current.scale.z -= 0.001;
+      boxRef.current.scale.x -= 0.001;
+      boxRef.current.scale.y -= 0.001;
     }
-  })
+  });
 
-  return <primitive object={scene} ref={boxRef} scale={2} {...props} />
+  return <primitive object={scene} ref={boxRef} scale={2} {...props} />;
 }
 
 function Home(props) {
-  const [showTitle, setShowTitle] = useState(false)
-  const [showTitle1, setShowTitle1] = useState(false)
-  const [showTitleGradient, setShowTitleGradient] = useState(false)
+  const [showTitle, setShowTitle] = useState(false);
+  const [showTitle1, setShowTitle1] = useState(false);
+  const [showTitleGradient, setShowTitleGradient] = useState(false);
 
-  const initialRender = useRef(true)
+  const initialRender = useRef(true);
 
   useEffect(() => {
     if (initialRender.current === true) {
-      initialRender.current = false
+      initialRender.current = false;
 
       setTimeout(() => {
-        setShowTitle(true)
-      }, 1200)
+        setShowTitle(true);
+      }, 1200);
       setTimeout(() => {
-        setShowTitle(false)
-      }, 3000)
+        setShowTitle(false);
+      }, 3000);
       setTimeout(() => {
-        setShowTitle1(true)
-      }, 4000)
+        setShowTitle1(true);
+      }, 4000);
       setTimeout(() => {
-        setShowTitleGradient(true)
-      }, 5000)
-      setTimeout(() => {
-        setShowTitleGradient(true)
-      }, 5000)
+        setShowTitleGradient(true);
+      }, 5000);
+
     }
-
-  })
+  });
   return (
     <>
-      <section className={props.className} style={{ flexDirection: 'column' }}>
-        <div style={{
-          width: '100%',
-          height: '90px',
-          display: 'flex',
-          justifyContent: 'center',
-          textAlign: 'center'
-        }}>
-
+      <section className={props.className} style={{ flexDirection: "column" }}>
+        <div
+          style={{
+            width: "100%",
+            height: "90px",
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
           {showTitleGradient ? (
             <h3
-              className='content-title alon-title title custom-animation-gradient1'
-              style={{ textAlign: 'center' }}
+              className="content-title alon-title title custom-animation-gradient1"
+              style={{ textAlign: "center" }}
             >
-              <span className='fade-animate'>I'm</span> Alon
+              <span className="fade-animate">I'm</span> Alon
             </h3>
           ) : (
             <>
               <Fade opposite when={showTitle} duration={2000}>
                 <h3
-                  className='content-title content-title-project title1'
-                  style={{ textAlign: 'center', margin: '0% 5%' }}
+                  className="content-title content-title-project title1"
+                  style={{ textAlign: "center", margin: "0% 5%" }}
                 >
                   Hi
                 </h3>
               </Fade>
               <Fade when={showTitle1} duration={2000}>
                 <h3
-                  className='content-title content-title-project title1'
-                  style={{ textAlign: 'center', margin: '0% 5%' }}
+                  className="content-title content-title-project title1"
+                  style={{ textAlign: "center", margin: "0% 5%" }}
                 >
                   I'm Alon
                 </h3>
-              </Fade></>
+              </Fade>
+            </>
           )}
-
         </div>
         <Fade bottom delay={6000}>
-
-        <div className='col' style={{marginTop: '8.5%'}}>
-          <h1 className='content-title linear-wipe'>FULL-STACK ENGINEER</h1>
-        </div>
+          <div className="col" style={{ marginTop: "8.5%" }}>
+            <h1 className="content-title linear-wipe">FULL-STACK ENGINEER</h1>
+          </div>
         </Fade>
         <Canvas
           camera={{ position: [0, 2, 7] }}
           style={{
             zIndex: 0,
-            position: 'absolute',
-            width: '100%'
+            position: "absolute",
+            width: "100%",
           }}
         >
           <ambientLight intensity={1} />
@@ -140,7 +143,7 @@ function Home(props) {
         </Canvas>
       </section>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
