@@ -1,21 +1,22 @@
 import React, { Suspense, useEffect, useRef, useState, useMemo } from "react";
 import Fade from "react-reveal/Fade";
-import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
+import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import BlackHole from "./BlackHole";
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
-import * as THREE from 'three'
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import * as THREE from "three";
 
-extend({ EffectComposer, RenderPass, UnrealBloomPass })
+extend({ EffectComposer, RenderPass, UnrealBloomPass });
 
 function Bloom({ children }) {
   const { gl, camera, size } = useThree();
   const [scene, setScene] = useState();
   const composer = useRef();
-  const aspect = useMemo(() => new THREE.Vector2(size.width, size.height), [
-    size
-  ]);
+  const aspect = useMemo(
+    () => new THREE.Vector2(size.width, size.height),
+    [size]
+  );
   useEffect(
     () => void scene && composer.current.setSize(size.width, size.height),
     [size]
@@ -60,12 +61,18 @@ function Home(props) {
   return (
     <>
       <section className={props.className} style={{ flexDirection: "column" }}>
-      <iframe style={{
-        height: '70%',
-        width: '20%',
-        marginLeft: '-7%'
-      }}
-      src="https://embed.lottiefiles.com/animation/14325"></iframe>
+        <Fade opposite left when={props.state} duration={2000} delay={1000}>
+          <iframe
+            style={{
+              height: "60%",
+              width: "20%",
+              marginLeft: "-7%",
+
+            }}
+            src="https://embed.lottiefiles.com/animation/14325"
+          ></iframe>
+        </Fade>
+
         <div
           style={{
             width: "100%",
@@ -116,12 +123,10 @@ function Home(props) {
             width: "100%",
           }}
         >
-          {/* <Bloom> */}
-            {" "}
-            <ambientLight intensity={1} />
-            <Suspense fallback={null}>
-              <BlackHole />
-            </Suspense>
+          {/* <Bloom> */} <ambientLight intensity={1} />
+          <Suspense fallback={null}>
+            <BlackHole />
+          </Suspense>
           {/* </Bloom> */}
         </Canvas>
       </section>

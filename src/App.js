@@ -44,29 +44,29 @@ const Pages = () => {
       {scrollRef.current < scrollState ? (
         <>
           <Reveal
-            effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effect="animate__animated animate__fadeInDown fadeInDown"
+            effectOut="animate__animated animate__fadeOutDown"
             when={scrollState === 0}
           >
-            <Home className="content-body" />
+            <Home className="content-body" state={scrollState === 0}/>
           </Reveal>
           <Reveal
-            effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effect="animate__animated animate__fadeInDown fadeInDown"
+            effectOut="animate__animated animate__fadeOutDown"
             when={scrollState === -1}
           >
             <IMBarber className="content-body" state={scrollState === -1} />
           </Reveal>
           <Reveal
-            effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effect="animate__animated animate__fadeInDown fadeInDown"
+            effectOut="animate__animated animate__fadeOutDown"
             when={scrollState === -2}
           >
             <Cellu className="content-body" state={scrollState === -2} />
           </Reveal>
           <Reveal
-            effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effect="animate__animated animate__fadeInDown fadeInDown"
+            effectOut="animate__animated animate__fadeOutDown"
             when={scrollState === -3}
           >
             <Compound className="content-body" state={scrollState === -3} />
@@ -76,28 +76,28 @@ const Pages = () => {
         <>
           <Reveal
             effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effectOut="animate__animated animate__fadeOutUp"
             when={scrollState === 0}
           >
-            <Home className="content-body" />
+            <Home className="content-body" state={scrollState === 0} />
           </Reveal>
           <Reveal
             effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effectOut="animate__animated animate__fadeOutUp"
             when={scrollState === -1}
           >
             <IMBarber className="content-body" state={scrollState === -1} />
           </Reveal>
           <Reveal
             effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effectOut="animate__animated animate__fadeOutUp"
             when={scrollState === -2}
           >
             <Cellu className="content-body" state={scrollState === -2} />
           </Reveal>
           <Reveal
             effect="animate__animated animate__fadeInUp fadeInUp"
-            effectOut="animate__animated animate__fadeOutLeft"
+            effectOut="animate__animated animate__fadeOutUp"
             when={scrollState === -3}
           >
             <Compound className="content-body" state={scrollState === -3} />

@@ -14,7 +14,7 @@ export default function MenuComponent () {
   useEffect(()=>{
     setTimeout(()=>{
       setShowTitle(true)
-    },6500)
+    },6300)
   },[])
 
   if (size.width > 768) {

@@ -3,11 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
 
-html,
-body {
+*, html{
   overflow: hidden;
 }
-
+.react-reveal {
+  overflow: visible;
+}
 .App {
   height: 100vh;
   background-color: #000000;
@@ -98,32 +99,9 @@ body {
 @keyframes custom-animation-gradient {
   0% {
     opacity: 0;
-  }
-  20% {
-    background-position: 10% 50%;
-  }
 
-  40% {
-    background-position: 20% 50%;
   }
-
   100% {
-    /* transform: translate3d(0px, 0px, 0px); */
-    animation-timing-function: ease-in-out;
-    background: #00f260;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right,
-        #dd2476,
-        #2f71ff);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right,
-        #dd2476,
-        #2f71ff);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-position: 50% 100%;
     opacity: 1;
   }
 }
@@ -232,6 +210,17 @@ body {
 }
 
 .custom-animation-gradient {
+  background: -webkit-linear-gradient(to right,
+  #dd2476,
+  #2f71ff);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right,
+  #dd2476,
+  #2f71ff);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-size: 100%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
   animation: 1.5s ease-in 0s 1 normal forwards running custom-animation-gradient;
 }
 
@@ -297,16 +286,17 @@ body {
 .title1 {
   font-size: 90px;
   font-family: 'Kaushan Script', cursive !important;
+  top: 15%;
 
 }
 
 .alon-title {
   font-size: 90px;
   position: absolute;
-  top: 0;
+  top:15%;
   left: 50%;
   transform: translate(-50%, 0);
-  animation: 2.2s ease-in-out 0s 1 normal forwards running moveTitle;
+  animation: 1.5s ease-in-out 0s 1 normal forwards running moveTitle;
 }
 .fade-animate {
   animation: 1.5s linear 0s 1 normal forwards running fade-animate;
@@ -315,7 +305,7 @@ body {
 @keyframes moveTitle {
   0% {
     left: 50%;
-    top: 0;
+    top: 15%;
   }
   40% {
     opacity: 1;
@@ -551,7 +541,9 @@ background: linear-gradient(to right,
   .description {
     width: 100%;
   }
-
+  [class^="col"] {
+    width: 100% !important;
+  }
   .image-cropper {
     width: 100%;
     position: unset;
@@ -570,26 +562,33 @@ background: linear-gradient(to right,
     object-fit: cover;
   }
 
-  .content-title-project,
-  .description,
-  .project-info {
-    margin-left: 0% !important;
 
+  .project-info {
+    width: 80%;
+    padding: 2%;
   }
-
-  .project-info {
-    width: 100%;
+  .stack-title{
+    font-size: 12px !important;
+  }
+  .content-body{
+    margin: 0 !important;
   }
 
   .content-body-project {
     width: 100%;
+    flex-direction: column !important;
   }
-
+  .col-4{
+    margin: 0 !important;
+  }
   .content-title-project {
     font-size: 55px;
   }
 
   .content-title-visit {
     font-size: 35px;
+  }
+  .ieWDks{
+    max-width: 100%;
   }
 }
