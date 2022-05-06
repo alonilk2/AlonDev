@@ -9,7 +9,7 @@ export default function BlackHole({ ...props }) {
   const scroll = useScroll();
   const boxRef = useRef();
   const scaleFlag = useRef(false);
-  const { scene, nodes, materials, animations } = useGLTF("scene.gltf");
+  const { scene, nodes, materials, animations } = useGLTF("/scene.gltf");
   const { ref, names, actions, clips } = useAnimations(animations, scene);
   useLayoutEffect(() => Object.values(nodes).forEach(
     (node) => (node.receiveShadow = node.castShadow = true)
