@@ -12,7 +12,7 @@ import Fade from "react-reveal/Fade";
 function Compound(props) {
   return (
     <>
-      <section className={props.className} style={{ margin: "0 2%" }}>
+      <section className={props.className} style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}>
         <div className="content-body-project">
           <div
             className="col-4"

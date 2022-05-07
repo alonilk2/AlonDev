@@ -1,5 +1,4 @@
 import {useEffect} from "react";
-import CelluImg from "../Images/cellu.png";
 import ReactIcon from "../Images/React-icon.png";
 import Node from "../Images/nodejs.svg";
 import Java from "../Images/java.png";
@@ -8,21 +7,18 @@ import Fade from "react-reveal/Fade";
 import Maps from "../Images/maps.png";
 import "../App.css";
 import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
-
+import useWindowSize from "../Hooks/useWindowSize";
 function Cellu(props) {
-  useEffect(() => {
-    console.log(props.state)
+  let size = useWindowSize();
 
-  }, [props.state])
-  
   return (
     <>
-      <section className={props.className} style={{ zIndex: 2 }}>
+      <section className={props.className} style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}>
         <div className="content-body-project">
           <div
             className="col-5"
             style={{
-              margin: "5% 0",
+              margin: size.width > 768 ? "5%" : "5% 0",
               display: "flex",
               flexDirection: "column",
               textAlign: "center",
@@ -107,7 +103,7 @@ function Cellu(props) {
             </Fade>
           </div>
 
-          <div class="image-cropper cf4a" style={{ borderRadius: "25px" }}>
+          <div class="image-cropper cf4a" style={{ borderRadius: "25px", height: size.width < 768 ? '420px' : '70%' }}>
             <CrossfadeCarousel
               interval={3000}
               transition={2000}

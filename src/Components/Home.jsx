@@ -8,7 +8,25 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import * as THREE from "three";
 import useWindowSize from "../Hooks/useWindowSize";
 
+
+
 extend({ EffectComposer, RenderPass, UnrealBloomPass });
+
+function Loading() {
+  return (
+    <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
+      <sphereGeometry attach="geometry" args={[1, 16, 16]} />
+      <meshStandardMaterial
+        attach="material"
+        color="white"
+        transparent
+        opacity={0.6}
+        roughness={1}
+        metalness={0}
+      />
+    </mesh>
+  );
+}
 
 function Bloom({ children }) {
   const { gl, camera, size } = useThree();
@@ -66,7 +84,8 @@ function Home(props) {
 
   return (
     <>
-      <section className={props.className} style={{ marginTop: 0 }}>
+    
+      <section className={props.className} style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}>
         {size.width > 768 && (
           <Fade opposite left when={props.state} duration={2000} delay={1000}>
             <iframe
@@ -134,7 +153,7 @@ function Home(props) {
             }}
           >
             {/* <Bloom> */} <ambientLight intensity={1} />
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loading />}>
               <BlackHole />
             </Suspense>
             {/* </Bloom> */}
@@ -150,9 +169,11 @@ function Home(props) {
               minHeight: "500px",
             }}
           >
+
             {/* <Bloom> */} <ambientLight intensity={1} />
-            <Suspense fallback={null}>
-              <BlackHole />
+
+            <Suspense fallback={<Loading />}>
+                            <BlackHole />
             </Suspense>
             {/* </Bloom> */}
           </Canvas>

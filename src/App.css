@@ -210,10 +210,8 @@ html {
 }
 
 .custom-animation-gradient {
-  background: -webkit-linear-gradient(to right, #dd2476, #2f71ff);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #dd2476, #2f71ff);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #dd2476, #a12fff);
+  background: linear-gradient(to right, #dd2476, #a12fff);
   background-size: 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -330,11 +328,9 @@ html {
 }
 .content-title-visit {
   font-size: 45px;
-
   padding: 2% 3%;
-  background: -webkit-linear-gradient(to right, #dd2476, #2f71ff);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #dd2476, #2f71ff);
+  background: -webkit-linear-gradient(to right, #dd2476, #a12fff);
+  background: linear-gradient(to right, #dd2476, #a12fff);
   border-radius: 25px;
   font-family: "Kaushan Script", cursive;
   color: #111111;
@@ -342,9 +338,8 @@ html {
   margin: 5%;
 }
 .content-title-visit:hover {
-  background: -webkit-linear-gradient(to right, #dd2476, #2f71ff);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ff9eca, #86acff);
+  background: -webkit-linear-gradient(to right, #ff9eca, #e6c7ff);
+  background: linear-gradient(to right, #ff9eca, #e6c7ff);
   color: #111111;
 }
 
@@ -356,7 +351,6 @@ html {
 }
 
 .trail {
-  /* className for the trail elements */
   position: absolute;
   height: 6px;
   width: 6px;
@@ -486,6 +480,7 @@ html {
 .tech-logo {
   width: 80%;
   object-fit: contain;
+  max-height: 80px;
 }
 
 .fadeInUp {
@@ -494,15 +489,12 @@ html {
 
 .tech-col {
   width: 20%;
-  /* padding: 5%; */
   display: flex;
   flex-direction: column;
-  /* vertical-align: bottom; */
   height: 100%;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-bottom: 3%;
   justify-content: flex-end;
 }
 
@@ -583,8 +575,7 @@ html {
     font-size: 10px !important;
   }
   .content-body {
-    min-height: 100vh;
-    margin: 5% 0 !important;
+    margin: 15% 0 !important;
   }
 
   .content-body-project {
