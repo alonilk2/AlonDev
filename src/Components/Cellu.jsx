@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import ReactIcon from "../Images/React-icon.png";
 import Node from "../Images/nodejs.svg";
 import Java from "../Images/java.png";
@@ -13,7 +13,10 @@ function Cellu(props) {
 
   return (
     <>
-      <section className={props.className} style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}>
+      <section
+        className={props.className}
+        style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
+      >
         <div className="content-body-project">
           <div
             className="col-5"
@@ -27,10 +30,18 @@ function Cellu(props) {
           >
             {" "}
             <Flip top when={props.state}>
-              <h1 className="content-title-project delay-1" style={{ position: "unset", height: "unset" }}>Cellu 5G</h1>
+              <h1
+                className="content-title-project delay-1"
+                style={{ position: "unset", height: "unset" }}
+              >
+                Cellu 5G
+              </h1>
             </Flip>{" "}
             <Flip top when={props.state} delay={500}>
-              <p className="description" style={{ position: "unset", height: "unset" }}>
+              <p
+                className="description"
+                style={{ position: "unset", height: "unset" }}
+              >
                 Cellu is an Android application which allows users to locate
                 cellular antennas in Israel. Cellu displays antennas located
                 close to you according to the current device's location,
@@ -40,7 +51,10 @@ function Cellu(props) {
               </p>{" "}
             </Flip>
             <Fade left when={props.state} delay={800}>
-              <div className="row project-info" style={{ position: "unset", height: "unset" }}>
+              <div
+                className="row project-info"
+                style={{ position: "unset", height: "unset" }}
+              >
                 {" "}
                 <Fade left when={props.state} delay={1000}>
                   <div className="col tech-col">
@@ -59,7 +73,7 @@ function Cellu(props) {
                       className="tech-logo"
                       src={Node}
                       alt="node.js"
-                      style={{ position: "unset", height: "unset"}}
+                      style={{ position: "unset", height: "unset" }}
                     />
                     <p className="stack-title">Node.js</p>
                   </div>{" "}
@@ -81,7 +95,7 @@ function Cellu(props) {
                       className="tech-logo"
                       src={Java}
                       alt="Java"
-                      style={{ position: "unset", height: "unset"}}
+                      style={{ position: "unset", height: "unset" }}
                     />
                     <p className="stack-title">Java</p>
                   </div>{" "}
@@ -103,7 +117,13 @@ function Cellu(props) {
             </Fade>
           </div>
 
-          <div class="image-cropper cf4a" style={{ borderRadius: "25px", height: size.width < 768 ? '420px' : '70%' }}>
+          <div
+            class="image-cropper cf4a"
+            style={{
+              borderRadius: "25px",
+              height: size.width < 768 ? "420px" : "70%",
+            }}
+          >
             <CrossfadeCarousel
               interval={3000}
               transition={2000}
