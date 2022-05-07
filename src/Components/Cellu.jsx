@@ -22,7 +22,7 @@ function Cellu(props) {
           <div
             className="col-5"
             style={{
-              margin: "5% 2%",
+              margin: "5% 0",
               display: "flex",
               flexDirection: "column",
               textAlign: "center",
@@ -51,7 +51,7 @@ function Cellu(props) {
                     <img
                       className="row tech-logo"
                       src={ReactIcon}
-                      style={{ width: "50%", position: "unset", height: "unset" }}
+                      style={{ position: "unset", height: "unset" }}
                       alt="react"
                     />
                     <p className="row stack-title">React Native</p>
@@ -63,7 +63,7 @@ function Cellu(props) {
                       className="tech-logo"
                       src={Node}
                       alt="node.js"
-                      style={{ width: "40%", position: "unset", height: "unset"}}
+                      style={{ position: "unset", height: "unset"}}
                     />
                     <p className="stack-title">Node.js</p>
                   </div>{" "}
@@ -74,7 +74,7 @@ function Cellu(props) {
                       className="tech-logo"
                       src={Maps}
                       alt="Google Maps API"
-                      style={{ width: "50%", position: "unset", height: "unset" }}
+                      style={{ position: "unset", height: "unset" }}
                     />
                     <p className="stack-title">Google Maps API</p>
                   </div>{" "}
@@ -85,7 +85,7 @@ function Cellu(props) {
                       className="tech-logo"
                       src={Java}
                       alt="Java"
-                      style={{ width: "40%", position: "unset", height: "unset"}}
+                      style={{ position: "unset", height: "unset"}}
                     />
                     <p className="stack-title">Java</p>
                   </div>{" "}
@@ -107,7 +107,7 @@ function Cellu(props) {
             </Fade>
           </div>
 
-          <div class="col image-cropper cf4a" style={{ borderRadius: "25px" }}>
+          <div class="image-cropper cf4a" style={{ borderRadius: "25px" }}>
             <CrossfadeCarousel
               interval={3000}
               transition={2000}

@@ -20,7 +20,7 @@ function IMBarber(props) {
           <div
             className="col-4"
             style={{
-              margin: "5% 2%",
+              margin: "5% 0",
               display: "flex",
               flexDirection: "column",
               textAlign: "center",
@@ -55,12 +55,12 @@ function IMBarber(props) {
               <Fade left when={props.state} delay={1000}>
                 <div className="col tech-col">
                   <img
-                    className="row tech-logo"
+                    className="tech-logo"
                     src={ReactIcon}
-                    style={{ position: "unset", height: "unset" }}
+                    style={{ transform: 'scale(1.1)', position: "unset", height: "unset" }}
                     alt="react"
                   />{" "}
-                  <p className="row stack-title">React.js</p>
+                  <p className="stack-title">React.js</p>
                 </div>{" "}
               </Fade>
               <Fade left when={props.state} delay={1200}>

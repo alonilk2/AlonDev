@@ -17,7 +17,7 @@ function Compound(props) {
           <div
             className="col-4"
             style={{
-              margin: "5% 2%",
+              margin: "5% 0",
               display: "flex",
               flexDirection: "column",
               textAlign: "center",

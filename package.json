@@ -2,6 +2,7 @@
   "name": "abdev",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alonilk2.github.io/abdev/",
   "dependencies": {
     "@fontsource/cabin-condensed": "^4.5.2",
     "@fontsource/encode-sans": "^4.5.2",

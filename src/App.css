@@ -515,8 +515,7 @@ html {
   opacity: 0.6;
   margin: 0 !important;
   font-size: 18px;
-  position: absolute;
-  bottom: 0;
+
   line-height: 16px;
 }
 
@@ -534,6 +533,8 @@ html {
     max-width: 20% !important;
     flex-shrink: unset !important;
     position: unset !important;
+    padding: 0;
+    height: 80px;
   }
   .description {
     width: 100%;
@@ -559,22 +560,23 @@ html {
     object-fit: cover;
   }
   .content-title {
-    font-size: 90px;
-    margin-top: 20%;
+    font-size: 4.5rem;
+    margin-top: 30%;
   }
   .tech-logo {
     max-width: 60px;
   }
   .project-info {
-    width: 90% !important;
+    width: 100% !important;
     padding: 2%;
+    border-radius: 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap !important;
     --bs-gutter-x: 0 !important;
   }
   .stack-title {
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
   .content-body {
     min-height: 100vh;
@@ -597,6 +599,7 @@ html {
   }
   .ieWDks {
     max-width: 100%;
+
   }
   .content-body-home {
     display: flex;
@@ -619,6 +622,16 @@ html {
   .App { 
     height: unset;
   }
+  @keyframes moveTitle {
+    0% {
+      left: 50%;
+      top: 15%;
+    }
 
+    100% {
+      font-size: 0px;
+      opacity: 0;
+    }
+  }
 }
 
