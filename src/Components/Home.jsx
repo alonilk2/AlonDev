@@ -66,10 +66,7 @@ function Home(props) {
 
   return (
     <>
-      <section
-        className={props.className}
-        style={{ marginTop: 0}}
-      >
+      <section className={props.className} style={{ marginTop: 0 }}>
         {size.width > 768 && (
           <Fade opposite left when={props.state} duration={2000} delay={1000}>
             <iframe
