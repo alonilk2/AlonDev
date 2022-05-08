@@ -6,11 +6,9 @@ import Express from "../Images/Expressjs.png";
 import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
-import useWindowSize from "../Hooks/useWindowSize";
 import "../App.css";
 
 function IMBarber(props) {
-  const size = useWindowSize();
   const techStackRow = (
     <Fade left when={props.state} delay={800}>
       <div
@@ -113,9 +111,7 @@ function IMBarber(props) {
           to customer's demands.
         </p>
       </Flip>
-
       {techStackRow}
-
       <a
         className="content-title-visit delay-1 "
         style={{
@@ -145,24 +141,12 @@ function IMBarber(props) {
     </div>
   );
 
-  if (size.width < 768) {
-    return (
-      <>
-        <section
-          className={props.className}
-          style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
-        >
-          <div className="content-body-project">
-            {sideColumn}
-            {imageCropper}
-          </div>
-        </section>
-      </>
-    );
-  }
   return (
     <>
-      <section className={props.className} style={{ margin: "0 2%" }}>
+      <section
+        className={props.className}
+        style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
+      >
         <div className="content-body-project">
           {sideColumn}
           {imageCropper}
