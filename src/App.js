@@ -1,8 +1,4 @@
 import { useEffect, useRef } from "react";
-import "./App.css";
-import "@fontsource/encode-sans-sc/700.css";
-import "@fontsource/encode-sans/700.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import useScrollState from "./Hooks/useScrollState";
 import Home from "./Components/Home";
 import IMBarber from "./Components/IMBarber";
@@ -13,6 +9,10 @@ import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
 import Reveal from "react-reveal/Reveal";
 import PageBar from "./Components/PageBar";
+import "./App.css";
+import "@fontsource/encode-sans-sc/700.css";
+import "@fontsource/encode-sans/700.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const PAGENUM = 3;
 
@@ -106,7 +106,6 @@ const Pages = () => {
   );
 
   if (size.width < 768) return RenderPagesOnMobile;
-
   return (
     <div>
       {scrollRef.current < scrollState ? RenderPagesOnUp : RenderPagesOnDown}
