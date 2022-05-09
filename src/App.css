@@ -81,6 +81,57 @@ html {
   margin-right: 80px;
   font-size: 20px;
 }
+.css-10botns-MuiInputBase-input-MuiFilledInput-input,
+.css-1gzyby-MuiInputBase-root-MuiFilledInput-root {
+  background-color: #9f9f9f45 !important;
+  color: white;
+}
+.css-e4w4as-MuiFormLabel-root-MuiInputLabel-root {
+  color: rgb(140 140 140) !important;
+}
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::after,
+.css-1gzyby-MuiInputBase-root-MuiFilledInput-root:after {
+  border-color: #f443dc !important;
+  border-bottom: 3px solid #f443dc !important;
+}
+.MuiInputLabel-root,
+.css-7209ej-MuiInputBase-input-MuiFilledInput-input {
+  color: #f443dc !important;
+}
+.MuiFormControl-root {
+  padding: 1% !important;
+  width: 100%;
+}
+.MuiFilledInput-root {
+  border-radius: 0 !important;
+}
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(155, 155, 155, 0.3);
+  width: 85%;
+  height: 75%;
+  justify-content: center;
+}
+.contact-col {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 1%;
+  justify-content: center;
+}
+.contact-submit-btn {
+  width: 200px;
+  padding: 1%;
+  background-color: transparent;
+  border: 3px solid #f443dc;
+  color: #f443dc;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 2px;
+  align-self: flex-end;
+  margin: 1%;
+}
 
 @keyframes custom-animation-white {
   0% {
@@ -378,7 +429,7 @@ html {
 }
 
 .horizontal-line-scope {
-  background: linear-gradient(to right, #dd2476, #ff512f);
+  background: #f443dc;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -594,7 +645,6 @@ html {
   }
   .ieWDks {
     max-width: 100%;
-
   }
   .content-body-home {
     display: flex;
@@ -614,7 +664,7 @@ html {
     top: 15%;
     transform: translate(-50%, 0);
   }
-  .App { 
+  .App {
     height: unset;
   }
   @keyframes moveTitle {
@@ -629,4 +679,3 @@ html {
     }
   }
 }
-

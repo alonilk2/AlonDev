@@ -92,7 +92,7 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      <Flip top when={props.state}>
+      <Flip top when={props.state} cascade>
         <h1
           className="content-title-project delay-1"
           style={{ position: "unset", height: "unset" }}

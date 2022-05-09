@@ -5,18 +5,19 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Container from "react-bootstrap/Container";
 import useWindowSize from "../Hooks/useWindowSize";
 
-export default function MenuComponent() {
+export default function NavBar(props) {
   const size = useWindowSize();
   const [toggle, setToggle] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
-
+  let scrollState = props.scrollState
+  console.log(scrollState)
   useEffect(() => {
     setTimeout(() => {
       setShowTitle(true);
     }, 6300);
   }, []);
 
-  const mobileNavbar = (
+  const desktopNavbar = (
     <Navbar expand="lg" variant="dark">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -29,13 +30,13 @@ export default function MenuComponent() {
             )}
           </div>
           <div className="col right-menu">
-            <Nav.Link href="/" className="navbar-btn-txt">
+            <Nav.Link href="/" className="navbar-btn-txt" style={{color: scrollState < 0 && scrollState > -4 ? '#f443dc' : ''}}>
               Portfolio
             </Nav.Link>
             <Nav.Link href="/" className="navbar-btn-txt">
               About
             </Nav.Link>
-            <Nav.Link href="/" className="navbar-btn-txt">
+            <Nav.Link href="/" className="navbar-btn-txt" style={{color: scrollState === -4 ? '#f443dc' : ''}}>
               Contact
             </Nav.Link>
           </div>
@@ -44,7 +45,7 @@ export default function MenuComponent() {
     </Navbar>
   );
 
-  const desktopNavbar = (
+  const mobileNavbar = (
     <Navbar
       expanded={toggle}
       sticky="top"
@@ -85,6 +86,6 @@ export default function MenuComponent() {
   );
 
   if (size.width > 768) {
-    return mobileNavbar;
-  } else return desktopNavbar;
+    return desktopNavbar;
+  } else return mobileNavbar;
 }

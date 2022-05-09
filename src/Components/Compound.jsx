@@ -1,10 +1,9 @@
-import React from "react";
+import "../App.css";
 import ReactIcon from "../Images/React-icon.png";
 import metamask from "../Images/metamask.png";
 import Hardhat from "../Images/hardhat.png";
 import Ethers from "../Images/ethers.png";
 import Alchemy from "../Images/alchemy.png";
-import "../App.css";
 import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
@@ -95,7 +94,7 @@ function Compound(props) {
         alignItems: "center",
       }}
     >
-      <Flip top when={props.state}>
+      <Flip top when={props.state} cascade>
         <h1
           className="content-title-project delay-1"
           style={{ position: "unset", height: "unset" }}

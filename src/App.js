@@ -4,20 +4,21 @@ import Home from "./Components/Home";
 import IMBarber from "./Components/IMBarber";
 import Cellu from "./Components/Cellu";
 import Compound from "./Components/Compound";
-import Menu from "./Components/MenuComponent";
+import Navbar from "./Components/Navbar";
 import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
 import Reveal from "react-reveal/Reveal";
 import PageBar from "./Components/PageBar";
+import Contact from './Components/Contact'
 import "./App.css";
 import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const PAGENUM = 3;
+const PAGENUM = 4;
 
-const Pages = () => {
-  const scrollState = useScrollState(PAGENUM);
+const Pages = (props) => {
+  let scrollState = props.scrollState;
   const size = useWindowSize();
   const scrollRef = useRef(0);
 
@@ -35,6 +36,7 @@ const Pages = () => {
         <IMBarber className="content-body" />
         <Cellu className="content-body" />
         <Compound className="content-body" />
+        <Contact className="content-body" />
       </Reveal>
     </div>
   );
@@ -69,6 +71,13 @@ const Pages = () => {
       >
         <Compound className="content-body" state={scrollState === -3} />
       </Reveal>
+      <Reveal
+        effect="animate__animated animate__fadeInDown fadeInDown"
+        effectOut="animate__animated animate__fadeOutDown"
+        when={scrollState === -4}
+      >
+        <Contact className="content-body" state={scrollState === -4}/>
+      </Reveal>
     </>
   );
 
@@ -102,6 +111,13 @@ const Pages = () => {
       >
         <Compound className="content-body" state={scrollState === -3} />
       </Reveal>
+      <Reveal
+        effect="animate__animated animate__fadeInUp fadeInUp"
+        effectOut="animate__animated animate__fadeOutUp"
+        when={scrollState === -4}
+      >
+        <Contact className="content-body" state={scrollState === -4}/>
+      </Reveal>
     </>
   );
 
@@ -115,11 +131,13 @@ const Pages = () => {
 };
 
 function App() {
+  const scrollState = useScrollState(PAGENUM);
+
   return (
     <div className="App">
-      <Menu />
+      <Navbar scrollState={scrollState} />
       {useSpace()}
-      <Pages />
+      <Pages scrollState={scrollState}/>
     </div>
   );
 }

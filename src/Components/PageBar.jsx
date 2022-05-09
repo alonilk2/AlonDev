@@ -30,6 +30,13 @@ export default function pageBar(scrollState) {
         >
           ___
         </span>
+        <span
+          className={
+            scrollState == -4 ? "horizontal-line-scope" : "horizontal-line"
+          }
+        >
+          ___
+        </span>
       </p>
     </footer>
   );

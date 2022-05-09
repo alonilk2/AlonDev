@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import ReactIcon from "../Images/React-icon.png";
 import Node from "../Images/nodejs.svg";
 import Java from "../Images/java.png";
@@ -78,7 +77,7 @@ function Cellu(props) {
       }}
     >
       {" "}
-      <Flip top when={props.state}>
+      <Flip top when={props.state} cascade>
         <h1
           className="content-title-project delay-1"
           style={{ position: "unset", height: "unset" }}
