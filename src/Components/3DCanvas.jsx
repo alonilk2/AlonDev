@@ -1,6 +1,11 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import BlackHole from "./BlackHole";
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+} from "@react-three/postprocessing";
 
 function Loading() {
   return (
@@ -12,7 +17,8 @@ function Loading() {
         transparent
         opacity={0.6}
         roughness={1}
-        metalness={0} />
+        metalness={0}
+      />
     </mesh>
   );
 }
@@ -30,6 +36,9 @@ export const desktopCanvas = (
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
+    <EffectComposer>
+      <Bloom luminanceThreshold={0.1} intensity={3} height={400}/>
+    </EffectComposer>
   </Canvas>
 );
 
