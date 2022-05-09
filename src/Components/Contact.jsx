@@ -8,7 +8,7 @@ export default function Contact(props) {
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
-
+  const [success, setSuccess] = useState();
   const handleSubmit = () => {
     window.emailjs
       .send("service_rh4fcch", "template_w3ffrb8", {
@@ -19,9 +19,11 @@ export default function Contact(props) {
       })
       .then(
         function (response) {
+          setSuccess(true)
           console.log("SUCCESS!", response.status, response.text);
         },
         function (error) {
+          setSuccess(false)
           console.log("FAILED...", error);
         }
       );
@@ -38,33 +40,45 @@ export default function Contact(props) {
         >
           <div className="contact-container">
             <div className="contact-col">
-              <Flip top when={props.state} cascade>
-                <h1
-                  className="content-title-project delay-1"
-                  style={{ position: "unset", height: "unset" }}
-                >
-                  Contact Me
-                </h1>
-              </Flip>{" "}
+              {success && <div className="success">
+                Your message has been sent successfully. Thank you!
+              </div>}
+              <h1
+                className="content-title-project delay-1 hover-animate"
+                style={{ position: "unset", height: "unset" }}
+              >
+                <span>C</span>
+                <span>o</span>
+                <span>n</span>
+                <span>t</span>
+                <span>a</span>
+                <span>c</span>
+                <span>t </span>{' '}
+                <span> m</span>
+                <span>e</span>
+              </h1>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <TextField
                   id="filled-basic"
                   label="Full Name"
                   variant="filled"
-                  onChange={(val) => setFullName(val)}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setFullName(e.target.value);
+                  }}
                 />
                 <TextField
                   id="filled-basic"
                   label="Email"
                   variant="filled"
-                  onChange={(val) => setEmail(val)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <TextField
                 id="filled-basic"
                 label="Subject"
                 variant="filled"
-                onChange={(val) => setSubject(val)}
+                onChange={(e) => setSubject(e.target.value)}
               />
               <TextField
                 id="filled-multiline-static"
@@ -72,9 +86,14 @@ export default function Contact(props) {
                 multiline
                 rows={4}
                 variant="filled"
-                onChange={(val) => setContent(val)}
+                onChange={(e) => setContent(e.target.value)}
               />
-              <button className="contact-submit-btn" onClick={handleSubmit}>Submit</button>
+              <button
+                className="contact-submit-btn button"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
             </div>
             <div className="div">
               <img

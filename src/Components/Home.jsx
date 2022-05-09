@@ -86,7 +86,7 @@ function Home(props) {
         className={props.className}
         style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
       >
-        {size.width > 768 && scrollSideLottie}
+        {size.width > 768 && props.state ? scrollSideLottie : null}
 
         {!RemoveCol && (
           <div
@@ -101,12 +101,13 @@ function Home(props) {
           </div>
         )}
 
-        <Fade bottom delay={6000} duration={2000}>
+        <Fade bottom delay={6000} duration={2000} cascade>
           <div className="col" style={{ marginTop: "8.5%" }}>
-            <h1 className="content-title linear-wipe">FULL-STACK ENGINEER</h1>
+            <h1 className="content-title linear-wipe hover-animate">
+              FULL-STACK ENGINEER
+            </h1>
           </div>
         </Fade>
-
         {size.width > 768 ? desktopCanvas : mobileCanvas}
       </section>
     </>
