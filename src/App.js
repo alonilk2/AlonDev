@@ -9,7 +9,7 @@ import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
 import Reveal from "react-reveal/Reveal";
 import PageBar from "./Components/PageBar";
-import Contact from './Components/Contact'
+import Contact from "./Components/Contact";
 import "./App.css";
 import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
@@ -26,18 +26,17 @@ const Pages = (props) => {
     scrollRef.current = scrollState;
   }, [scrollState]);
 
+  useEffect(() => {
+    console.log("rerender");
+  });
+  
   const RenderPagesOnMobile = (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-      >
-        <Home className="content-body-home" />
-        <IMBarber className="content-body" />
-        <Cellu className="content-body" />
-        <Compound className="content-body" />
-        <Contact className="content-body" />
-      </Reveal>
+      <Home className="content-body-home" />
+      <IMBarber className="content-body" />
+      <Cellu className="content-body" />
+      <Compound className="content-body" />
+      <Contact className="content-body" />
     </div>
   );
 
@@ -76,7 +75,7 @@ const Pages = (props) => {
         effectOut="animate__animated animate__fadeOutDown"
         when={scrollState === -4}
       >
-        <Contact className="content-body" state={scrollState === -4}/>
+        <Contact className="content-body" state={scrollState === -4} />
       </Reveal>
     </>
   );
@@ -116,7 +115,7 @@ const Pages = (props) => {
         effectOut="animate__animated animate__fadeOutUp"
         when={scrollState === -4}
       >
-        <Contact className="content-body" state={scrollState === -4}/>
+        <Contact className="content-body" state={scrollState === -4} />
       </Reveal>
     </>
   );
@@ -132,14 +131,26 @@ const Pages = (props) => {
 
 function App() {
   const scrollState = useScrollState(PAGENUM);
+  const size = useWindowSize();
+  const spaceBackground = useSpace();
+  if (size.width > 768){
+    return (
+      <div className="App">
+        <Navbar scrollState={scrollState} />
+        {spaceBackground}
+        <Pages scrollState={scrollState} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Navbar />
+        {spaceBackground}
+        <Pages />
+      </div>
+    );
+  }
 
-  return (
-    <div className="App">
-      <Navbar scrollState={scrollState} />
-      {useSpace()}
-      <Pages scrollState={scrollState}/>
-    </div>
-  );
 }
 
 export default App;
