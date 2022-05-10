@@ -1,7 +1,10 @@
 import "../App.css";
+import { AiFillPhone, AiFillMail } from "react-icons/ai";
+import { GiPositionMarker } from "react-icons/gi";
+
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
-import Flip from "react-reveal/Flip";
+import useWindowSize from "../Hooks/useWindowSize";
 
 export default function Contact(props) {
   const [fullName, setFullName] = useState("");
@@ -9,6 +12,7 @@ export default function Contact(props) {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [success, setSuccess] = useState();
+  const size = useWindowSize();
   const handleSubmit = () => {
     window.emailjs
       .send("service_rh4fcch", "template_w3ffrb8", {
@@ -19,11 +23,11 @@ export default function Contact(props) {
       })
       .then(
         function (response) {
-          setSuccess(true)
+          setSuccess(true);
           console.log("SUCCESS!", response.status, response.text);
         },
         function (error) {
-          setSuccess(false)
+          setSuccess(false);
           console.log("FAILED...", error);
         }
       );
@@ -36,13 +40,15 @@ export default function Contact(props) {
       >
         <div
           className="content-body-project"
-          style={{ justifyContent: "center", margin: "2%" }}
+          style={{ justifyContent: "center", margin: "0" }}
         >
           <div className="contact-container">
             <div className="contact-col">
-              {success && <div className="success">
-                Your message has been sent successfully. Thank you!
-              </div>}
+              {success && (
+                <div className="success">
+                  Your message has been sent successfully. Thank you!
+                </div>
+              )}
               <h1
                 className="content-title-project delay-1 hover-animate"
                 style={{ position: "unset", height: "unset" }}
@@ -53,10 +59,30 @@ export default function Contact(props) {
                 <span>t</span>
                 <span>a</span>
                 <span>c</span>
-                <span>t </span>{' '}
-                <span> m</span>
+                <span>t </span> <span> m</span>
                 <span>e</span>
               </h1>
+              <div className="bubble-row">
+                <div className="col bubble-col">
+                  <div className="contact-bubble hover-animate-bubble">
+                    <AiFillPhone />
+                  </div>
+                  058-789-7938
+                </div>
+                <div className="col bubble-col">
+                  <div className="contact-bubble hover-animate-bubble">
+                    <GiPositionMarker />
+                  </div>
+                  Nof Hagalil, Israel
+                </div>
+                <div className="col bubble-col">
+                  <div className="contact-bubble hover-animate-bubble">
+                    <AiFillMail />
+                  </div>
+                  alonilk2@gmail.com
+                </div>
+              </div>
+
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <TextField
                   id="filled-basic"
@@ -96,12 +122,21 @@ export default function Contact(props) {
               </button>
             </div>
             <div className="div">
-              <img
-                src={
-                  "https://maps.googleapis.com/maps/api/staticmap?center=Nof%20Hagalil,Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
-                }
-                alt="Map"
-              />
+              {size.width > 768 ? (
+                <img
+                  src={
+                    "https://maps.googleapis.com/maps/api/staticmap?center=Nof%20Hagalil,Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
+                  }
+                  alt="Map"
+                />
+              ) : (
+                <img
+                  src={
+                    "https://maps.googleapis.com/maps/api/staticmap?center=Nof%20Hagalil,Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
+                  }
+                  alt="Map"
+                />
+              )}
             </div>
           </div>
         </div>

@@ -82,7 +82,7 @@ function Compound(props) {
       </div>
     </Fade>
   );
-  
+
   const sideColumn = (
     <div
       className="col-4"
@@ -94,15 +94,20 @@ function Compound(props) {
         alignItems: "center",
       }}
     >
-      <Flip top when={props.state} cascade>
-        <h1
-          className="content-title-project delay-1"
-          style={{ position: "unset", height: "unset" }}
-        >
-          Compound DApp
-        </h1>{" "}
-      </Flip>
-      <Flip top when={props.state} delay={500}>
+      <h1
+        className="content-title-project delay-1 hover-animate"
+        style={{ position: "unset", height: "unset", zIndex: 6 }}
+      >
+        <span>C</span>
+        <span>o</span>
+        <span>m</span>
+        <span>p</span>
+        <span>o</span>
+        <span>u</span>
+        <span>n</span>
+        <span>d</span>
+      </h1>
+      <Fade top when={props.state} delay={500}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
@@ -111,7 +116,7 @@ function Compound(props) {
           featuring ETH coins supply and DAI coins borrow. The app is
           interfacing with MetaMask wallets.
         </p>{" "}
-      </Flip>
+      </Fade>
       {techStackRow}
 
       <a
@@ -126,10 +131,9 @@ function Compound(props) {
 
   const imageCropper = (
     <div class="image-cropper cf4a">
-      <CrossfadeCarousel
-        interval={3000}
-        transition={2000}
-        images={["https://alonilk2.github.io/map1/compound.jpg"]}
+      <img
+        src={"https://alonilk2.github.io/map1/abdev/compound.png"}
+        alt="Compound"
       />
     </div>
   );

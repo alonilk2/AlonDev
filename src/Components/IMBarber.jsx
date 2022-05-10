@@ -7,8 +7,10 @@ import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 import "../App.css";
+import useWindowSize from "../Hooks/useWindowSize";
 
 function IMBarber(props) {
+  const size = useWindowSize();
   const techStackRow = (
     <Fade left when={props.state} delay={800}>
       <div
@@ -92,15 +94,19 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      <Flip top when={props.state} cascade>
-        <h1
-          className="content-title-project delay-1"
-          style={{ position: "unset", height: "unset" }}
-        >
-          IM.Barber
-        </h1>
-      </Flip>
-      <Flip top when={props.state} delay={500}>
+      <h1
+        className="content-title-project delay-1 hover-animate"
+        style={{ position: "unset", height: "unset", zIndex: 6 }}
+      >
+        <span>I'</span>
+        <span>M</span> <span>B</span>
+        <span>a</span>
+        <span>r</span>
+        <span>b</span>
+        <span>e</span>
+        <span>r</span>
+      </h1>
+      <Fade top when={props.state} delay={500}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
@@ -110,7 +116,7 @@ function IMBarber(props) {
           management, users and orders management, all made originally according
           to customer's demands.
         </p>
-      </Flip>
+      </Fade>
       {techStackRow}
       <a
         className="content-title-visit delay-1 "
@@ -126,12 +132,24 @@ function IMBarber(props) {
       </a>
     </div>
   );
-
+  const imageCropperMobile = (
+    <div class="image-cropper cf4a">
+      <CrossfadeCarousel
+        interval={2000}
+        transition={1000}
+        images={[
+          "https://alonilk2.github.io/map1/abdev/barber2.png",
+          "https://alonilk2.github.io/map1/abdev/barber1.jpg",
+          "https://alonilk2.github.io/map1/abdev/barber3.jpg",
+        ]}
+      />
+    </div>
+  );
   const imageCropper = (
     <div class="image-cropper cf4a">
       <CrossfadeCarousel
-        interval={3000}
-        transition={2000}
+        interval={2000}
+        transition={1000}
         images={[
           "https://alonilk2.github.io/map1/barber2.png",
           "https://alonilk2.github.io/map1/barber1.png",
@@ -140,7 +158,6 @@ function IMBarber(props) {
       />
     </div>
   );
-
   return (
     <>
       <section
@@ -149,7 +166,7 @@ function IMBarber(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {imageCropper}
+          {size.width>768 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>

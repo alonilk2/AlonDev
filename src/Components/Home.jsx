@@ -84,7 +84,11 @@ function Home(props) {
     <>
       <section
         className={props.className}
-        style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
+        style={{
+          marginTop: 0,
+          zIndex: props.state ? 4 : 0,
+          position: "relative",
+        }}
       >
         {size.width > 768 && props.state ? scrollSideLottie : null}
 
@@ -109,6 +113,16 @@ function Home(props) {
           </div>
         </Fade>
         {size.width > 768 ? desktopCanvas : mobileCanvas}
+        <div className="col">
+        <a href="#" class="arrow-container">
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+        </a>
+        <h5 className="title-scroll">Scroll Down</h5>
+        </div>
+
+
       </section>
     </>
   );

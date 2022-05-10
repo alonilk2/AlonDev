@@ -9,8 +9,8 @@ export default function NavBar(props) {
   const size = useWindowSize();
   const [toggle, setToggle] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
-  let scrollState = props.scrollState
-  console.log(scrollState)
+  let scrollState = props.scrollState;
+  console.log(scrollState);
   useEffect(() => {
     setTimeout(() => {
       setShowTitle(true);
@@ -30,13 +30,23 @@ export default function NavBar(props) {
             )}
           </div>
           <div className="col right-menu">
-            <Nav.Link href="/" className="navbar-btn-txt" style={{color: scrollState < 0 && scrollState > -4 ? '#f443dc' : ''}}>
+            <Nav.Link
+              href="/"
+              className="navbar-btn-txt"
+              style={{
+                color: scrollState < 0 && scrollState > -4 ? "#f443dc" : "",
+              }}
+            >
               Portfolio
             </Nav.Link>
             <Nav.Link href="/" className="navbar-btn-txt">
               About
             </Nav.Link>
-            <Nav.Link href="/" className="navbar-btn-txt" style={{color: scrollState === -4 ? '#f443dc' : ''}}>
+            <Nav.Link
+              href="/"
+              className="navbar-btn-txt"
+              style={{ color: scrollState === -4 ? "#f443dc" : "" }}
+            >
               Contact
             </Nav.Link>
           </div>
@@ -46,41 +56,13 @@ export default function NavBar(props) {
   );
 
   const mobileNavbar = (
-    <Navbar
-      expanded={toggle}
-      sticky="top"
-      onToggle={() => setToggle(!toggle)}
-      expand="lg"
-      variant="dark"
-    >
+    <Navbar expanded={toggle} sticky="top" expand="lg" variant="dark">
       <Container fluid>
-        <Navbar.Toggle aria-controls="offcanvasNavbar" />
-        <h3 className="title custom-animation-gradient pos-mobile">
-          Alon Barenboim
-        </h3>
-
-        <Navbar.Offcanvas
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-          placement="end"
-        >
-          <Offcanvas.Header closeButton>
-            <h3 className="title">Alon Barenboim</h3>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav className="mr-auto justify-content-end flex-grow-1 pe-3 navbar-container">
-              <Nav.Link href="/" className="navbar-btn-txt">
-                Portfolio
-              </Nav.Link>
-              <Nav.Link href="/" className="navbar-btn-txt">
-                About
-              </Nav.Link>
-              <Nav.Link href="/" className="navbar-btn-txt">
-                Contact
-              </Nav.Link>
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
+        <Offcanvas.Header closeButton>
+          <h3 className="title custom-animation-gradient pos-mobile">
+            Alon Barenboim
+          </h3>{" "}
+        </Offcanvas.Header>
       </Container>
     </Navbar>
   );

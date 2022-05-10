@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
+import useWindowSize from "./useWindowSize";
 
-function useScrollState (PAGENUM) {
-  const [pageScrollState, setPageScrollState] = useState(0)
-
-  const handleScroll = e => {
+function useScrollState(PAGENUM) {
+  const [pageScrollState, setPageScrollState] = useState(0);
+  const handleScroll = (e) => {
     if (e.deltaY > 0)
-      setPageScrollState(pageScrollState =>
+      setPageScrollState((pageScrollState) =>
         pageScrollState > -PAGENUM ? pageScrollState - 1 : pageScrollState
-      )
+      );
     else
-      setPageScrollState(pageScrollState =>
+      setPageScrollState((pageScrollState) =>
         pageScrollState < 0 ? pageScrollState + 1 : pageScrollState
-      )
-  }
+      );
+  };
   useEffect(() => {
-    window.addEventListener('wheel', handleScroll, { passive: true })
+    window.addEventListener("wheel", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('wheel', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
 
-  return pageScrollState
+  return pageScrollState;
 }
 
-export default useScrollState
+export default useScrollState;

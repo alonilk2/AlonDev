@@ -32,7 +32,6 @@ export const desktopCanvas = (
       width: "100%",
     }}
   >
-    <ambientLight intensity={1} />
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
@@ -49,11 +48,10 @@ export const mobileCanvas = (
       zIndex: 0,
       width: "100%",
       position: "absolute",
-      top: "5%",
-      minHeight: "500px",
+      bottom: "15%",
+      height: "600px",
     }}
   >
-    <ambientLight intensity={1} />
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>

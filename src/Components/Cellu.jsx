@@ -77,15 +77,18 @@ function Cellu(props) {
       }}
     >
       {" "}
-      <Flip top when={props.state} cascade>
-        <h1
-          className="content-title-project delay-1"
-          style={{ position: "unset", height: "unset" }}
-        >
-          Cellu 5G
-        </h1>
-      </Flip>{" "}
-      <Flip top when={props.state} delay={500}>
+      <h1
+        className="content-title-project delay-1 hover-animate"
+        style={{ position: "unset", height: "unset", zIndex: 6 }}
+      >
+        <span>C</span>
+        <span>e</span>
+        <span>l</span>
+        <span>l</span>
+        <span>u</span> <span>5</span>
+        <span>G</span>
+      </h1>
+      <Fade top when={props.state} delay={500}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
@@ -97,7 +100,7 @@ function Cellu(props) {
           address that being chosen from a list of all streets and cities in
           Israel.
         </p>{" "}
-      </Flip>
+      </Fade>
       {techStackRow}
       <Fade left when={props.state} delay={1800}>
         <a
@@ -124,14 +127,13 @@ function Cellu(props) {
       }}
     >
       <CrossfadeCarousel
-        interval={3000}
-        transition={2000}
+        interval={2000}
+        transition={1000}
         images={[
-          "https://alonilk2.github.io/map1/3.png",
-          "https://alonilk2.github.io/map1/4.png",
-          "https://alonilk2.github.io/map1/5.png",
-          "https://alonilk2.github.io/map1/1.jpg",
-          "https://alonilk2.github.io/map1/2.jpg",
+          "https://alonilk2.github.io/map1/abdev/3.png",
+          "https://alonilk2.github.io/map1/abdev/5.jpg",
+          "https://alonilk2.github.io/map1/abdev/1.jpg",
+          "https://alonilk2.github.io/map1/abdev/2.jpg",
         ]}
       />
     </div>
