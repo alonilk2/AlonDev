@@ -114,15 +114,13 @@ function Home(props) {
         </Fade>
         {size.width > 768 ? desktopCanvas : mobileCanvas}
         <div className="col">
-        <a href="#" class="arrow-container">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-        </a>
-        <h5 className="title-scroll">Scroll Down</h5>
+          <a href="#" class="arrow-container">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </a>
+          <h5 className="title-scroll">Scroll Down</h5>
         </div>
-
-
       </section>
     </>
   );

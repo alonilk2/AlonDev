@@ -36,7 +36,7 @@ export const desktopCanvas = (
       <BlackHole />
     </Suspense>
     <EffectComposer>
-      <Bloom luminanceThreshold={0.1} intensity={3} height={400}/>
+      <Bloom luminanceThreshold={0.1} intensity={3} height={400} />
     </EffectComposer>
   </Canvas>
 );
