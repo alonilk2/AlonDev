@@ -3,6 +3,7 @@
 *,
 html {
   overflow: hidden;
+  letter-spacing: 1.3px;
 }
 .react-reveal {
   overflow: visible;
@@ -23,10 +24,17 @@ html {
   background-image: linear-gradient(0deg, transparent, black 75%);
 }
 
+.resume-btn {
+  background-color: #f443dc;
+  border-radius: 25px;
+  padding: 1% 2% !important;
+  color: black !important;
+}
 .navbar-expand-lg .navbar-nav {
   flex-direction: row;
   width: 100%;
   padding: 2% 5% 0% 5%;
+  z-index: 10;
 }
 
 .navbar-btn-txt {
@@ -107,7 +115,7 @@ html {
   width: 50px;
   height: 50px;
   position: absolute;
-  bottom: 15%;
+  bottom: 25%;
   left: 50%;
   transform: translate(-50%, -50%) rotateZ(0deg);
 }
@@ -138,7 +146,7 @@ html {
 .title-scroll {
   position: absolute;
   left: 50%;
-  bottom: 25%;
+  bottom: 34%;
   transform: translate(-50%, -50%);
   font-size: 14px;
   font-weight: 100;
@@ -265,10 +273,11 @@ html {
 .contact-container {
   display: flex;
   flex-direction: row;
-  background-color: rgba(155, 155, 155, 0.3);
+  background-color: #2f2f2f;
   width: 85%;
   height: 75%;
   justify-content: center;
+  margin-top: 1%;
 }
 .contact-col {
   display: flex;
@@ -317,6 +326,22 @@ html {
   letter-spacing: 2px;
   align-self: flex-end;
 }
+.hover-animate-static > span {
+  position: relative;
+  display: inline-block;
+  animation: flip-reverse-static 1s;
+  transition-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.hover-animate-static > span:hover {
+  position: relative;
+  -webkit-animation: flip-static 1s;
+  animation: flip-static 1s;
+  transition-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 .hover-animate > span {
   position: relative;
   display: inline-block;
@@ -324,6 +349,8 @@ html {
   transition-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  overflow: visible;
+
 }
 .hover-animate > span:hover {
   position: relative;
@@ -333,6 +360,8 @@ html {
   font-weight: bold;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+.project-img-mobile {
 }
 @keyframes flip {
   25% {
@@ -350,6 +379,22 @@ html {
   }
   100% {
     transform: rotateY(0deg);
+  }
+}
+@keyframes flip-static {
+  30% {
+    color: #f443dc;
+  }
+  100% {
+    color: #f443dc;
+  }
+}
+@keyframes flip-reverse-static {
+  0% {
+    color: #f443dc;
+  }
+  100% {
+    color: #2f2f2f;
   }
 }
 
@@ -578,7 +623,36 @@ html {
   letter-spacing: 2px;
   font-family: "Oswald", "Courier New", Courier, monospace;
 }
+.about-cropper {
+  border-radius: 50%;
+}
+.myfilter img {
+  filter: sepia(0.36);
+}
 
+.myfilter {
+  position: relative;
+}
+
+.myfilter:after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background: linear-gradient(to right, #f443dc40 0%, #f443dcbd 100%);
+  mix-blend-mode: color;
+}
+.about-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10%;
+  margin-left: 10%;
+}
 .content-title-project {
   font-size: 70px;
   /* margin-top: 370px;
@@ -668,7 +742,7 @@ html {
   width: 100%;
   text-align: center;
 }
-.content-title-visit:hover {
+.content-title-visit:hover, .resume-btn:hover {
   background: -webkit-linear-gradient(to right, #ff9eca, #e6c7ff);
   background: linear-gradient(to right, #ff9eca, #e6c7ff);
   color: #111111;
@@ -732,6 +806,7 @@ html {
   height: 100%;
   color: white;
   overflow: hidden !important;
+  padding-top: 2%;
 }
 
 .screenshot {
@@ -796,17 +871,16 @@ html {
 
 .project-info {
   background-color: rgba(255, 255, 255, 0.3);
-  height: fit-content;
   border-radius: 30px;
   overflow: hidden;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
   position: relative;
-  width: 85%;
+  width: 100%;
 }
 
 .tech-logo {
@@ -839,10 +913,10 @@ html {
 
 .stack-title {
   text-align: center;
-  font-weight: 400;
+  font-weight: 300;
   opacity: 0.6;
   margin: 0 !important;
-  font-size: 18px;
+  font-size: 14px;
 
   line-height: 16px;
 }
@@ -879,7 +953,6 @@ html {
     justify-content: center;
     display: flex;
     z-index: 0;
-    height: 300px;
     align-items: flex-start;
   }
 
@@ -964,6 +1037,7 @@ html {
   .pos-mobile {
     position: sticky;
   }
+
   @keyframes moveTitle {
     0% {
       top: 1.5%;

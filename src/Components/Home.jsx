@@ -3,7 +3,6 @@ import Fade from "react-reveal/Fade";
 import * as THREE from "three";
 import useWindowSize from "../Hooks/useWindowSize";
 import { desktopCanvas, mobileCanvas } from "./3DCanvas";
-
 function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
@@ -67,7 +66,7 @@ function Home(props) {
     </>
   );
 
-  const scrollSideLottie = (
+  const scrollDownSideLottie = (
     <Fade opposite left when={props.state} duration={2000} delay={1000}>
       <iframe
         style={{
@@ -80,6 +79,18 @@ function Home(props) {
     </Fade>
   );
 
+  const scrollDownArrow = (
+    <div>
+      <a href="#" class="arrow-container">
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+      </a>
+      <h5 className="title-scroll">Scroll Down</h5>
+    </div>
+  );
+
+
   return (
     <>
       <section
@@ -90,7 +101,7 @@ function Home(props) {
           position: "relative",
         }}
       >
-        {size.width > 768 && props.state ? scrollSideLottie : null}
+        {size.width > 768 && props.state ? scrollDownSideLottie : null}
 
         {!RemoveCol && (
           <div
@@ -106,21 +117,15 @@ function Home(props) {
         )}
 
         <Fade bottom delay={6000} duration={2000} cascade>
-          <div className="col" style={{ marginTop: "8.5%" }}>
-            <h1 className="content-title linear-wipe hover-animate">
+          <div className="col" style={{ marginTop: "8.5%"}}>
+            <h1 className="content-title linear-wipe hover-animate-static">
               FULL-STACK ENGINEER
             </h1>
           </div>
         </Fade>
         {size.width > 768 ? desktopCanvas : mobileCanvas}
-        <div className="col">
-          <a href="#" class="arrow-container">
-            <div class="arrow"></div>
-            <div class="arrow"></div>
-            <div class="arrow"></div>
-          </a>
-          <h5 className="title-scroll">Scroll Down</h5>
-        </div>
+        {size.width < 768 && scrollDownArrow}
+
       </section>
     </>
   );

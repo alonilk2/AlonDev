@@ -8,12 +8,13 @@ import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
 import Contact from "./Components/Contact";
 import Pages from "./Components/Pages";
+import { useEffect } from "react";
 import "./App.css";
 import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const PAGENUM = 4;
+const PAGENUM = 5;
 export const RenderPagesOnMobile = (
   <div style={{ display: "flex", flexDirection: "column" }}>
     <Home className="content-body-home" />
@@ -25,16 +26,16 @@ export const RenderPagesOnMobile = (
 );
 
 function App() {
-  const scrollState = useScrollState(PAGENUM);
+  const [scrollState, setPageScrollState] = useScrollState(PAGENUM);
   const size = useWindowSize();
   const spaceBackground = useSpace();
-
+  
   if (size.width > 768) {
     return (
       <div className="App">
-        <Navbar scrollState={scrollState} />
+        <Navbar scrollState={scrollState} setPageScrollState={setPageScrollState}/>
         {spaceBackground}
-        <Pages scrollState={scrollState} />
+        <Pages scrollState={scrollState}/>
       </div>
     );
   } else {

@@ -4,7 +4,6 @@ import Postgre from "../Images/psql.png";
 import Node from "../Images/nodejs.svg";
 import Express from "../Images/Expressjs.png";
 import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
-import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 import "../App.css";
 import useWindowSize from "../Hooks/useWindowSize";
@@ -85,9 +84,9 @@ function IMBarber(props) {
 
   const sideColumn = (
     <div
-      className="col-4"
+      className="col-3"
       style={{
-        margin: "5% 0",
+        margin: size.width > 768 ? "5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -134,15 +133,10 @@ function IMBarber(props) {
   );
   const imageCropperMobile = (
     <div class="image-cropper cf4a">
-      <CrossfadeCarousel
-        interval={2000}
-        transition={1000}
-        images={[
-          "https://alonilk2.github.io/map1/abdev/barber2.png",
-          "https://alonilk2.github.io/map1/abdev/barber1.jpg",
-          "https://alonilk2.github.io/map1/abdev/barber3.jpg",
-        ]}
-      />
+      <img
+        src={"https://alonilk2.github.io/map1/abdev/barber1.jpg"}
+        alt=""
+      ></img>
     </div>
   );
   const imageCropper = (
@@ -166,7 +160,7 @@ function IMBarber(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {size.width>768 ? imageCropper : imageCropperMobile}
+          {size.width > 768 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>

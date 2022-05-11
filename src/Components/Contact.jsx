@@ -36,7 +36,7 @@ export default function Contact(props) {
     <>
       <section
         className={props.className}
-        style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
+        style={{ zIndex: props.state ? 4 : 0 }}
       >
         <div
           className="content-body-project"
@@ -125,14 +125,14 @@ export default function Contact(props) {
               {size.width > 768 ? (
                 <img
                   src={
-                    "https://maps.googleapis.com/maps/api/staticmap?center=Nof%20Hagalil,Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
+                    "https://maps.googleapis.com/maps/api/staticmap?markers=color:blue%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
                   }
                   alt="Map"
                 />
               ) : (
                 <img
                   src={
-                    "https://maps.googleapis.com/maps/api/staticmap?center=Nof%20Hagalil,Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
+                    "https://maps.googleapis.com/maps/api/staticmap?markers=color:blue%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
                   }
                   alt="Map"
                 />

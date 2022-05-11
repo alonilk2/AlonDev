@@ -4,11 +4,12 @@ import metamask from "../Images/metamask.png";
 import Hardhat from "../Images/hardhat.png";
 import Ethers from "../Images/ethers.png";
 import Alchemy from "../Images/alchemy.png";
-import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
-import Flip from "react-reveal/Flip";
+
 import Fade from "react-reveal/Fade";
+import useWindowSize from "../Hooks/useWindowSize";
 
 function Compound(props) {
+  const size = useWindowSize()
   const techStackRow = (
     <Fade left when={props.state} delay={800}>
       <div
@@ -82,12 +83,31 @@ function Compound(props) {
       </div>
     </Fade>
   );
-
+  const imageCropperMobile = (
+    <div class="image-cropper cf4a">
+      <img src={"https://alonilk2.github.io/map1/abdev/compound.png"} alt=""></img>
+    </div>
+  );
+  const imageCropper = (
+    <div
+      class="image-cropper cf4a"
+      style={{
+        borderRadius: "25px",
+        marginRight: "3%",
+      }}
+    >
+      <img
+        src={"https://alonilk2.github.io/map1/compound.png"}
+        alt="Compound"
+        style={{objectFit: 'cover'}}
+      />
+    </div>
+  );
   const sideColumn = (
     <div
-      className="col-4"
+      className="col-3"
       style={{
-        margin: "5% 0",
+        margin: size.width > 768 ? "5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -122,22 +142,12 @@ function Compound(props) {
       <a
         className="content-title-visit delay-1 "
         style={{ textAlign: "center", textDecoration: "unset", zIndex: 3 }}
-        href={"https://alonilk2.github.io/compound-dapp/"}
+        href={"https://alonilk2.github.io/Compound-Protocol-Dapp/"}
       >
         Enter App
       </a>
     </div>
   );
-
-  const imageCropper = (
-    <div class="image-cropper cf4a">
-      <img
-        src={"https://alonilk2.github.io/map1/abdev/compound.png"}
-        alt="Compound"
-      />
-    </div>
-  );
-
   return (
     <>
       <section
@@ -147,8 +157,8 @@ function Compound(props) {
         <div className="content-body-project">
           {sideColumn}
 
-          {imageCropper}
-        </div>
+          {size.width>768 ? imageCropper : imageCropperMobile}
+                  </div>
       </section>
     </>
   );

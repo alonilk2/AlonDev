@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { RenderPagesOnUp, RenderPagesOnDown } from "./RenderPagesOnUp";
+import { RenderPagesOnUp, RenderPagesOnDown } from "./RenderPages";
 import useWindowSize from "../Hooks/useWindowSize";
 import PageBar from "../Components/PageBar";
 import { RenderPagesOnMobile } from "../App";

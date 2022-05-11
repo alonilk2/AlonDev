@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import useWindowSize from "./useWindowSize";
 
 function useScrollState(PAGENUM) {
   const [pageScrollState, setPageScrollState] = useState(0);
@@ -20,7 +19,7 @@ function useScrollState(PAGENUM) {
     };
   }, []);
 
-  return pageScrollState;
+  return [pageScrollState, setPageScrollState];
 }
 
 export default useScrollState;

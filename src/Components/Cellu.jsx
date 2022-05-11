@@ -67,7 +67,7 @@ function Cellu(props) {
 
   const sideColumn = (
     <div
-      className="col-5"
+      className="col-3"
       style={{
         margin: size.width > 768 ? "5%" : "5% 0",
         display: "flex",
@@ -123,19 +123,35 @@ function Cellu(props) {
       class="image-cropper cf4a"
       style={{
         borderRadius: "25px",
-        height: size.width < 768 ? "420px" : "70%",
+        height: size.width < 768 && "420px",
+        marginRight: "3%",
       }}
     >
-      <CrossfadeCarousel
-        interval={2000}
-        transition={1000}
-        images={[
-          "https://alonilk2.github.io/map1/abdev/3.png",
-          "https://alonilk2.github.io/map1/abdev/5.jpg",
-          "https://alonilk2.github.io/map1/abdev/1.jpg",
-          "https://alonilk2.github.io/map1/abdev/2.jpg",
-        ]}
-      />
+      <img
+        src={"https://alonilk2.github.io/map1/1.jpg"}
+        alt=""
+        className="project-img-mobile"
+      ></img>
+      <img
+        src={"https://alonilk2.github.io/map1/2.jpg"}
+        alt=""
+        className="project-img-mobile"
+      ></img>
+      <img
+        src={"https://alonilk2.github.io/map1/3.png"}
+        alt=""
+        className="project-img-mobile"
+      ></img>
+    </div>
+  );
+
+  const imageCropperMobile = (
+    <div class="image-cropper cf4a">
+      <img
+        src={"https://alonilk2.github.io/map1/abdev/1.jpg"}
+        alt=""
+        className="project-img-mobile"
+      ></img>
     </div>
   );
 
@@ -147,7 +163,7 @@ function Cellu(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {imageCropper}
+          {size.width > 768 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>

@@ -6,7 +6,7 @@ import {
   DepthOfField,
   Bloom,
 } from "@react-three/postprocessing";
-
+import { OrbitControls } from "@react-three/drei";
 function Loading() {
   return (
     <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]}>
@@ -32,6 +32,7 @@ export const desktopCanvas = (
       width: "100%",
     }}
   >
+    <OrbitControls />
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
@@ -52,6 +53,8 @@ export const mobileCanvas = (
       height: "600px",
     }}
   >
+        <OrbitControls />
+
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
