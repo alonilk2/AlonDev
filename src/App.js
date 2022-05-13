@@ -42,7 +42,7 @@ function App() {
     return (
       <div className="App">
         <Navbar />
-        {spaceBackground}
+        {/* {spaceBackground} */}
         <Pages />
       </div>
     );

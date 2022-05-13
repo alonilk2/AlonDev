@@ -66,18 +66,18 @@ function Home(props) {
     </>
   );
 
-  const scrollDownSideLottie = (
-    <Fade opposite left when={props.state} duration={2000} delay={1000}>
-      <iframe
-        style={{
-          height: "60%",
-          width: "20%",
-          marginLeft: "-7%",
-        }}
-        src="https://embed.lottiefiles.com/animation/14325"
-      ></iframe>
-    </Fade>
-  );
+  // const scrollDownSideLottie = (
+  //   <Fade opposite left when={props.state} duration={2000} delay={1000}>
+  //     <iframe
+  //       style={{
+  //         height: "60%",
+  //         width: "20%",
+  //         marginLeft: "-7%",
+  //       }}
+  //       src="https://embed.lottiefiles.com/animation/14325"
+  //     ></iframe>
+  //   </Fade>
+  // );
 
   const scrollDownArrow = (
     <div>
@@ -101,7 +101,7 @@ function Home(props) {
           position: "relative",
         }}
       >
-        {size.width > 768 && props.state ? scrollDownSideLottie : null}
+        {/* {size.width > 768 && props.state ? scrollDownSideLottie : null} */}
 
         {!RemoveCol && (
           <div
@@ -117,13 +117,13 @@ function Home(props) {
         )}
 
         <Fade bottom delay={6000} duration={2000} cascade>
-          <div className="col" style={{ marginTop: "8.5%"}}>
+          <div className="col" style={{ marginTop: "3%"}}>
             <h1 className="content-title linear-wipe hover-animate-static">
               FULL-STACK ENGINEER
             </h1>
           </div>
         </Fade>
-        {size.width > 768 ? desktopCanvas : mobileCanvas}
+        {/* {size.width > 768 ? desktopCanvas : mobileCanvas} */}
         {size.width < 768 && scrollDownArrow}
 
       </section>

@@ -107,7 +107,7 @@ function Compound(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 768 ? "5%" : "5% 0",
+        margin: size.width > 950 ? "5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",

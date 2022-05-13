@@ -49,14 +49,14 @@ export default function NavBar(props) {
               onClick={() => props.setPageScrollState(-1)}
               className="navbar-btn-txt"
               style={{
-                color: scrollState < 0 && scrollState > -4 ? "#f443dc" : "",
+                color: scrollState < 0 && scrollState > -4 ? "#c41c1c" : "",
               }}
             >
               Portfolio
             </Nav.Link>
             <Nav.Link
               onClick={() => props.setPageScrollState(-4)}
-              style={{ color: scrollState === -4 ? "#f443dc" : "" }}
+              style={{ color: scrollState === -4 ? "#c41c1c" : "" }}
               className="navbar-btn-txt"
             >
               About
@@ -64,7 +64,7 @@ export default function NavBar(props) {
             <Nav.Link
               onClick={() => props.setPageScrollState(-5)}
               className="navbar-btn-txt"
-              style={{ color: scrollState === -5 ? "#f443dc" : "" }}
+              style={{ color: scrollState === -5 ? "#c41c1c" : "" }}
             >
               Contact
             </Nav.Link>

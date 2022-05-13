@@ -49,11 +49,10 @@ export const mobileCanvas = (
       zIndex: 0,
       width: "100%",
       position: "absolute",
-      bottom: "15%",
+      bottom: "20%",
       height: "600px",
     }}
   >
-        <OrbitControls />
 
     <Suspense fallback={<Loading />}>
       <BlackHole />

@@ -5,6 +5,7 @@ import { loadFull } from 'tsparticles'
 export default function useSpace () {
   
   const particlesInit = useCallback(async main => {
+    console.log("abc")
     await loadFull(main)
   }, [])
 
@@ -13,9 +14,10 @@ export default function useSpace () {
       id='tsparticles'
       init={particlesInit}
       options={{
+        fpsLimit: 15,
         particles: {
           number: {
-            value: 160,
+            value:60,
             density: {
               enable: true,
               value_area: 800
