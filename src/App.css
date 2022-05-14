@@ -928,7 +928,7 @@ html {
   height: 100%;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   justify-content: flex-end;
 }
 
@@ -969,6 +969,7 @@ html {
   }
   .description {
     width: 100%;
+    font-size: 20px;
   }
   [class^="col"] {
     width: 100% !important;
@@ -1023,9 +1024,6 @@ html {
     font-size: 55px;
   }
 
-  .content-title-visit {
-    font-size: 35px;
-  }
   .ieWDks {
     max-width: 100%;
   }

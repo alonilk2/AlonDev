@@ -121,7 +121,7 @@ export default function Contact(props) {
                 Submit
               </button>
             </div>
-            <div className="div">
+            <div className="div" style={{ padding: size.width <= 768 ? "4%" : 0}}>
               {size.width > 768 ? (
                 <img
                   src={
@@ -134,6 +134,7 @@ export default function Contact(props) {
                   src={
                     "https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
                   }
+                  style={{ width: "100%" }}
                   alt="Map"
                 />
               )}

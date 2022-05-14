@@ -21,11 +21,7 @@ function IMBarber(props) {
             <img
               className="tech-logo"
               src={ReactIcon}
-              style={{
-                transform: "scale(1.1)",
-                position: "unset",
-                height: "unset",
-              }}
+
               alt="react"
             />{" "}
             <p className="stack-title">React.js</p>
@@ -37,7 +33,6 @@ function IMBarber(props) {
               className="tech-logo"
               src={Node}
               alt="node.js"
-              style={{ position: "unset", height: "unset" }}
             />{" "}
             <p className="stack-title">Node.js</p>
           </div>{" "}
@@ -49,7 +44,6 @@ function IMBarber(props) {
               className="tech-logo"
               src={Sequelize}
               alt="Sequelize"
-              style={{ position: "unset", height: "unset" }}
             />{" "}
             <p className="stack-title">Sequelize</p>
           </div>{" "}
@@ -61,7 +55,6 @@ function IMBarber(props) {
               className="tech-logo"
               src={Postgre}
               alt="PostgreSQL"
-              style={{ position: "unset", height: "unset" }}
             />{" "}
             <p className="stack-title">PostgreSQL</p>
           </div>{" "}
@@ -73,7 +66,6 @@ function IMBarber(props) {
               className="tech-logo"
               src={Express}
               alt="Express.js"
-              style={{ position: "unset", height: "unset" }}
             />{" "}
             <p className="stack-title">Express.js</p>
           </div>{" "}

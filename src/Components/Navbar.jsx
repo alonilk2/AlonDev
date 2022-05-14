@@ -22,22 +22,23 @@ export default function NavBar(props) {
         <Nav className="mr-auto navbar-container">
           <div className="col-3 left-menu">
             {showTitle && (
-              // <h3 className="title custom-animation-gradient">
-              //   Alon Barenboim
-              // </h3>
               <h1
                 className="title custom-animation-gradient hover-animate"
-                style={{ position: "unset", height: "unset", whiteSpace: 'nowrap' }}
+                style={{
+                  position: "unset",
+                  height: "unset",
+                  whiteSpace: "nowrap",
+                }}
               >
                 <span>A</span>
                 <span>l</span>
                 <span>o</span>
                 <span>n</span> <span>B</span>
                 <span>a</span>
-                <span>r</span> 
+                <span>r</span>
                 <span>e</span>
                 <span>n</span>
-                <span>b</span> 
+                <span>b</span>
                 <span>o</span>
                 <span>i</span>
                 <span>m</span>
@@ -46,20 +47,20 @@ export default function NavBar(props) {
           </div>
           <div className="col right-menu">
             <Nav.Link
-              onClick={() => props.setPageScrollState(-1)}
-              className="navbar-btn-txt"
-              style={{
-                color: scrollState < 0 && scrollState > -4 ? "#c41c1c" : "",
-              }}
-            >
-              Portfolio
-            </Nav.Link>
-            <Nav.Link
               onClick={() => props.setPageScrollState(-4)}
-              style={{ color: scrollState === -4 ? "#c41c1c" : "" }}
+              style={{ color: scrollState === -1 ? "#c41c1c" : "" }}
               className="navbar-btn-txt"
             >
               About
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => props.setPageScrollState(-1)}
+              className="navbar-btn-txt"
+              style={{
+                color: scrollState < -1 && scrollState > -5 ? "#c41c1c" : "",
+              }}
+            >
+              Portfolio
             </Nav.Link>
             <Nav.Link
               onClick={() => props.setPageScrollState(-5)}
