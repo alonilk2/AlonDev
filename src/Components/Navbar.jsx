@@ -47,14 +47,14 @@ export default function NavBar(props) {
           </div>
           <div className="col right-menu">
             <Nav.Link
-              onClick={() => props.setPageScrollState(-4)}
+              onClick={() => props.setPageScrollState(-1)}
               style={{ color: scrollState === -1 ? "#c41c1c" : "" }}
               className="navbar-btn-txt"
             >
               About
             </Nav.Link>
             <Nav.Link
-              onClick={() => props.setPageScrollState(-1)}
+              onClick={() => props.setPageScrollState(-2)}
               className="navbar-btn-txt"
               style={{
                 color: scrollState < -1 && scrollState > -5 ? "#c41c1c" : "",
