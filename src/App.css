@@ -416,7 +416,12 @@ html {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-
+.css-10botns-MuiInputBase-input-MuiFilledInput-input{
+  color: white !important;
+}
+.MuiCircularProgress-colorPrimary {
+  color: #c41c1c !important;
+}
 @keyframes flip-bubble {
   30% {
     background-color: white;
@@ -910,7 +915,10 @@ html {
   position: relative;
   width: 100%;
 }
+.css-og3m0y::after,.css-17spqnz::after  {
+  border-bottom: 2px solid rgb(196 28 28) !important;
 
+}
 .tech-logo {
   width: 80%;
   object-fit: contain;
@@ -996,7 +1004,9 @@ html {
   }
   .tech-logo {
     max-width: 60px;
+
   }
+
   .project-info {
     width: 100% !important;
     padding: 2%;

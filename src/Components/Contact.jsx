@@ -1,7 +1,7 @@
 import "../App.css";
 import { AiFillPhone, AiFillMail } from "react-icons/ai";
 import { GiPositionMarker } from "react-icons/gi";
-
+import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import useWindowSize from "../Hooks/useWindowSize";
@@ -12,8 +12,10 @@ export default function Contact(props) {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [success, setSuccess] = useState();
+  const [loading, setLoading] = useState(false);
   const size = useWindowSize();
   const handleSubmit = () => {
+    setLoading(true);
     window.emailjs
       .send("service_rh4fcch", "template_w3ffrb8", {
         fullname: fullName,
@@ -24,10 +26,12 @@ export default function Contact(props) {
       .then(
         function (response) {
           setSuccess(true);
+          setLoading(false);
           console.log("SUCCESS!", response.status, response.text);
         },
         function (error) {
           setSuccess(false);
+          setLoading(false);
           console.log("FAILED...", error);
         }
       );
@@ -114,14 +118,28 @@ export default function Contact(props) {
                 variant="filled"
                 onChange={(e) => setContent(e.target.value)}
               />
-              <button
-                className="contact-submit-btn button"
-                onClick={handleSubmit}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                }}
               >
-                Submit
-              </button>
+                <div style={{ margin: "2% 2% 0% 0%" }}>
+                {loading && <CircularProgress />}
+                </div>
+                <button
+                  className="contact-submit-btn button"
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </button>
+              </div>
             </div>
-            <div className="div" style={{ padding: size.width <= 768 ? "4%" : 0}}>
+            <div
+              className="div"
+              style={{ padding: size.width <= 768 ? "4%" : 0 }}
+            >
               {size.width > 768 ? (
                 <img
                   src={
