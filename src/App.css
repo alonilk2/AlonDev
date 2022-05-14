@@ -28,8 +28,10 @@ html {
 .resume-btn {
   background-color: #c41c1c;
   border-radius: 25px;
-  padding: 1% 2% !important;
+  padding: 0.8% 2% !important;
   color: black !important;
+  white-space: nowrap;
+  text-align: center;
 }
 .navbar-expand-lg .navbar-nav {
   flex-direction: row;
@@ -308,6 +310,7 @@ html {
   align-items: center;
   font-size: 14px;
   font-weight: 100;
+  white-space: nowrap;
 }
 .bubble-row {
   display: flex;
@@ -351,7 +354,6 @@ html {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   overflow: visible;
-
 }
 .hover-animate > span:hover {
   position: relative;
@@ -629,11 +631,11 @@ html {
   border-radius: 50%;
 }
 .myfilter img {
-
 }
 
 .myfilter {
   position: relative;
+  margin: 0 10%;
 }
 
 .myfilter:after {
@@ -646,26 +648,32 @@ html {
   width: 100%;
 
   background: linear-gradient(to right, #c41c1c00 0%, #c41c1c7a 100%);
-  mix-blend-mode:color;
+  mix-blend-mode: color;
 }
 .about-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   height: 100%;
   margin-left: 10%;
+  margin-top: 5%;
 }
 .content-title-project {
   font-size: 70px;
-  /* margin-top: 370px;
-  margin-bottom: 15px; */
+  overflow: visible;
 }
 .title1 {
   font-size: 90px;
   font-family: "Kaushan Script", cursive !important;
   top: 15%;
+  z-index: 15;
 }
-
+.project-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 5%;
+}
 .alon-title {
   font-size: 90px;
   position: absolute;
@@ -710,19 +718,37 @@ html {
   }
 }
 .content-title-visit {
-  font-size: 45px;
-  padding: 1.5% 2%;
+  font-size: 20px;
   background: #c41c1c;
   border-radius: 50px;
   font-family: "Kaushan Script", cursive;
   color: #111111;
-  font-weight: 700;
-  margin: 5%;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  height: 60px;
+  padding: 2%;
+  border: 1px solid black;
+}
+.content-title-visit-git {
+  font-size: 20px;
+  background: transparent;
+  border: 1px solid white;
+  color: white !important;
+  border-radius: 50px;
+  font-family: "Kaushan Script", cursive;
+  color: #111111;
+  font-weight: 600;
+  width: 100%;
+  white-space: nowrap;
+  height: 60px;
+  padding: 2%;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .success {
-  position: absolute;
-  top: 5%;
-  left: 50%;
   background: -webkit-linear-gradient(
     to right,
     #e6c7ff00,
@@ -738,13 +764,13 @@ html {
     #e6c7ff00
   );
   padding: 3%;
-  transform: translate(-50%);
   color: white;
   font-weight: 300;
   width: 100%;
   text-align: center;
 }
-.content-title-visit:hover, .resume-btn:hover {
+.content-title-visit:hover,
+.resume-btn:hover {
   background: -webkit-linear-gradient(to right, #ff9eca, #e6c7ff);
   background: linear-gradient(to right, #ff9eca, #e6c7ff);
   color: #111111;
@@ -821,7 +847,7 @@ html {
 }
 
 .image-cropper {
-  width: 100%;
+  width: 80%;
   overflow: hidden;
   height: 75%;
   object-fit: contain;
@@ -907,13 +933,14 @@ html {
 }
 
 .description {
-  font-size: 22px;
+  font-size: 1vw;
   font-weight: 100;
   width: 100%;
   margin-top: 0px !important;
 }
 
 .stack-title {
+  white-space: nowrap;
   text-align: center;
   font-weight: 300;
   opacity: 0.6;

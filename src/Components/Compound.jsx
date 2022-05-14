@@ -4,6 +4,7 @@ import metamask from "../Images/metamask.png";
 import Hardhat from "../Images/hardhat.png";
 import Ethers from "../Images/ethers.png";
 import Alchemy from "../Images/alchemy.png";
+import Github from '../Images/github.png';
 
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
@@ -16,7 +17,7 @@ function Compound(props) {
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        <Fade left when={props.state} delay={1000}>
+        <Fade left when={props.state} delay={900}>
           <div className="col tech-col">
             <img
               className="row tech-logo"
@@ -31,7 +32,7 @@ function Compound(props) {
             <p className="row stack-title">React.js</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1200}>
+        <Fade left when={props.state} delay={1000}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -47,7 +48,7 @@ function Compound(props) {
             <p className="stack-title">Ethers.js</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1400}>
+        <Fade left when={props.state} delay={1100}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -58,7 +59,7 @@ function Compound(props) {
             <p className="stack-title">MetaMask</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1600}>
+        <Fade left when={props.state} delay={1200}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -69,7 +70,7 @@ function Compound(props) {
             <p className="stack-title">Hardhat</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1800}>
+        <Fade left when={props.state} delay={1300}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -107,7 +108,7 @@ function Compound(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 950 ? "5%" : "5% 0",
+        margin: size.width > 950 ? "2% 5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -127,25 +128,41 @@ function Compound(props) {
         <span>n</span>
         <span>d</span>
       </h1>
-      <Fade top when={props.state} delay={500}>
+      <Fade top when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
           A single-page web application for Compound DeFi Protocol services,
-          featuring ETH coins supply and DAI coins borrow. The app is
+          featuring ETH coins supply and DAI coins borrow. This app is
           interfacing with MetaMask wallets.
         </p>{" "}
       </Fade>
       {techStackRow}
-
-      <a
-        className="content-title-visit delay-1 "
-        style={{ textAlign: "center", textDecoration: "unset", zIndex: 3 }}
-        href={"https://alonilk2.github.io/Compound-Protocol-Dapp/"}
-      >
-        Enter App
-      </a>
+      <div className="project-buttons" style={{zIndex: 6}}>
+        <a
+          style={{
+            textAlign: "center",
+            width: "100%", marginRight: '1%'
+          }}
+          href={"https://alonilk2.github.io/Compound-Protocol-Dapp/"}
+        >
+          <button className="content-title-visit delay-1 col ">
+            Enter App
+          </button>
+        </a>{" "}
+        <a
+          style={{
+            textAlign: "center",
+            width: "100%", marginLeft: '1%',    color: 'transparent'
+          }}
+          href={"https://github.com/alonilk2/Compound-Protocol-Dapp"}
+        >
+          <button className="content-title-visit-git delay-1 col">
+          <img src={Github} style={{width:'40px'}}></img>Github Repository 
+          </button>
+        </a>{" "}
+      </div>
     </div>
   );
   return (

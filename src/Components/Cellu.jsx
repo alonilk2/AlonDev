@@ -1,11 +1,10 @@
 import ReactIcon from "../Images/React-icon.png";
 import Node from "../Images/nodejs.svg";
 import Java from "../Images/java.png";
-import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 import Maps from "../Images/maps.png";
 import "../App.css";
-import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
+import Github from '../Images/github.png';
 import useWindowSize from "../Hooks/useWindowSize";
 function Cellu(props) {
   let size = useWindowSize();
@@ -17,7 +16,7 @@ function Cellu(props) {
         style={{ position: "unset", height: "unset" }}
       >
         {" "}
-        <Fade left when={props.state} delay={1000}>
+        <Fade left when={props.state} delay={900}>
           <div className="col tech-col">
             <img
               className="row tech-logo"
@@ -28,7 +27,7 @@ function Cellu(props) {
             <p className="row stack-title">React Native</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1200}>
+        <Fade left when={props.state} delay={1000}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -39,7 +38,7 @@ function Cellu(props) {
             <p className="stack-title">Node.js</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1400}>
+        <Fade left when={props.state} delay={1100}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -50,7 +49,7 @@ function Cellu(props) {
             <p className="stack-title">Google Maps API</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1600}>
+        <Fade left when={props.state} delay={1200}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -69,7 +68,7 @@ function Cellu(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 768 ? "5%" : "5% 0",
+        margin: size.width > 768 ? "2% 5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -88,7 +87,7 @@ function Cellu(props) {
         <span>u</span> <span>5</span>
         <span>G</span>
       </h1>
-      <Fade top when={props.state} delay={500}>
+      <Fade top when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
@@ -102,7 +101,7 @@ function Cellu(props) {
         </p>{" "}
       </Fade>
       {techStackRow}
-      <Fade left when={props.state} delay={1800}>
+      <Fade left when={props.state} delay={1300}>
         <a
           style={{ zIndex: 2, position: "unset", height: "unset" }}
           href="https://play.google.com/store/apps/details?id=com.cellu&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
@@ -111,10 +110,22 @@ function Cellu(props) {
             alt="Get it on Google Play"
             src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
             width={300}
-            style={{ marginTop: "5%" }}
+            style={{ marginTop: "2%" }}
           />
         </a>
       </Fade>
+      <a
+          style={{
+            textAlign: "center",
+            width: "50%",
+            marginTop: '2%',    color: 'transparent', zIndex: 6
+          }}
+          href={"https://github.com/alonilk2/Cellu5G"}
+        >
+          <button className="content-title-visit-git delay-1 col">
+            <img src={Github} style={{ width: "40px" }}></img>Github Repository
+          </button>
+        </a>{" "}
     </div>
   );
 

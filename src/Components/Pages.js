@@ -2,9 +2,24 @@ import { useEffect, useRef } from "react";
 import { RenderPagesOnUp, RenderPagesOnDown } from "./RenderPages";
 import useWindowSize from "../Hooks/useWindowSize";
 import PageBar from "../Components/PageBar";
-import { RenderPagesOnMobile } from "../App";
+import Home from "../Components/Home";
+import IMBarber from "../Components/IMBarber";
+import Cellu from "../Components/Cellu";
+import Compound from "../Components/Compound";
+import Contact from "../Components/Contact";
 
-export default function Pages(props){
+
+const RenderPagesOnMobile = (
+  <div style={{ display: "flex", flexDirection: "column" }}>
+    <Home className="content-body-home" />
+    <IMBarber className="content-body" />
+    <Cellu className="content-body" />
+    <Compound className="content-body" />
+    <Contact className="content-body" />
+  </div>
+);
+
+export default function Pages(props) {
   let scrollState = props.scrollState;
   const size = useWindowSize();
   const scrollRef = useRef(0);
@@ -13,8 +28,7 @@ export default function Pages(props){
     scrollRef.current = scrollState;
   }, [scrollState]);
 
-  if (size.width < 768)
-    return RenderPagesOnMobile;
+  if (size.width < 768) return RenderPagesOnMobile;
   return (
     <div>
       {scrollRef.current < scrollState
@@ -23,4 +37,4 @@ export default function Pages(props){
       {PageBar(scrollState)}
     </div>
   );
-};
+}

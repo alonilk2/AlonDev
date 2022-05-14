@@ -39,7 +39,7 @@ function Home(props) {
   const titleMovingAnimation = (
     <h3
       className="content-title alon-title title1 custom-animation-gradient1"
-      style={{ textAlign: "center", width: "100%" }}
+      style={{ textAlign: "center", width: "100%", zIndex: 12 }}
     >
       <span className="fade-animate">I'm</span> Alon
     </h3>
@@ -66,18 +66,18 @@ function Home(props) {
     </>
   );
 
-  // const scrollDownSideLottie = (
-  //   <Fade opposite left when={props.state} duration={2000} delay={1000}>
-  //     <iframe
-  //       style={{
-  //         height: "60%",
-  //         width: "20%",
-  //         marginLeft: "-7%",
-  //       }}
-  //       src="https://embed.lottiefiles.com/animation/14325"
-  //     ></iframe>
-  //   </Fade>
-  // );
+  const scrollDownSideLottie = (
+    <Fade opposite left when={props.state} duration={2000} delay={1000}>
+      <iframe
+        style={{
+          height: "60%",
+          width: "20%",
+          marginLeft: "-7%",
+        }}
+        src="https://embed.lottiefiles.com/animation/14325"
+      ></iframe>
+    </Fade>
+  );
 
   const scrollDownArrow = (
     <div>
@@ -101,7 +101,7 @@ function Home(props) {
           position: "relative",
         }}
       >
-        {/* {size.width > 768 && props.state ? scrollDownSideLottie : null} */}
+        {size.width > 768 && props.state ? scrollDownSideLottie : null}
 
         {!RemoveCol && (
           <div
@@ -110,6 +110,7 @@ function Home(props) {
               display: "flex",
               justifyContent: "center",
               textAlign: "center",
+              zIndex: 12
             }}
           >
             {showTitleGradient ? titleMovingAnimation : titleBeforeMovement}
@@ -123,7 +124,7 @@ function Home(props) {
             </h1>
           </div>
         </Fade>
-        {/* {size.width > 768 ? desktopCanvas : mobileCanvas} */}
+        {size.width > 768 ? desktopCanvas : mobileCanvas}
         {size.width < 768 && scrollDownArrow}
 
       </section>

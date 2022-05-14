@@ -7,7 +7,7 @@ import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Fade from "react-reveal/Fade";
 import "../App.css";
 import useWindowSize from "../Hooks/useWindowSize";
-
+import Github from "../Images/github.png";
 function IMBarber(props) {
   const size = useWindowSize();
   const techStackRow = (
@@ -16,7 +16,7 @@ function IMBarber(props) {
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        <Fade left when={props.state} delay={1000}>
+        <Fade left when={props.state} delay={900}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -31,7 +31,7 @@ function IMBarber(props) {
             <p className="stack-title">React.js</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1200}>
+        <Fade left when={props.state} delay={1000}>
           <div className="col tech-col">
             <img
               className="tech-logo"
@@ -42,7 +42,7 @@ function IMBarber(props) {
             <p className="stack-title">Node.js</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1400}>
+        <Fade left when={props.state} delay={1100}>
           <div className="col tech-col">
             {" "}
             <img
@@ -54,7 +54,7 @@ function IMBarber(props) {
             <p className="stack-title">Sequelize</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1600}>
+        <Fade left when={props.state} delay={1200}>
           <div className="col tech-col">
             {" "}
             <img
@@ -66,7 +66,7 @@ function IMBarber(props) {
             <p className="stack-title">PostgreSQL</p>
           </div>{" "}
         </Fade>
-        <Fade left when={props.state} delay={1800}>
+        <Fade left when={props.state} delay={1300}>
           <div className="col tech-col">
             {" "}
             <img
@@ -84,9 +84,9 @@ function IMBarber(props) {
 
   const sideColumn = (
     <div
-      className="col-3"
+      className="col-4"
       style={{
-        margin: size.width > 768 ? "5%" : "5% 0",
+        margin: size.width > 768 ? "2% 4%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -105,30 +105,46 @@ function IMBarber(props) {
         <span>e</span>
         <span>r</span>
       </h1>
-      <Fade top when={props.state} delay={500}>
+      <Fade top when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          IM.Barber is an online store and corporate website for
-          IM.Barber-Academy & Barbershop. This project includes online store
-          management, users and orders management, all made originally according
-          to customer's demands.
+          IM.Barber is an online store and corporate website. This project
+          includes online store management system with orders, users and
+          products management, Paypal Checkout, custom branding and SEO, all
+          made originally according to customer's requirements.
         </p>
       </Fade>
       {techStackRow}
-      <a
-        className="content-title-visit delay-1 "
-        style={{
-          textAlign: "center",
-          position: "unset",
-          height: "unset",
-          textDecoration: "unset",
-        }}
-        href={"https://imbarber.com"}
-      >
-        Visit IM.Barber
-      </a>
+        <div className="project-buttons">
+          <a
+            style={{
+              textAlign: "center",
+              width: "100%",
+              marginRight: "1%",
+            }}
+            href={"https://imbarber.com"}
+          >
+            <button className="content-title-visit delay-1 col ">
+              Visit IM.Barber
+            </button>
+          </a>{" "}
+          <a
+            style={{
+              textAlign: "center",
+              width: "100%",
+              marginLeft: "1%",
+              color: "transparent",
+            }}
+            href={"https://github.com/alonilk2/IM.Barber"}
+          >
+            <button className="content-title-visit-git delay-1 col">
+              <img src={Github} style={{ width: "40px" }}></img>Github
+              Repository
+            </button>
+          </a>{" "}
+        </div>{" "}
     </div>
   );
   const imageCropperMobile = (

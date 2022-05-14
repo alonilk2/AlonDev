@@ -20,14 +20,14 @@ export default function NavBar(props) {
     <Navbar expand="lg" variant="dark">
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto navbar-container">
-          <div className="col left-menu">
+          <div className="col-3 left-menu">
             {showTitle && (
               // <h3 className="title custom-animation-gradient">
               //   Alon Barenboim
               // </h3>
               <h1
                 className="title custom-animation-gradient hover-animate"
-                style={{ position: "unset", height: "unset" }}
+                style={{ position: "unset", height: "unset", whiteSpace: 'nowrap' }}
               >
                 <span>A</span>
                 <span>l</span>
