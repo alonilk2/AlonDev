@@ -12,7 +12,7 @@ function IMBarber(props) {
     <div
       className="col-4"
       style={{
-        margin: size.width > 768 ? "2% 4%" : "5% 0",
+        margin: size.width > 980 ? "2% 4%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -101,7 +101,7 @@ function IMBarber(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {size.width > 768 ? imageCropper : imageCropperMobile}
+          {size.width > 980 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>

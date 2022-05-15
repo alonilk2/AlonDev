@@ -33,8 +33,8 @@ function ContactWaysRow() {
 
 function Map(size) {
   return (
-    <div className="div" style={{ padding: size.width <= 768 ? "4%" : 0 }}>
-      {size.width > 768 ? (
+    <div className="div" style={{ padding: size.width <= 980 ? "4%" : 0 }}>
+      {size.width > 980 ? (
         <img
           src={
             "https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"

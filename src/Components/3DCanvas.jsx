@@ -59,3 +59,21 @@ export const mobileCanvas = (
     </Suspense>
   </Canvas>
 );
+
+export const mobileCanvasLandscape = (
+  <Canvas
+    camera={{ position: [0, 2, 11] }}
+    style={{
+      zIndex: 0,
+      width: "100%",
+      position: "absolute",
+      bottom: "-25%",
+      height: "600px",
+    }}
+  >
+
+    <Suspense fallback={<Loading />}>
+      <BlackHole />
+    </Suspense>
+  </Canvas>
+);

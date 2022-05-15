@@ -10,7 +10,7 @@ function Cellu(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 768 ? "2% 5%" : "5% 0",
+        margin: size.width > 980 ? "2% 5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -76,7 +76,7 @@ function Cellu(props) {
       class="image-cropper cf4a"
       style={{
         borderRadius: "25px",
-        height: size.width < 768 && "420px",
+        height: size.width < 980 && "420px",
         marginRight: "3%",
       }}
     >
@@ -116,7 +116,7 @@ function Cellu(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {size.width > 768 ? imageCropper : imageCropperMobile}
+          {size.width > 980 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>

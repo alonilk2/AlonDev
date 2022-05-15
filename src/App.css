@@ -994,7 +994,7 @@ html {
   line-height: 16px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 980px) {
   *,
   html {
     overflow: inherit;
@@ -1041,7 +1041,6 @@ html {
   }
   .content-title {
     font-size: 4.5rem;
-    margin-top: 30%;
   }
   .tech-logo {
     max-width: 60px;

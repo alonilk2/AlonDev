@@ -36,12 +36,13 @@ function About(props) {
         className={props.className}
         style={{ zIndex: props.state ? 4 : 0 }}
       >
-        <div className="col-5 about-info ">
+        <div
+          className="col-5 about-info"
+          style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
+        >
           <h1
             className="content-title-project delay-1 hover-animate"
             style={{
-              position: "unset",
-              height: "unset",
               zIndex: 6,
               fontFamily: "Kaushan Script",
             }}
@@ -59,7 +60,7 @@ function About(props) {
             style={{
               fontSize: "20px",
               fontWeight: 300,
-              margin: "2%",
+              margin: size.width > 980 ? "2%" : "2% 0",
               fontFamily: "Roboto",
             }}
           >

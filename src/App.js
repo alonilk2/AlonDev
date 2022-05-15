@@ -30,7 +30,21 @@ function App() {
       </div>
     </>
   );
-  if (size.width > 768) {
+  const ScrollDownAnimationLandscape = (
+    <>
+      <div className="chevron-container" style={{top: '2%'}}>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+      </div>
+      <div className="chevron-container" style={{left: '1%', top: '2%', right: 'unset'}}>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+      </div>
+    </>
+  );
+  if (size.width > 980) {
     return (
       <div className="App">
         <Navbar
@@ -42,7 +56,7 @@ function App() {
         <Pages scrollState={scrollState} />
       </div>
     );
-  } else {
+  } else if(size.height > 500){
     return (
       <div className="App">
         <Navbar />
@@ -50,7 +64,13 @@ function App() {
         <Pages />
       </div>
     );
-  }
+  } else return (
+    <div className="App">
+    <Navbar />
+    {scrollState > -5 && ScrollDownAnimationLandscape}
+    <Pages />
+  </div>
+  )
 }
 
 export default App;

@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Fade from "react-reveal/Fade";
-import * as THREE from "three";
 import useWindowSize from "../Hooks/useWindowSize";
-import { desktopCanvas, mobileCanvas } from "./3DCanvas";
+import { desktopCanvas, mobileCanvas, mobileCanvasLandscape } from "./3DCanvas";
+
 function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
-  const [showTitleGradient, setShowTitleGradient] = useState(false);
   const [RemoveCol, setRemoveCol] = useState(false);
   const initialRender = useRef(true);
 
@@ -97,6 +96,14 @@ function Home(props) {
     </Fade>
   );
 
+  function RenderCanvasByViewport() {
+    if (size.width > 980) {
+      return desktopCanvas;
+    } else if (size.height > 500) {
+      return mobileCanvas;
+    } else return mobileCanvasLandscape;
+  }
+
   return (
     <>
       <section
@@ -111,8 +118,8 @@ function Home(props) {
           <div className="titleBeforeMovement">{titleBeforeMovement}</div>
         )}
 
-        {size.width > 768 ? mainTitle : mainTitleMobile}
-        {size.width > 768 ? desktopCanvas : mobileCanvas}
+        {size.width > 980 ? mainTitle : mainTitleMobile}
+        {RenderCanvasByViewport()}
       </section>
     </>
   );

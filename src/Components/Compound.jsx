@@ -32,7 +32,7 @@ function Compound(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 950 ? "2% 5%" : "5% 0",
+        margin: size.width > 980 ? "2% 5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -98,7 +98,7 @@ function Compound(props) {
         <div className="content-body-project">
           {sideColumn}
 
-          {size.width>768 ? imageCropper : imageCropperMobile}
+          {size.width>980 ? imageCropper : imageCropperMobile}
                   </div>
       </section>
     </>

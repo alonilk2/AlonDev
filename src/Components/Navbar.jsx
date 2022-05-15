@@ -92,7 +92,7 @@ export default function NavBar(props) {
       </Container>
     </Navbar>
   );
-  if (size.width > 768) {
+  if (size.width > 980) {
     return desktopNavbar;
   } else return mobileNavbar;
 }

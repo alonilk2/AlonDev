@@ -104,7 +104,7 @@ function FiberLocator(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-          {size.width > 768 ? imageCropper : imageCropperMobile}
+          {size.width > 980 ? imageCropper : imageCropperMobile}
         </div>
       </section>
     </>
