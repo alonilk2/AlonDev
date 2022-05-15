@@ -22,8 +22,8 @@ function Home(props) {
       setShowTitle1(true);
     }, 3500);
     setTimeout(() => {
-      setShowTitleGradient(true);
-    }, 5500);
+      setShowTitle1(false);
+    }, 6000);
     setTimeout(() => {
       setRemoveCol(true);
     }, 7000);
@@ -36,18 +36,9 @@ function Home(props) {
     }
   });
 
-  const titleMovingAnimation = (
-    <h3
-      className="content-title alon-title title1 custom-animation-gradient1"
-      style={{ textAlign: "center", width: "100%", zIndex: 12 }}
-    >
-      <span className="fade-animate">I'm</span> Alon
-    </h3>
-  );
-
   const titleBeforeMovement = (
     <>
-      <Fade opposite when={showTitle} duration={2000}>
+      <Fade opposite when={showTitle}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -55,7 +46,7 @@ function Home(props) {
           Hi
         </h3>
       </Fade>
-      <Fade when={showTitle1} duration={2000}>
+      <Fade opposite when={showTitle1}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -66,30 +57,45 @@ function Home(props) {
     </>
   );
 
-  const scrollDownSideLottie = (
-    <Fade opposite left when={props.state} duration={2000} delay={1000}>
-      <iframe
-        style={{
-          height: "60%",
-          width: "20%",
-          marginLeft: "-7%",
-        }}
-        src="https://embed.lottiefiles.com/animation/14325"
-      ></iframe>
+  const mainTitleMobile = (
+    <Fade bottom delay={6000} duration={2000}>
+      <div className="col" style={{ marginTop: "4%", zIndex: 20 }}>
+        <h1 className="content-title linear-wipe hover-animate-static">
+          FULL STACK ENGINEER
+        </h1>
+      </div>
     </Fade>
   );
 
-  const scrollDownArrow = (
-    <div>
-      <a href="#" class="arrow-container">
-        <div class="arrow"></div>
-        <div class="arrow"></div>
-        <div class="arrow"></div>
-      </a>
-      <h5 className="title-scroll">Scroll Down</h5>
-    </div>
+  const mainTitle = (
+    <Fade bottom delay={6000} duration={2000}>
+      <div className="col" style={{ marginTop: "4%", zIndex: 20 }}>
+        <h1
+          className="content-title hover-animate-main"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <span>F</span>
+          <span>U</span>
+          <span>L</span>
+          <span style={{ marginRight: "30px" }}>L</span>
+          <span>S</span>
+          <span>T</span>
+          <span>A</span>
+          <span>C</span>
+          <span style={{ marginRight: "30px" }}>K</span>
+          <span>D</span>
+          <span>E</span>
+          <span>V</span>
+          <span>E</span>
+          <span>L</span>
+          <span>O</span>
+          <span>P</span>
+          <span>E</span>
+          <span>R</span>
+        </h1>
+      </div>
+    </Fade>
   );
-
 
   return (
     <>
@@ -101,32 +107,12 @@ function Home(props) {
           position: "relative",
         }}
       >
-        {size.width > 768 && props.state ? scrollDownSideLottie : null}
-
         {!RemoveCol && (
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              textAlign: "center",
-              zIndex: 12
-            }}
-          >
-            {showTitleGradient ? titleMovingAnimation : titleBeforeMovement}
-          </div>
+          <div className="titleBeforeMovement">{titleBeforeMovement}</div>
         )}
 
-        <Fade bottom delay={6000} duration={2000} cascade>
-          <div className="col" style={{ marginTop: "3%"}}>
-            <h1 className="content-title linear-wipe hover-animate-static">
-              FULL-STACK ENGINEER
-            </h1>
-          </div>
-        </Fade>
+        {size.width > 768 ? mainTitle : mainTitleMobile}
         {size.width > 768 ? desktopCanvas : mobileCanvas}
-        {size.width < 768 && scrollDownArrow}
-
       </section>
     </>
   );

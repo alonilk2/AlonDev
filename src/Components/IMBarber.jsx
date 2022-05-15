@@ -97,7 +97,7 @@ function IMBarber(props) {
     <>
       <section
         className={props.className}
-        style={{ marginTop: 0, zIndex: props.state ? 4 : 0 }}
+        style={{ zIndex: props.state ? 4 : 0 }}
       >
         <div className="content-body-project">
           {sideColumn}

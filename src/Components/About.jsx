@@ -14,7 +14,7 @@ function About(props) {
 
   const imageCropper = (
     <div
-      className="col image-cropper cf4a myfilter"
+      className="col image-cropper cf4a"
       style={{
         borderRadius: "50%",
         marginRight: "3%",
