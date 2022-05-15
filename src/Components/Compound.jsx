@@ -1,89 +1,13 @@
 import "../App.css";
-import ReactIcon from "../Images/React-icon.png";
-import metamask from "../Images/metamask.png";
-import Hardhat from "../Images/hardhat.png";
-import Ethers from "../Images/ethers.png";
-import Alchemy from "../Images/alchemy.png";
 import Github from '../Images/github.png';
 
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
+import { CompoundStackRow } from "./TechStackRow";
 
 function Compound(props) {
   const size = useWindowSize()
-  const techStackRow = (
-    <Fade left when={props.state} delay={800}>
-      <div
-        className="row project-info"
-        style={{ position: "unset", height: "unset" }}
-      >
-        <Fade left when={props.state} delay={900}>
-          <div className="col tech-col">
-            <img
-              className="row tech-logo"
-              src={ReactIcon}
-              style={{
-                width: "90%",
-                position: "unset",
-                height: "unset",
-              }}
-              alt="react"
-            />
-            <p className="row stack-title">React.js</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1000}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Ethers}
-              alt="Ethers.js"
-              style={{
-                transform: "scale(1.5)",
-                marginBottom: "20px",
-                position: "unset",
-                height: "unset",
-              }}
-            />
-            <p className="stack-title">Ethers.js</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1100}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={metamask}
-              alt="metamask"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">MetaMask</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1200}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Hardhat}
-              alt="HardhatSQL"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">Hardhat</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1300}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Alchemy}
-              alt="Alchemy"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">Alchemy</p>
-          </div>{" "}
-        </Fade>
-      </div>
-    </Fade>
-  );
+
   const imageCropperMobile = (
     <div class="image-cropper cf4a">
       <img src={"https://alonilk2.github.io/map1/abdev/compound.png"} alt=""></img>
@@ -138,7 +62,7 @@ function Compound(props) {
           interfacing with MetaMask wallets.
         </p>{" "}
       </Fade>
-      {techStackRow}
+      {CompoundStackRow(props.state)}
       <div className="project-buttons" style={{zIndex: 6}}>
         <a
           style={{

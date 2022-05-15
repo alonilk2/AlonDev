@@ -1,68 +1,10 @@
-import ReactIcon from "../Images/React-icon.png";
-import Node from "../Images/nodejs.svg";
-import Java from "../Images/java.png";
 import Fade from "react-reveal/Fade";
-import Maps from "../Images/maps.png";
 import "../App.css";
 import Github from '../Images/github.png';
 import useWindowSize from "../Hooks/useWindowSize";
+import { CelluStackRow } from "./TechStackRow";
 function Cellu(props) {
   let size = useWindowSize();
-
-  const techStackRow = (
-    <Fade left when={props.state} delay={800}>
-      <div
-        className="row project-info"
-        style={{ position: "unset", height: "unset" }}
-      >
-        {" "}
-        <Fade left when={props.state} delay={900}>
-          <div className="col tech-col">
-            <img
-              className="row tech-logo"
-              src={ReactIcon}
-              style={{ position: "unset", height: "unset" }}
-              alt="react"
-            />
-            <p className="row stack-title">React Native</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1000}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Node}
-              alt="node.js"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">Node.js</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1100}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Maps}
-              alt="Google Maps API"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">Google Maps API</p>
-          </div>{" "}
-        </Fade>
-        <Fade left when={props.state} delay={1200}>
-          <div className="col tech-col">
-            <img
-              className="tech-logo"
-              src={Java}
-              alt="Java"
-              style={{ position: "unset", height: "unset" }}
-            />
-            <p className="stack-title">Java</p>
-          </div>{" "}
-        </Fade>
-      </div>{" "}
-    </Fade>
-  );
 
   const sideColumn = (
     <div
@@ -100,7 +42,7 @@ function Cellu(props) {
           Israel.
         </p>{" "}
       </Fade>
-      {techStackRow}
+      {CelluStackRow(props)}
       <Fade left when={props.state} delay={1300}>
         <a
           style={{ zIndex: 2, position: "unset", height: "unset" }}
@@ -109,7 +51,7 @@ function Cellu(props) {
           <img
             alt="Get it on Google Play"
             src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-            width={300}
+            width={280}
             style={{ marginTop: "2%" }}
           />
         </a>
@@ -123,7 +65,7 @@ function Cellu(props) {
           href={"https://github.com/alonilk2/Cellu5G"}
         >
           <button className="content-title-visit-git delay-1 col">
-            <img src={Github} style={{ width: "40px" }}></img>Github Repository
+            <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>Github Repository
           </button>
         </a>{" "}
     </div>
@@ -182,3 +124,4 @@ function Cellu(props) {
 }
 
 export default Cellu;
+
