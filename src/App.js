@@ -10,7 +10,7 @@ import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const PAGENUM = 5;
+const PAGENUM = 6;
 
 function App() {
   const [scrollState, setPageScrollState] = useScrollState(PAGENUM);

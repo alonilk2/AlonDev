@@ -5,6 +5,7 @@ import Compound from "./Compound";
 import Reveal from "react-reveal/Reveal";
 import Contact from "./Contact";
 import About from "./About";
+import FiberLocator from "./FiberLocator";
 
 export function RenderPagesOnUp(scrollState) {
   return (
@@ -60,22 +61,32 @@ export function RenderPagesOnUp(scrollState) {
         effectOut="animate__animated animate__fadeOutDown"
         when={scrollState === -4}
       >
-        <Compound
+        <FiberLocator
           className="content-body"
           state={scrollState === -4}
           style={{ zIndex: scrollState === -4 ? 5 : 0 }}
         />
       </Reveal>
-
       <Reveal
         effect="animate__animated animate__fadeInDown fadeInDown"
         effectOut="animate__animated animate__fadeOutDown"
         when={scrollState === -5}
       >
-        <Contact
+        <Compound
           className="content-body"
           state={scrollState === -5}
           style={{ zIndex: scrollState === -5 ? 5 : 0 }}
+        />
+      </Reveal>
+      <Reveal
+        effect="animate__animated animate__fadeInDown fadeInDown"
+        effectOut="animate__animated animate__fadeOutDown"
+        when={scrollState === -6}
+      >
+        <Contact
+          className="content-body"
+          state={scrollState === -6}
+          style={{ zIndex: scrollState === -6 ? 5 : 0 }}
         />
       </Reveal>
     </>
@@ -135,7 +146,7 @@ export function RenderPagesOnDown(scrollState) {
         effectOut="animate__animated animate__fadeOutUp"
         when={scrollState === -4}
       >
-        <Compound
+        <FiberLocator
           className="content-body"
           state={scrollState === -4}
           style={{ zIndex: scrollState === -4 ? 5 : 0 }}
@@ -146,10 +157,21 @@ export function RenderPagesOnDown(scrollState) {
         effectOut="animate__animated animate__fadeOutUp"
         when={scrollState === -5}
       >
-        <Contact
+        <Compound
           className="content-body"
           state={scrollState === -5}
           style={{ zIndex: scrollState === -5 ? 5 : 0 }}
+        />
+      </Reveal>
+      <Reveal
+        effect="animate__animated animate__fadeInUp fadeInUp"
+        effectOut="animate__animated animate__fadeOutUp"
+        when={scrollState === -6}
+      >
+        <Contact
+          className="content-body"
+          state={scrollState === -6}
+          style={{ zIndex: scrollState === -6 ? 5 : 0 }}
         />
       </Reveal>
     </>
