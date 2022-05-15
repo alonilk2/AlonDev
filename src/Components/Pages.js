@@ -6,6 +6,7 @@ import Home from "../Components/Home";
 import IMBarber from "../Components/IMBarber";
 import Cellu from "../Components/Cellu";
 import Compound from "../Components/Compound";
+import FiberLocator from "../Components/FiberLocator";
 import Contact from "../Components/Contact";
 
 
@@ -14,6 +15,8 @@ const RenderPagesOnMobile = (
     <Home className="content-body-home" />
     <IMBarber className="content-body" />
     <Cellu className="content-body" />
+    <FiberLocator className="content-body" />
+
     <Compound className="content-body" />
     <Contact className="content-body" />
   </div>
