@@ -10,10 +10,7 @@ function FiberLocator(props) {
 
   const imageCropperMobile = (
     <div class="image-cropper cf4a">
-      <img
-        src={"https://alonilk2.github.io/map1/fiber1.jpg"}
-        alt=""
-      ></img>
+      <img src={"https://alonilk2.github.io/map1/fiber1.jpg"} alt=""></img>
     </div>
   );
   const imageCropper = (
@@ -39,23 +36,26 @@ function FiberLocator(props) {
         alignItems: "center",
       }}
     >
-      <h1
-        className="content-title-project delay-1 hover-animate"
-        style={{ position: "unset", height: "unset", zIndex: 6 }}
-      >
-        <span>F</span>
-        <span>i</span>
-        <span>b</span>
-        <span>e</span>
-        <span>r</span>
-        <span>L</span>
-        <span>o</span>
-        <span>c</span>
-        <span>a</span>
-        <span>t</span>
-        <span>o</span>
-        <span>r</span>
-      </h1>
+      <Fade top when={props.state} delay={100} cascade>
+        <h1
+          className="content-title-project delay-1 hover-animate"
+          style={{ position: "unset", height: "unset", zIndex: 6 }}
+        >
+          <span>F</span>
+          <span>i</span>
+          <span>b</span>
+          <span>e</span>
+          <span>r</span>
+          <span>L</span>
+          <span>o</span>
+          <span>c</span>
+          <span>a</span>
+          <span>t</span>
+          <span>o</span>
+          <span>r</span>
+        </h1>{" "}
+      </Fade>
+
       <Fade top when={props.state} delay={400}>
         <p
           className="description"

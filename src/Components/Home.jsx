@@ -22,7 +22,7 @@ function Home(props) {
     }, 3500);
     setTimeout(() => {
       setShowTitle1(false);
-    }, 6000);
+    }, 5500);
     setTimeout(() => {
       setRemoveCol(true);
     }, 7000);
@@ -37,7 +37,7 @@ function Home(props) {
 
   const titleBeforeMovement = (
     <>
-      <Fade opposite when={showTitle}>
+      <Fade left opposite duration={2000} when={showTitle}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -45,7 +45,7 @@ function Home(props) {
           Hi
         </h3>
       </Fade>
-      <Fade opposite when={showTitle1}>
+      <Fade left opposite duration={2000} when={showTitle1}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -58,7 +58,7 @@ function Home(props) {
 
   const mainTitleMobile = (
     <Fade bottom delay={6000} duration={2000}>
-      <div className="col" style={{ marginTop: "4%", zIndex: 20 }}>
+      <div className="col" style={{ marginTop: "20%", zIndex: 20 }}>
         <h1 className="content-title linear-wipe hover-animate-static">
           FULL STACK ENGINEER
         </h1>

@@ -1,6 +1,6 @@
 import Fade from "react-reveal/Fade";
 import "../App.css";
-import Github from '../Images/github.png';
+import Github from "../Images/github.png";
 import useWindowSize from "../Hooks/useWindowSize";
 import { CelluStackRow } from "./TechStackRow";
 function Cellu(props) {
@@ -18,17 +18,19 @@ function Cellu(props) {
       }}
     >
       {" "}
-      <h1
-        className="content-title-project delay-1 hover-animate"
-        style={{ position: "unset", height: "unset", zIndex: 6 }}
-      >
-        <span>C</span>
-        <span>e</span>
-        <span>l</span>
-        <span>l</span>
-        <span>u</span> <span>5</span>
-        <span>G</span>
-      </h1>
+      <Fade top when={props.state} delay={100} cascade>
+        <h1
+          className="content-title-project delay-1 hover-animate"
+          style={{ position: "unset", height: "unset", zIndex: 6 }}
+        >
+          <span>C</span>
+          <span>e</span>
+          <span>l</span>
+          <span>l</span>
+          <span>u</span> <span>5</span>
+          <span>G</span>
+        </h1>
+      </Fade>
       <Fade top when={props.state} delay={400}>
         <p
           className="description"
@@ -55,19 +57,22 @@ function Cellu(props) {
             style={{ marginTop: "2%" }}
           />
         </a>
-      </Fade>
-      <a
+        <a
           style={{
             textAlign: "center",
             width: "50%",
-            marginTop: '2%',    color: 'transparent', zIndex: 6
+            marginTop: "2%",
+            color: "transparent",
+            zIndex: 6,
           }}
           href={"https://github.com/alonilk2/Cellu5G"}
         >
           <button className="content-title-visit-git delay-1 col">
-            <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>Github Repository
+            <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>
+            Github Repository
           </button>
         </a>{" "}
+      </Fade>
     </div>
   );
 
@@ -124,4 +129,3 @@ function Cellu(props) {
 }
 
 export default Cellu;
-

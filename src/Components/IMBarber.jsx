@@ -19,18 +19,21 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      <h1
-        className="content-title-project delay-1 hover-animate"
-        style={{ position: "unset", height: "unset", zIndex: 6 }}
-      >
-        <span>I'</span>
-        <span>M</span> <span>B</span>
-        <span>a</span>
-        <span>r</span>
-        <span>b</span>
-        <span>e</span>
-        <span>r</span>
-      </h1>
+      {" "}
+      <Fade top when={props.state} delay={100} cascade>
+        <h1
+          className="content-title-project delay-1 hover-animate"
+          style={{ position: "unset", height: "unset", zIndex: 6 }}
+        >
+          <span>I'</span>
+          <span>M</span> <span>B</span>
+          <span>a</span>
+          <span>r</span>
+          <span>b</span>
+          <span>e</span>
+          <span>r</span>
+        </h1>{" "}
+      </Fade>
       <Fade top when={props.state} delay={400}>
         <p
           className="description"

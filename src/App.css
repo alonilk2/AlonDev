@@ -32,6 +32,8 @@ html {
   color: black !important;
   white-space: nowrap;
   text-align: center;
+  text-decoration: none;
+
 }
 .navbar-expand-lg .navbar-nav {
   flex-direction: row;
@@ -1029,6 +1031,17 @@ html {
     z-index: 0;
     align-items: flex-start;
   }
+  .resume-btn {
+    font-family: 'ku';
+    width: 300px;
+    margin: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kaushan Script", cursive !important;
+    font-size: 4.5vw;
+  }
   .chevron-container {
     width: 34px;
     top: 8%;
@@ -1040,7 +1053,7 @@ html {
     object-fit: cover;
   }
   .content-title {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
   .tech-logo {
     max-width: 60px;
@@ -1095,7 +1108,7 @@ html {
     font-size: 90px;
     font-family: "Kaushan Script", cursive !important;
     position: absolute;
-    top: 1.5%;
+    top: 7%;
     transform: translate(-50%, 0);
   }
   .App {
