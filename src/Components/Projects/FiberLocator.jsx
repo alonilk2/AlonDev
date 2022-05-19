@@ -1,33 +1,27 @@
-import "../App.css";
-import Github from "../Images/github.png";
-
+import "../../App.css";
+import Github from "../../Images/github.png";
+import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Fade from "react-reveal/Fade";
-import useWindowSize from "../Hooks/useWindowSize";
-import { CompoundStackRow } from "./TechStackRow";
+import useWindowSize from "../../Hooks/useWindowSize";
+import { FiberLocatorStackRow } from "./TechStackRow";
 
-function Compound(props) {
+function FiberLocator(props) {
   const size = useWindowSize();
 
   const imageCropperMobile = (
     <div class="image-cropper cf4a">
-      <img
-        src={"https://alonilk2.github.io/map1/abdev/compound.png"}
-        alt=""
-      ></img>
+      <img src={"https://alonilk2.github.io/map1/fiber1.jpg"} alt=""></img>
     </div>
   );
   const imageCropper = (
-    <div
-      class="image-cropper cf4a"
-      style={{
-        borderRadius: "25px",
-        marginRight: "3%",
-      }}
-    >
-      <img
-        src={"https://alonilk2.github.io/map1/compound.png"}
-        alt="Compound"
-        style={{ objectFit: "cover" }}
+    <div class="image-cropper cf4a">
+      <CrossfadeCarousel
+        interval={2000}
+        transition={1000}
+        images={[
+          "https://alonilk2.github.io/map1/fiber.jpg",
+          "https://alonilk2.github.io/map1/fiber1.jpg",
+        ]}
       />
     </div>
   );
@@ -35,40 +29,43 @@ function Compound(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 980 ? "2% 5%" : "5% 0",
+        margin: size.width > 950 ? "2% 5%" : "5% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
         alignItems: "center",
       }}
     >
-      {" "}
-      <Fade top when={props.state} delay={100} cascade>
+      <Fade left duration={2000}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
         >
-          <span>C</span>
+          <span>F</span>
+          <span>i</span>
+          <span>b</span>
+          <span>e</span>
+          <span>r</span>
+          <span>L</span>
           <span>o</span>
-          <span>m</span>
-          <span>p</span>
+          <span>c</span>
+          <span>a</span>
+          <span>t</span>
           <span>o</span>
-          <span>u</span>
-          <span>n</span>
-          <span>d</span>
-        </h1>{" "}
+          <span>r</span>
+        </h1>
       </Fade>
       <Fade top when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          A single-page web application for Compound DeFi Protocol services,
-          featuring ETH coins supply and DAI coins borrow. This app is
-          interfacing with MetaMask wallets.
+          FiberLocator is a web application allowing users to run a fiber optics
+          infrustructre availability check in their area, in multiple internet
+          companies in Israel simultaneously.
         </p>{" "}
       </Fade>
-      {CompoundStackRow(props.state)}
+      {FiberLocatorStackRow(props)}
       <div className="project-buttons" style={{ zIndex: 6 }}>
         <a
           style={{
@@ -76,7 +73,7 @@ function Compound(props) {
             width: "100%",
             marginRight: "1%",
           }}
-          href={"https://alonilk2.github.io/Compound-Protocol-Dapp/"}
+          href={"http://fiberlocate.herokuapp.com/"}
         >
           <button className="content-title-visit delay-1 col ">
             Enter App
@@ -89,7 +86,7 @@ function Compound(props) {
             marginLeft: "1%",
             color: "transparent",
           }}
-          href={"https://github.com/alonilk2/Compound-Protocol-Dapp"}
+          href={"https://github.com/alonilk2/FiberLocator"}
         >
           <button className="content-title-visit-git delay-1 col">
             <img src={Github} style={{ width: "40px" }}></img>Github Repository
@@ -106,7 +103,6 @@ function Compound(props) {
       >
         <div className="content-body-project">
           {sideColumn}
-
           {size.width > 980 ? imageCropper : imageCropperMobile}
         </div>
       </section>
@@ -114,4 +110,4 @@ function Compound(props) {
   );
 }
 
-export default Compound;
+export default FiberLocator;

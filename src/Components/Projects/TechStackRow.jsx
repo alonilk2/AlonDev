@@ -1,16 +1,16 @@
-import ReactIcon from "../Images/React-icon.png";
-import NodeIcon from "../Images/nodejs.svg";
-import JavaIcon from "../Images/java.png";
+import ReactIcon from "../../Images/React-icon.png";
+import NodeIcon from "../../Images/nodejs.svg";
+import JavaIcon from "../../Images/java.png";
 import Fade from "react-reveal/Fade";
-import MapsIcon from "../Images/maps.png";
-import MetamaskIcon from "../Images/metamask.png";
-import HardhatIcon from "../Images/hardhat.png";
-import EthersIcon from "../Images/ethers.png";
-import AlchemyIcon from "../Images/alchemy.png";
-import SequelizeIcon from "../Images/sequelize.svg";
-import PostgreIcon from "../Images/psql.png";
-import ExpressIcon from "../Images/Expressjs.png";
-import RestIcon from "../Images/rest.png";
+import MapsIcon from "../../Images/maps.png";
+import MetamaskIcon from "../../Images/metamask.png";
+import HardhatIcon from "../../Images/hardhat.png";
+import EthersIcon from "../../Images/ethers.png";
+import AlchemyIcon from "../../Images/alchemy.png";
+import SequelizeIcon from "../../Images/sequelize.svg";
+import PostgreIcon from "../../Images/psql.png";
+import ExpressIcon from "../../Images/Expressjs.png";
+import RestIcon from "../../Images/rest.png";
 
 function Icon(icon, name, state, delay) {
   return (

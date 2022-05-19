@@ -1,13 +1,48 @@
 import Home from "./Home";
-import IMBarber from "./IMBarber";
-import Cellu from "./Cellu";
-import Compound from "./Compound";
+import IMBarber from "./Projects/IMBarber";
+import Cellu from "./Projects/Cellu";
+import Compound from "./Projects/Compound";
 import Reveal from "react-reveal/Reveal";
 import Contact from "./Contact";
 import About from "./About";
-import FiberLocator from "./FiberLocator";
+import FiberLocator from "./Projects/FiberLocator";
+import { useEffect, useRef } from "react";
+import useWindowSize from "../Hooks/useWindowSize";
+import PageBar from "./PageBar";
 
-export function RenderPagesOnUp(scrollState) {
+export default function Pages(props) {
+  let scrollState = props.scrollState;
+  const size = useWindowSize();
+  const scrollRef = useRef(0);
+
+  useEffect(() => {
+    scrollRef.current = scrollState;
+  }, [scrollState]);
+
+  if (size.width < 980) return RenderPagesOnMobile;
+  return (
+    <div>
+      {scrollRef.current < scrollState
+        ? RenderPagesOnUp(scrollState)
+        : RenderPagesOnDown(scrollState)}
+      {PageBar(scrollState)}
+    </div>
+  );
+}
+
+const RenderPagesOnMobile = (
+  <div style={{ display: "flex", flexDirection: "column" }}>
+    <Home className="content-body-home" />
+    <About className="content-body" />
+    <IMBarber className="content-body" />
+    <Cellu className="content-body" />
+    <FiberLocator className="content-body" />
+    <Compound className="content-body" />
+    <Contact className="content-body" />
+  </div>
+);
+
+function RenderPagesOnUp(scrollState) {
   return (
     <>
       {scrollState > -2 && (
@@ -92,7 +127,8 @@ export function RenderPagesOnUp(scrollState) {
     </>
   );
 }
-export function RenderPagesOnDown(scrollState) {
+
+function RenderPagesOnDown(scrollState) {
   return (
     <>
       {scrollState > -2 && (

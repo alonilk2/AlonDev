@@ -38,12 +38,14 @@ function About(props) {
           className="col-5 about-info"
           style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
         >
-          <Fade right delay={100} cascade>
+          <Fade bottom delay={6000} duration={2000}>
             <h1
               className="content-title-project delay-1 hover-animate"
               style={{
                 zIndex: 6,
                 fontFamily: "Kaushan Script",
+                position: size.width > 980 && "absolute",
+                top: size.width > 980 && "1%",
               }}
             >
               <span>H</span>
@@ -56,13 +58,15 @@ function About(props) {
               <span>n</span>
             </h1>
           </Fade>
+
           <Fade left delay={200} cascade>
             <p
               style={{
                 fontSize: "20px",
                 fontWeight: 100,
-                margin: size.width > 980 ? "2%" : "2% 0",
+                margin: size.width > 980 ? "5% 2%" : "2% 0",
                 fontFamily: "Roboto",
+                width: size.width > 980 && "50%",
               }}
             >
               <span>
@@ -79,10 +83,10 @@ function About(props) {
                 both in front and back ends.
                 <br />
                 <br />
-                Programming is my passion and my hobby. I knew Since childhood
-                that being a programmer is my dream, and now, after 4 years of
-                academic studies and 2 years of self-learning and freelancing, I
-                am eager to fulfill it.
+                Programming is my passion and my hobby. I knew since childhood
+                that being a programmer is my future dream, and now, after 4
+                years of academic studies and 2 years of self-learning and
+                freelancing, I am eager to fulfill it.
                 <br />
                 <br />
                 So if you look for a passionate developer to join your team,

@@ -3,8 +3,7 @@ import useScrollState from "./Hooks/useScrollState";
 import Navbar from "./Components/Navbar";
 import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
-import Pages from "./Components/Pages";
-import { useEffect } from "react";
+import ScrollPages from "./Components/ScrollPages";
 import "./App.css";
 import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
@@ -53,7 +52,7 @@ function App() {
         />
         {spaceBackground}
         {scrollState > -5 && ScrollDownAnimation}
-        <Pages scrollState={scrollState} />
+        <ScrollPages scrollState={scrollState} />
       </div>
     );
   } else if(size.height > 500){
@@ -61,14 +60,14 @@ function App() {
       <div className="App">
         <Navbar />
         {scrollState > -5 && ScrollDownAnimation}
-        <Pages />
+        <ScrollPages />
       </div>
     );
   } else return (
     <div className="App">
     <Navbar />
     {scrollState > -5 && ScrollDownAnimationLandscape}
-    <Pages />
+    <ScrollPages />
   </div>
   )
 }

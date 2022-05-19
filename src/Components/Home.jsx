@@ -19,10 +19,10 @@ function Home(props) {
     }, 3000);
     setTimeout(() => {
       setShowTitle1(true);
-    }, 3500);
+    }, 3800);
     setTimeout(() => {
       setShowTitle1(false);
-    }, 5500);
+    }, 5800);
     setTimeout(() => {
       setRemoveCol(true);
     }, 7000);
@@ -37,7 +37,7 @@ function Home(props) {
 
   const titleBeforeMovement = (
     <>
-      <Fade left opposite duration={2000} when={showTitle}>
+      <Fade duration={2000} when={showTitle}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -45,7 +45,7 @@ function Home(props) {
           Hi
         </h3>
       </Fade>
-      <Fade left opposite duration={2000} when={showTitle1}>
+      <Fade duration={2000} when={showTitle1}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}

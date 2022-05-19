@@ -1,7 +1,7 @@
 import Fade from "react-reveal/Fade";
-import "../App.css";
-import Github from "../Images/github.png";
-import useWindowSize from "../Hooks/useWindowSize";
+import "../../App.css";
+import Github from "../../Images/github.png";
+import useWindowSize from "../../Hooks/useWindowSize";
 import { CelluStackRow } from "./TechStackRow";
 function Cellu(props) {
   let size = useWindowSize();
@@ -17,8 +17,8 @@ function Cellu(props) {
         alignItems: "center",
       }}
     >
-      {" "}
-      <Fade top when={props.state} delay={100} cascade>
+
+      <Fade left duration={2000}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
@@ -45,34 +45,32 @@ function Cellu(props) {
         </p>{" "}
       </Fade>
       {CelluStackRow(props)}
-      <Fade left when={props.state} delay={1300}>
-        <a
-          style={{ zIndex: 2, position: "unset", height: "unset" }}
-          href="https://play.google.com/store/apps/details?id=com.cellu&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-        >
-          <img
-            alt="Get it on Google Play"
-            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-            width={280}
-            style={{ marginTop: "2%" }}
-          />
-        </a>
-        <a
-          style={{
-            textAlign: "center",
-            width: "50%",
-            marginTop: "2%",
-            color: "transparent",
-            zIndex: 6,
-          }}
-          href={"https://github.com/alonilk2/Cellu5G"}
-        >
-          <button className="content-title-visit-git delay-1 col">
-            <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>
-            Github Repository
-          </button>
-        </a>{" "}
-      </Fade>
+      <a
+        style={{ zIndex: 2, position: "unset", height: "unset" }}
+        href="https://play.google.com/store/apps/details?id=com.cellu&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+      >
+        <img
+          alt="Get it on Google Play"
+          src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+          width={280}
+          style={{ marginTop: "2%" }}
+        />
+      </a>
+      <a
+        style={{
+          textAlign: "center",
+          width: "50%",
+          marginTop: "2%",
+          color: "transparent",
+          zIndex: 6,
+        }}
+        href={"https://github.com/alonilk2/Cellu5G"}
+      >
+        <button className="content-title-visit-git delay-1 col">
+          <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>
+          Github Repository
+        </button>
+      </a>{" "}
     </div>
   );
 

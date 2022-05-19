@@ -5,6 +5,7 @@ import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import useWindowSize from "../Hooks/useWindowSize";
+import Fade from "react-reveal/Fade";
 
 function ContactWaysRow() {
   return (
@@ -101,19 +102,22 @@ export default function Contact(props) {
                   Your message has been sent successfully. Thank you!
                 </div>
               )}
-              <h1
-                className="content-title-project delay-1 hover-animate"
-                style={{ position: "unset", height: "unset" }}
-              >
-                <span>C</span>
-                <span>o</span>
-                <span>n</span>
-                <span>t</span>
-                <span>a</span>
-                <span>c</span>
-                <span>t </span> <span> m</span>
-                <span>e</span>
-              </h1>
+
+              <Fade left duration={2000}>
+                <h1
+                  className="content-title-project delay-1 hover-animate"
+                  style={{ position: "unset", height: "unset", zIndex: 6 }}
+                >
+                  <span>C</span>
+                  <span>o</span>
+                  <span>n</span>
+                  <span>t</span>
+                  <span>a</span>
+                  <span>c</span>
+                  <span>t </span> <span> m</span>
+                  <span>e</span>
+                </h1>
+              </Fade>
               {ContactWaysRow()}
 
               <div style={{ display: "flex", flexDirection: "row" }}>

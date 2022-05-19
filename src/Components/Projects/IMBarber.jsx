@@ -1,8 +1,8 @@
 import CrossfadeCarousel from "@notbaldrick/react-crossfade-carousel";
 import Fade from "react-reveal/Fade";
-import "../App.css";
-import useWindowSize from "../Hooks/useWindowSize";
-import Github from "../Images/github.png";
+import "../../App.css";
+import useWindowSize from "../../Hooks/useWindowSize";
+import Github from "../../Images/github.png";
 import { IMBarberStackRow } from "./TechStackRow";
 
 function IMBarber(props) {
@@ -19,8 +19,7 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      {" "}
-      <Fade top when={props.state} delay={100} cascade>
+      <Fade left duration={2000}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
@@ -32,7 +31,7 @@ function IMBarber(props) {
           <span>b</span>
           <span>e</span>
           <span>r</span>
-        </h1>{" "}
+        </h1>
       </Fade>
       <Fade top when={props.state} delay={400}>
         <p
@@ -45,7 +44,7 @@ function IMBarber(props) {
           made originally according to customer's requirements.
         </p>
       </Fade>
-      {IMBarberStackRow(props.state)}
+      {IMBarberStackRow(props)}
       <div className="project-buttons">
         <a
           style={{

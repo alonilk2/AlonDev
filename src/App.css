@@ -268,7 +268,6 @@ html {
   -webkit-animation: flip 1s;
   animation: flip 1s;
   transition-timing-function: ease-in-out;
-  font-weight: bold;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -1000,6 +999,10 @@ html {
   *,
   html {
     overflow: inherit;
+  }
+  .contact-bubble {
+    font-size: 3vw;
+    letter-spacing: 0.5px;
   }
   .react-reveal {
     height: 100%;
