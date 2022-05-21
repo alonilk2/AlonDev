@@ -38,7 +38,7 @@ function About(props) {
           className="col-5 about-info"
           style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
         >
-          <Fade bottom delay={6000} duration={2000}>
+          <Fade Top delay={6000} duration={2000}>
             <h1
               className="content-title-project delay-1 hover-animate"
               style={{

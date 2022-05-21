@@ -19,6 +19,7 @@ function Loading() {
         roughness={1}
         metalness={0}
       />
+      Loading...
     </mesh>
   );
 }

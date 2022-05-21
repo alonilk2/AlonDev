@@ -2,13 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
 import { desktopCanvas, mobileCanvas, mobileCanvasLandscape } from "./3DCanvas";
-
+import useScrollState from "../Hooks/useScrollState";
 function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
   const [RemoveCol, setRemoveCol] = useState(false);
   const initialRender = useRef(true);
+  const [scrollState, setPageScrollState, scrollStateMobile] = useScrollState();
+
 
   const triggerInitialAnimations = () => {
     setTimeout(() => {
@@ -34,6 +36,9 @@ function Home(props) {
       triggerInitialAnimations();
     }
   });
+
+  useEffect(()=>{
+  },[scrollStateMobile])
 
   const titleBeforeMovement = (
     <>
@@ -119,7 +124,7 @@ function Home(props) {
         )}
 
         {size.width > 980 ? mainTitle : mainTitleMobile}
-        {RenderCanvasByViewport()}
+        {scrollStateMobile < 1200 && RenderCanvasByViewport()}
       </section>
     </>
   );

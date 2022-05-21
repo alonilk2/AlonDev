@@ -614,7 +614,7 @@ html {
 }
 
 .content-title {
-  font-size: 190px;
+  font-size: 10vw;
   font-weight: 400;
   font-family: "Oswald", "Courier New", Courier, monospace;
 }
@@ -1034,7 +1034,7 @@ html {
     overflow: inherit;
   }
   .contact-bubble {
-    font-size: 3vw;
+    font-size: 6vw;
     letter-spacing: 0.5px;
   }
   .react-reveal {
@@ -1080,7 +1080,7 @@ html {
   }
   .chevron-container {
     width: 34px;
-    top: 10%;
+    top: 8.5%;
     height: 100px;
     z-index: 15;
     
