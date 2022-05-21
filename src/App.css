@@ -1027,7 +1027,30 @@ html {
   font-size: 0.7vw;
   line-height: 16px;
 }
+.social-links {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  background-color: #2f2f2f;
+  height: 150px;
+  font-size: 30px;
+  color: rgb(182, 182, 182);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3%;
+  z-index: 20;
+}
 
+.social-links a {
+  color: rgb(182, 182, 182);
+
+}
+.social-links a:hover {
+  color: #c41c1c;
+
+}
 @media only screen and (max-width: 980px) {
   *,
   html {
