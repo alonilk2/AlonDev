@@ -17,7 +17,6 @@ function Cellu(props) {
         alignItems: "center",
       }}
     >
-
       <Fade left duration={2000}>
         <h1
           className="content-title-project delay-1 hover-animate"
@@ -66,9 +65,8 @@ function Cellu(props) {
         }}
         href={"https://github.com/alonilk2/Cellu5G"}
       >
-        <button className="content-title-visit-git delay-1 col">
-          <img src={Github} style={{ width: "40px", minWidth: "20px" }}></img>
-          Github Repository
+        <button className=" button content-title-visit-git">
+          <img src={Github} style={{ width: "40px" }}></img>Github Repository
         </button>
       </a>{" "}
     </div>

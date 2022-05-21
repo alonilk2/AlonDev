@@ -143,7 +143,6 @@ html {
   padding: 0.75rem 1.25rem;
   border-radius: 10rem;
   color: #fff;
-  text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.15rem;
   transition: all 0.3s;
@@ -173,6 +172,45 @@ html {
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
+}
+.button-red {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button-red:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 204, 255, 0);
+  border-radius: 10rem;
+  z-index: -2;
+}
+.button-red:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #fa8d8d;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.button-red:hover:before {
+  width: 100%;
 }
 .button:hover {
   color: #fff;
@@ -618,10 +656,10 @@ html {
 
 .chevron {
   position: absolute;
-  width: 2.1rem;
-  height: 0.48rem;
+  width: 2.0rem;
+  height: 0.3rem;
   opacity: 0;
-  transform: scale(0.3);
+  transform: scale(0.2);
   -webkit-animation: move-chevron 3s ease-out infinite;
   animation: move-chevron 3s ease-out infinite;
   overflow: visible;
@@ -644,7 +682,7 @@ html {
   top: 0;
   height: 100%;
   width: 50%;
-  background: #ffffff;
+  background: #ffffff9d;
 }
 
 .chevron:before {
@@ -761,7 +799,7 @@ html {
   border-radius: 50px;
   font-family: "Kaushan Script", cursive;
   color: #111111;
-  font-weight: 900;
+  font-weight: 600;
   width: 100%;
   white-space: nowrap;
   height: 60px;
@@ -776,7 +814,7 @@ html {
   border-radius: 50px;
   font-family: "Kaushan Script", cursive;
   color: #111111;
-  font-weight: 600;
+  font-weight: 300;
   width: 100%;
   white-space: nowrap;
   height: 60px;
@@ -784,6 +822,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 0;
 }
 .success {
   background: -webkit-linear-gradient(
@@ -805,12 +844,6 @@ html {
   font-weight: 300;
   width: 100%;
   text-align: center;
-}
-.content-title-visit:hover,
-.resume-btn:hover {
-  background: -webkit-linear-gradient(to right, #ff9eca, #e6c7ff);
-  background: linear-gradient(to right, #ff9eca, #e6c7ff);
-  color: #111111;
 }
 
 .content-title-2 {
@@ -1047,9 +1080,10 @@ html {
   }
   .chevron-container {
     width: 34px;
-    top: 8%;
-    height: 200px;
+    top: 10%;
+    height: 100px;
     z-index: 15;
+    
   }
   .screenshot {
     width: 800px;

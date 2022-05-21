@@ -71,7 +71,7 @@ export default function NavBar(props) {
             </Nav.Link>
             <Nav.Link
               href={"https://alonilk2.github.io/map1/alonbarenboimcv.pdf"}
-              className="navbar-btn-txt resume-btn"
+              className="navbar-btn-txt resume-btn button-red"
             >
               Get My Resume
             </Nav.Link>

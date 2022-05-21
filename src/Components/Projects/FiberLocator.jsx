@@ -75,7 +75,7 @@ function FiberLocator(props) {
           }}
           href={"http://fiberlocate.herokuapp.com/"}
         >
-          <button className="content-title-visit delay-1 col ">
+          <button className="content-title-visit button-red delay-1 col ">
             Enter App
           </button>
         </a>{" "}
@@ -88,7 +88,7 @@ function FiberLocator(props) {
           }}
           href={"https://github.com/alonilk2/FiberLocator"}
         >
-          <button className="content-title-visit-git delay-1 col">
+          <button className=" button content-title-visit-git">
             <img src={Github} style={{ width: "40px" }}></img>Github Repository
           </button>
         </a>{" "}

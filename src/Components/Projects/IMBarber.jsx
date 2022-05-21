@@ -54,8 +54,8 @@ function IMBarber(props) {
           }}
           href={"https://imbarber.com"}
         >
-          <button className="content-title-visit delay-1 col ">
-            Visit IM.Barber
+          <button className="content-title-visit button-red delay-1 col ">
+            Enter App
           </button>
         </a>{" "}
         <a
@@ -67,7 +67,7 @@ function IMBarber(props) {
           }}
           href={"https://github.com/alonilk2/IM.Barber"}
         >
-          <button className="content-title-visit-git delay-1 col">
+          <button className=" button content-title-visit-git">
             <img src={Github} style={{ width: "40px" }}></img>Github Repository
           </button>
         </a>{" "}
