@@ -1,5 +1,4 @@
 import useScrollState from "./Hooks/useScrollState";
-
 import Navbar from "./Components/Navbar";
 import useWindowSize from "./Hooks/useWindowSize";
 import useSpace from "./Hooks/useSpace";
@@ -51,7 +50,7 @@ function App() {
           setPageScrollState={setPageScrollState}
         />
         {spaceBackground}
-        {scrollState > -5 && ScrollDownAnimation}
+        {scrollState > -6 && ScrollDownAnimation}
         <ScrollPages scrollState={scrollState} />
       </div>
     );
@@ -59,14 +58,14 @@ function App() {
     return (
       <div className="App">
         <Navbar />
-        {scrollState > -5 && ScrollDownAnimation}
+        {scrollState > -6 && ScrollDownAnimation}
         <ScrollPages />
       </div>
     );
   } else return (
     <div className="App">
     <Navbar />
-    {scrollState > -5 && ScrollDownAnimationLandscape}
+    {scrollState > -6 && ScrollDownAnimationLandscape}
     <ScrollPages />
   </div>
   )
