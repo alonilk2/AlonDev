@@ -37,12 +37,9 @@ function Home(props) {
     }
   });
 
-  useEffect(()=>{
-  },[scrollStateMobile])
-
   const titleBeforeMovement = (
     <>
-      <Fade duration={2000} when={showTitle}>
+      <Fade duration={1000} when={showTitle}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}
@@ -50,7 +47,7 @@ function Home(props) {
           Hi
         </h3>
       </Fade>
-      <Fade duration={2000} when={showTitle1}>
+      <Fade duration={1000} when={showTitle1}>
         <h3
           className="content-title content-title-project title1 "
           style={{ textAlign: "center" }}

@@ -994,7 +994,7 @@ html {
   animation-fill-mode: both;
 }
 
-.fadeInUp {
+.fadeInUp, .fadeInDown {
   z-index: 2;
 }
 
@@ -1059,6 +1059,11 @@ html {
   .contact-bubble {
     font-size: 6vw;
     letter-spacing: 0.5px;
+  }
+  .bubble-col {
+    font-size: 2.5vw;
+    letter-spacing: 0.5px;
+
   }
   .react-reveal {
     height: 100%;

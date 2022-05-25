@@ -1,7 +1,9 @@
 import "../App.css";
+import Roll from "react-reveal/Roll";
 
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
+import { sizeWidth } from "@mui/system";
 
 function About(props) {
   const size = useWindowSize();
@@ -38,14 +40,15 @@ function About(props) {
           className="col-5 about-info"
           style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
         >
-          <Fade Top delay={6000} duration={2000}>
+          <Fade when={props.state}>
             <h1
               className="content-title-project delay-1 hover-animate"
               style={{
                 zIndex: 6,
                 fontFamily: "Kaushan Script",
                 position: size.width > 980 && "absolute",
-                top: size.width > 980 && "1%",
+                top: size.width > 980 && "0%",
+                left: size.width > 980 && "10%",
               }}
             >
               <span>H</span>
@@ -59,43 +62,49 @@ function About(props) {
             </h1>
           </Fade>
 
-          <Fade left delay={200} cascade>
+          <Fade delay={500} duration={1500} when={props.state} cascade>
             <p
               style={{
-                fontSize: "20px",
+                fontSize: "18px",
                 fontWeight: 100,
-                margin: size.width > 980 ? "5% 2%" : "2% 0",
+                margin: size.width > 980 ? "3% 5%" : "2% 0",
                 fontFamily: "Roboto",
-                width: size.width > 980 && "50%",
+                width: size.width > 980 && "35%",
               }}
             >
               <span>
-                a{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
+                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
                   B.Sc Software Engineer
                 </span>{" "}
                 and{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
-                  Full-Stack Developer
+                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                  Full Stack Developer
                 </span>{" "}
-                with two years of hands-on experience in Web and Mobile
-                applications development, in multiple languages and frameworks,
-                both in front and back ends.
+                experienced with front and back end applications design and
+                development, and equipped with tons of passion to create
+                beautiful code and amazing UIs.
+                <br />
+                My tech stack contains React.js, Node.js, Express.js, React
+                Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more.
                 <br />
                 <br />
-                Programming is my passion and my hobby. I knew since childhood
-                that being a programmer is my future dream, and now, after 4
-                years of academic studies and 2 years of self-learning and
-                freelancing, I am eager to fulfill it.
+                Coding is my passion. When I was little kid, I recieved my first
+                WinME PC as a gift, and got facinated by the fact the I could
+                create a webpage just by dragging random components in Microsoft
+                FrontPage (RIP). <br /> More than 20 years later, after
+                acquiring my first degree in Software Engineering and gaining
+                experience as a (real &#128517;) Full Stack developer, I'm
+                willing to join a company where I could contribute to and grow
+                at, as a Full Stack / Front / Back End Engineer.
                 <br />
                 <br />
-                So if you look for a passionate developer to join your team,
-                I'll be{" "}
+                So if you look for an amazingly passionate developer to join
+                your team, I'll be{" "}
               </span>
-              <span style={{ color: "#c41c1c", fontWeight: "500" }}>
+              <span style={{ color: "#c41c1c", fontWeight: "400" }}>
                 more than happy
               </span>{" "}
-              to contact!
+              <span>to contact!</span>
             </p>
           </Fade>
         </div>

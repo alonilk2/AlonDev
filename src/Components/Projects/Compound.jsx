@@ -42,19 +42,21 @@ function Compound(props) {
       }}
     >
       {" "}
-      <h1
-        className="content-title-project delay-1 hover-animate"
-        style={{ position: "unset", height: "unset", zIndex: 6 }}
-      >
-        <span>C</span>
-        <span>o</span>
-        <span>m</span>
-        <span>p</span>
-        <span>o</span>
-        <span>u</span>
-        <span>n</span>
-        <span>d</span>
-      </h1>{" "}
+      <Fade left when={props.state} duration={1000}>
+        <h1
+          className="content-title-project delay-1 hover-animate"
+          style={{ position: "unset", height: "unset", zIndex: 6 }}
+        >
+          <span>C</span>
+          <span>o</span>
+          <span>m</span>
+          <span>p</span>
+          <span>o</span>
+          <span>u</span>
+          <span>n</span>
+          <span>d</span>
+        </h1>{" "}
+      </Fade>
       <Fade top when={props.state} delay={400}>
         <p
           className="description"

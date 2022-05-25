@@ -73,15 +73,13 @@ export default function Contact(props) {
         content: content,
       })
       .then(
-        function (response) {
+        (response) => {
           setSuccess(true);
           setLoading(false);
-          console.log("SUCCESS!", response.status, response.text);
         },
-        function (error) {
+        (error) => {
           setSuccess(false);
           setLoading(false);
-          console.log("FAILED...", error);
         }
       );
   };
@@ -103,7 +101,7 @@ export default function Contact(props) {
                 </div>
               )}
 
-              <Fade left duration={2000}>
+              <Fade left when={props.state}>
                 <h1
                   className="content-title-project delay-1 hover-animate"
                   style={{ position: "unset", height: "unset", zIndex: 6 }}

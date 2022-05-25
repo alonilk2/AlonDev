@@ -36,7 +36,7 @@ function FiberLocator(props) {
         alignItems: "center",
       }}
     >
-      <Fade left duration={2000}>
+      <Fade left when={props.state} duration={1000}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
