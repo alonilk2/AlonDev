@@ -24,30 +24,30 @@ function Icon(icon, name, state, delay) {
 }
 export function CelluStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={500}>
+    <Fade left when={props?.state} delay={400}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        {Icon(ReactIcon, "React Native", props?.state, 600)}
-        {Icon(NodeIcon, "Node.js", props?.state, 700)}
-        {Icon(MapsIcon, "Google Maps API", props?.state, 800)}
-        {Icon(JavaIcon, "Java", props?.state, 900)}
+        {Icon(ReactIcon, "React Native", props?.state, 500)}
+        {Icon(NodeIcon, "Node.js", props?.state, 600)}
+        {Icon(MapsIcon, "Google Maps API", props?.state, 700)}
+        {Icon(JavaIcon, "Java", props?.state, 800)}
       </div>
     </Fade>
   );
 }
 export function CompoundStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={500}>
+    <Fade left when={props?.state} delay={400}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        {Icon(ReactIcon, "React.js", props?.state, 600)}
-        {Icon(EthersIcon, "Ethers.js", props?.state, 700)}
-        {Icon(MetamaskIcon, "MetaMask", props?.state, 800)}
-        {Icon(HardhatIcon, "Hardhat", props?.state, 900)}
+        {Icon(ReactIcon, "React.js", props?.state, 500)}
+        {Icon(EthersIcon, "Ethers.js", props?.state, 600)}
+        {Icon(MetamaskIcon, "MetaMask", props?.state, 700)}
+        {Icon(HardhatIcon, "Hardhat", props?.state, 800)}
         {Icon(AlchemyIcon, "Alchemy", props?.state, 1000)}
       </div>
     </Fade>
@@ -55,15 +55,15 @@ export function CompoundStackRow(props) {
 }
 export function IMBarberStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={500}>
+    <Fade left when={props?.state} delay={400}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        {Icon(ReactIcon, "React.js", props?.state, 600)}
-        {Icon(NodeIcon, "Node.js", props?.state, 700)}
-        {Icon(SequelizeIcon, "Sequelize", props?.state, 800)}
-        {Icon(PostgreIcon, "PostgreSQL", props?.state, 900)}
+        {Icon(ReactIcon, "React.js", props?.state, 500)}
+        {Icon(NodeIcon, "Node.js", props?.state, 600)}
+        {Icon(SequelizeIcon, "Sequelize", props?.state, 700)}
+        {Icon(PostgreIcon, "PostgreSQL", props?.state, 800)}
         {Icon(ExpressIcon, "Express", props?.state, 1000)}
       </div>
     </Fade>
@@ -71,14 +71,14 @@ export function IMBarberStackRow(props) {
 }
 export function FiberLocatorStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={500}>
+    <Fade left when={props?.state} delay={400}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
       >
-        {Icon(ReactIcon, "React.js", props?.state, 600)}
-        {Icon(NodeIcon, "Node.js", props?.state, 700)}
-        {Icon(RestIcon, "Rest", props?.state, 800)}
+        {Icon(ReactIcon, "React.js", props?.state, 500)}
+        {Icon(NodeIcon, "Node.js", props?.state, 600)}
+        {Icon(RestIcon, "Rest", props?.state, 700)}
       </div>
     </Fade>
   );

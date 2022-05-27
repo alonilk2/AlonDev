@@ -40,9 +40,9 @@ function About(props) {
           className="col-5 about-info"
           style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
         >
-          <Fade when={props.state}>
+          <Fade left when={props.state} >
             <h1
-              className="content-title-project delay-1 hover-animate"
+              className="content-title-project hover-animate"
               style={{
                 zIndex: 6,
                 fontFamily: "Kaushan Script",
@@ -52,8 +52,7 @@ function About(props) {
               }}
             >
               <span>H</span>
-              <span>e</span>
-              <span>y</span>
+              <span>i</span>
               <span>!</span> <span>I'</span>
               <span>m</span> <span>A</span>
               <span>l</span>
@@ -62,7 +61,7 @@ function About(props) {
             </h1>
           </Fade>
 
-          <Fade delay={500} duration={1500} when={props.state} cascade>
+          <Fade bottom when={props.state}>
             <p
               style={{
                 fontSize: "18px",
@@ -73,46 +72,43 @@ function About(props) {
               }}
             >
               <span>
-                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
                   B.Sc Software Engineer
                 </span>{" "}
                 and{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
                   Full Stack Developer
                 </span>{" "}
                 experienced with front and back end applications design and
                 development, and equipped with tons of passion to create
                 beautiful code and amazing UIs.
                 <br />
+                <br />
                 My tech stack contains React.js, Node.js, Express.js, React
                 Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more.
+                I also have hands on experience in C, C++, Java and Python.
                 <br />
                 <br />
-                Coding is my passion. When I was little kid, I recieved my first
-                WinME PC as a gift, and got facinated by the fact the I could
-                create a webpage just by dragging random components in Microsoft
-                FrontPage (RIP). <br /> More than 20 years later, after
-                acquiring my first degree in Software Engineering and gaining
-                experience as a (real &#128517;) Full Stack developer, I'm
-                willing to join a company where I could contribute to and grow
-                at, as a Full Stack / Front / Back End Engineer.
+                Coding is my passion. I'm willing to join a company where I
+                could contribute to and grow at, as a Full Stack / Front / Back
+                End Engineer.
                 <br />
                 <br />
-                So if you look for an amazingly passionate developer to join
-                your team, I'll be{" "}
+                So if you look for an {" "}
+                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
+                   amazingly passionate developer{" "}
+                </span>
+                to join your team, I'll be more than happy to contact!
               </span>
-              <span style={{ color: "#c41c1c", fontWeight: "400" }}>
-                more than happy
-              </span>{" "}
-              <span>to contact!</span>
             </p>
           </Fade>
         </div>
         {size.width < 980 && (
-          <Fade bottom delay={300} cascade>
+          <Fade bottom cascade>
             <a
               href={"https://alonilk2.github.io/map1/alonbarenboimcv.pdf"}
               className="navbar-btn-txt content-title-visit resume-btn"
+              style={{padding: '0 2%'}}
             >
               Get My Resume
             </a>

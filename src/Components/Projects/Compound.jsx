@@ -42,7 +42,7 @@ function Compound(props) {
       }}
     >
       {" "}
-      <Fade left when={props.state} duration={1000}>
+      <Fade left when={props.state}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
@@ -78,7 +78,7 @@ function Compound(props) {
           href={"https://alonilk2.github.io/Compound-Protocol-Dapp/"}
         >
           <button className="content-title-visit button-red delay-1 col ">
-            Enter App
+            Visit Compound
           </button>
         </a>{" "}
         <a
@@ -90,11 +90,8 @@ function Compound(props) {
           }}
           href={"https://github.com/alonilk2/Compound-Protocol-Dapp"}
         >
-          {/* <button className="content-title-visit-git delay-1 col">
-            <img src={Github} style={{ width: "40px" }}></img>Github Repository
-          </button> */}
           <button className=" button content-title-visit-git">
-            <img src={Github} style={{ width: "40px" }}></img>Github Repository
+            <img src={Github} className="github-btn-icon"></img>Github Repository
           </button>
         </a>{" "}
       </div>

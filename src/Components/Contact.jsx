@@ -103,7 +103,7 @@ export default function Contact(props) {
 
               <Fade left when={props.state}>
                 <h1
-                  className="content-title-project delay-1 hover-animate"
+                  className="content-title-project hover-animate"
                   style={{ position: "unset", height: "unset", zIndex: 6 }}
                 >
                   <span>C</span>

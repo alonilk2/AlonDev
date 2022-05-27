@@ -19,13 +19,14 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      <Fade left when={props.state} duration={1000}>
+      <Fade left when={props.state}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
         >
-          <span>I'</span>
-          <span>M</span> <span>B</span>
+          <span>I</span>
+          <span>M.</span>
+          <span>B</span>
           <span>a</span>
           <span>r</span>
           <span>b</span>
@@ -55,7 +56,7 @@ function IMBarber(props) {
           href={"https://imbarber.com"}
         >
           <button className="content-title-visit button-red delay-1 col ">
-            Enter App
+            Visit IM.Barber
           </button>
         </a>{" "}
         <a
@@ -68,7 +69,7 @@ function IMBarber(props) {
           href={"https://github.com/alonilk2/IM.Barber"}
         >
           <button className=" button content-title-visit-git">
-            <img src={Github} style={{ width: "40px" }}></img>Github Repository
+            <img src={Github} className="github-btn-icon"></img>Github Repository
           </button>
         </a>{" "}
       </div>{" "}
