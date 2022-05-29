@@ -57,7 +57,7 @@ function Compound(props) {
           <span>d</span>
         </h1>{" "}
       </Fade>
-      <Fade top when={props.state} delay={400}>
+      <Fade right when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}

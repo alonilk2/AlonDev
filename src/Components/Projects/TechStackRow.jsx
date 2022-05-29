@@ -55,7 +55,7 @@ export function CompoundStackRow(props) {
 }
 export function IMBarberStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={350}>
+    <Fade right when={props?.state} delay={350}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}
@@ -71,7 +71,7 @@ export function IMBarberStackRow(props) {
 }
 export function FiberLocatorStackRow(props) {
   return (
-    <Fade left when={props?.state} delay={350}>
+    <Fade right when={props?.state} delay={350}>
       <div
         className="row project-info"
         style={{ position: "unset", height: "unset" }}

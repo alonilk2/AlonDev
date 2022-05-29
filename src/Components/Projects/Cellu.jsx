@@ -30,7 +30,7 @@ function Cellu(props) {
           <span>G</span>
         </h1>
       </Fade>
-      <Fade top when={props.state} delay={300}>
+      <Fade right when={props.state} delay={300}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}

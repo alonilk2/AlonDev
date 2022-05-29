@@ -41,7 +41,7 @@ export default function NavBar(props) {
                 <span>b</span>
                 <span>o</span>
                 <span>i</span>
-                <span>m</span>
+                <span>m.</span>
               </h1>
             )}
           </div>

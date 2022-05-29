@@ -45,7 +45,8 @@ function About(props) {
               className="content-title-project hover-animate"
               style={{
                 zIndex: 6,
-                fontFamily: "Kaushan Script",
+                fontFamily: "GT Walsheim Pro",
+                fontStyle: 'italic',
                 position: size.width > 980 && "absolute",
                 top: size.width > 980 && "0%",
                 left: size.width > 980 && "10%",
@@ -65,9 +66,9 @@ function About(props) {
             <p
               style={{
                 fontSize: "18px",
-                fontWeight: 100,
+                fontFamily: "GT Walsheim Pro",
+                fontWeight: 200,
                 margin: size.width > 980 ? "3% 5%" : "2% 0",
-                fontFamily: "Roboto",
                 width: size.width > 980 && "35%",
               }}
             >

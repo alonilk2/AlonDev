@@ -19,7 +19,7 @@ function IMBarber(props) {
         alignItems: "center",
       }}
     >
-      <Fade left when={props.state}>
+      <Fade right when={props.state}>
         <h1
           className="content-title-project delay-1 hover-animate"
           style={{ position: "unset", height: "unset", zIndex: 6 }}
@@ -34,7 +34,7 @@ function IMBarber(props) {
           <span>r</span>
         </h1>
       </Fade>
-      <Fade top when={props.state} delay={400}>
+      <Fade left when={props.state} delay={400}>
         <p
           className="description"
           style={{ position: "unset", height: "unset" }}
