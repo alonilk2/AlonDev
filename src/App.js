@@ -12,7 +12,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaStackOverflow } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 
-const PAGENUM = 6;
+const PAGENUM = 7;
 
 function App() {
   const [scrollState, setPageScrollState] = useScrollState(PAGENUM);

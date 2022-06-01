@@ -51,6 +51,13 @@ export default function pageBar(scrollState) {
         >
           __
         </span>
+        <span
+          className={
+            scrollState == -7 ? "horizontal-line-scope" : "horizontal-line"
+          }
+        >
+          __
+        </span>
       </p>
     </footer>
   );

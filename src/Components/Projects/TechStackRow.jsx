@@ -11,6 +11,7 @@ import SequelizeIcon from "../../Images/sequelize.svg";
 import PostgreIcon from "../../Images/psql.png";
 import ExpressIcon from "../../Images/Expressjs.png";
 import RestIcon from "../../Images/rest.png";
+import TsIcon from "../../Images/ts-logo-128.png";
 
 function Icon(icon, name, state, delay) {
   return (
@@ -42,7 +43,7 @@ export function CompoundStackRow(props) {
     <Fade left when={props?.state} delay={350}>
       <div
         className="row project-info"
-        style={{ position: "unset", height: "unset" }}
+        style={{ position: "unset", height: "80px" }}
       >
         {Icon(ReactIcon, "React.js", props?.state, 400)}
         {Icon(EthersIcon, "Ethers.js", props?.state, 450)}
@@ -65,6 +66,19 @@ export function IMBarberStackRow(props) {
         {Icon(SequelizeIcon, "Sequelize", props?.state, 500)}
         {Icon(PostgreIcon, "PostgreSQL", props?.state, 550)}
         {Icon(ExpressIcon, "Express", props?.state, 600)}
+      </div>
+    </Fade>
+  );
+}
+export function SimonSaysStackRow(props) {
+  return (
+    <Fade right when={props?.state} delay={350}>
+      <div
+        className="row project-info"
+        style={{ position: "unset", height: "unset" }}
+      >
+        {Icon(ReactIcon, "React Native", props?.state, 400)}
+        {Icon(TsIcon, "TypeScript", props?.state, 500)}
       </div>
     </Fade>
   );
