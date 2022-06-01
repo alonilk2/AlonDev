@@ -10,7 +10,7 @@ function IMBarber(props) {
 
   const sideColumn = (
     <div
-      className="col-4"
+      className="col-3"
       style={{
         margin: size.width > 980 ? "2% 4%" : "5% 0",
         display: "flex",
@@ -39,9 +39,9 @@ function IMBarber(props) {
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          IM.Barber is an online store and corporate website. This project
-          includes online store management system with orders, users and
-          products management, Paypal Checkout, custom branding and SEO, all
+          Online store and corporate website for private customer. 
+          Includes online store management system with Orders, Users and
+          Products management, Paypal Checkout, custom branding and SEO, all
           made originally according to customer's requirements.
         </p>
       </Fade>

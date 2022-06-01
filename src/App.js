@@ -10,7 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaStackOverflow } from "react-icons/fa";
-import Fade from "react-reveal/Fade";
 
 const PAGENUM = 7;
 

@@ -71,7 +71,7 @@ export default function NavBar(props) {
             </Nav.Link>
             <Nav.Link
               href={"https://alonilk2.github.io/map1/alonbarenboimcv.pdf"}
-              className="navbar-btn-txt resume-btn button-red"
+              className="navbar-btn-txt resume-btn button-red-resume"
             >
               Get My Resume
             </Nav.Link>
@@ -84,9 +84,9 @@ export default function NavBar(props) {
   const mobileNavbar = (
     <Navbar sticky="top" expand="lg" variant="dark">
       <Container fluid>
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header>
           <h3 className="title custom-animation-gradient pos-mobile">
-            Alon Barenboim
+            Alon Barenboim.
           </h3>{" "}
         </Offcanvas.Header>
       </Container>

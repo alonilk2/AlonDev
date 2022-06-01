@@ -9,7 +9,7 @@ function IMBarber(props) {
 
   const sideColumn = (
     <div
-      className="col-4"
+      className="col-3"
       style={{
         margin: size.width > 980 ? "2% 4%" : "5% 0",
         display: "flex",
@@ -39,7 +39,7 @@ function IMBarber(props) {
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          Simon Says game, made using React Native 0.68, Typescript, Redux
+          Simon Says game, made using React Native, TypeScript, Redux
         </p>
       </Fade>
       {SimonSaysStackRow(props)}
@@ -98,7 +98,7 @@ function IMBarber(props) {
   const imageCropperMobile = (
     <div class="image-cropper cf4a">
       <img
-        src={"https://alonilk2.github.io/map1/simonsays.jpg"}
+        src={"https://alonilk2.github.io/map1/abdev/simonsays.jpg"}
         alt=""
         className="project-img-mobile"
       ></img>
