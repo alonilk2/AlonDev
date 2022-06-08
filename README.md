@@ -5,7 +5,6 @@
 
 
 
-![AlonDev](https://alonilk2.github.io/map1/abdev-shot.png)
 
 
 ## Development Stack
