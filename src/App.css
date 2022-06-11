@@ -185,6 +185,9 @@ html {
   z-index: 1;
   border: white 2px solid;
 }
+.button-red:hover {
+  color: white;
+}
 .button-red:after {
   content: "";
   position: absolute;
