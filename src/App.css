@@ -1147,7 +1147,7 @@ html {
   }
   .chevron-container {
     width: 34px;
-    top: 80vh;
+    top: 75vh;
     height: 100px;
     z-index: 15;
   }
@@ -1162,9 +1162,9 @@ html {
     font-size: 5rem;
   }
   .scroll-text {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    bottom: 15%;
+    bottom: 22%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -1172,11 +1172,11 @@ html {
     max-width: 60px;
   }
   .social-links {
-    top: 1.5%;
+    top: 0.7%;
     right: 0;
     left: unset;
     border-radius: 10px 0px 0 10px;
-    padding: 2%;
+    padding: 1.5%;
   }
   .pos-mobile {
     font-size: 4.5vw;
