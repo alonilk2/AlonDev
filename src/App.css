@@ -186,7 +186,7 @@ html {
   border: white 2px solid;
 }
 .button-red:hover {
-  color: white;
+  color: white !important;
 }
 .button-red:after {
   content: "";
@@ -1077,6 +1077,7 @@ html {
   align-items: center;
   padding: 0.3%;
   z-index: 20;
+  border-radius: 0 10px 10px 0px;
 }
 
 .social-links a {
@@ -1117,6 +1118,10 @@ html {
   [class^="col"] {
     width: 100% !important;
   }
+  .project-buttons {
+    flex-direction: column;
+    padding: 5%;
+  }
   .image-cropper {
     width: 100%;
     position: unset;
@@ -1136,13 +1141,13 @@ html {
     justify-content: center;
     font-family: 'GT Walsheim Pro', cursive !important;
     font-size: 1em !important;
-  
+    min-width: 100%;
     font-weight: 400;
     padding: 0 5% !important;
   }
   .chevron-container {
     width: 34px;
-    top: 8.5%;
+    top: 80vh;
     height: 100px;
     z-index: 15;
   }
@@ -1150,11 +1155,28 @@ html {
     width: 800px;
     object-fit: cover;
   }
+  .titleBeforeMovement {
+    margin: auto;
+  }
   .content-title {
     font-size: 5rem;
   }
+  .scroll-text {
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .tech-logo {
     max-width: 60px;
+  }
+  .social-links {
+    top: 1.5%;
+    right: 0;
+    left: unset;
+    border-radius: 10px 0px 0 10px;
+    padding: 2%;
   }
   .pos-mobile {
     font-size: 4.5vw;
@@ -1179,6 +1201,7 @@ html {
   .content-title-visit-git {
     font-size: 1em;
     letter-spacing: 0.05rem;
+    margin: 2% 0;
   }
 
   .content-body-project {
@@ -1210,8 +1233,6 @@ html {
     font-size: 90px;
     font-family: 'GT Walsheim Pro Ultra', cursive !important;
     position: absolute;
-    top: 7%;
-    transform: translate(-50%, 0);
   }
   .App {
     height: unset;

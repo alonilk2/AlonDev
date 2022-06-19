@@ -7,12 +7,9 @@ import "./App.css";
 import "@fontsource/encode-sans-sc/700.css";
 import "@fontsource/encode-sans/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaStackOverflow } from "react-icons/fa";
+import { SocialLinks } from "./Components/SocialLinks";
 
 const PAGENUM = 7;
-
 function App() {
   const [scrollState, setPageScrollState] = useScrollState(PAGENUM);
   const size = useWindowSize();
@@ -57,17 +54,7 @@ function App() {
         />
         {spaceBackground}
         {scrollState > -6 && ScrollDownAnimation}
-        <div className="social-links">
-          <a href={"https://www.linkedin.com/in/alonbar1/"}>
-            <FaLinkedinIn style={{ margin: "5px 0" }} />
-          </a>
-          <a href={"https://github.com/alonilk2"}>
-            <FaGithub style={{ margin: "5px 0" }} />
-          </a>
-          <a href={"https://stackoverflow.com/users/9691776/alon-barenboim"}>
-            <FaStackOverflow style={{ margin: "5px 0" }} />
-          </a>
-        </div>
+        {SocialLinks}
         <ScrollPages scrollState={scrollState} />
       </div>
     );
@@ -76,6 +63,7 @@ function App() {
       <div className="App">
         <Navbar />
         {scrollState > -6 && ScrollDownAnimation}
+        {SocialLinks}
         <ScrollPages />
       </div>
     );
@@ -87,6 +75,7 @@ function App() {
         <ScrollPages />
       </div>
     );
+
 }
 
 export default App;

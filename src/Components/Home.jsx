@@ -8,8 +8,8 @@ function Home(props) {
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
   const [RemoveCol, setRemoveCol] = useState(false);
-  const initialRender = useRef(true);
   const [scrollState, setPageScrollState, scrollStateMobile] = useScrollState();
+  const initialRender = useRef(true);
 
 
   const triggerInitialAnimations = () => {
@@ -60,7 +60,7 @@ function Home(props) {
 
   const mainTitleMobile = (
     <Fade bottom delay={6000} duration={2000}>
-      <div className="col" style={{ marginTop: "20%", zIndex: 20 }}>
+      <div className="col" style={{ marginTop: "35%", zIndex: 20 }}>
         <h1 className="content-title linear-wipe hover-animate-static">
           FULL STACK ENGINEER
         </h1>
@@ -122,6 +122,7 @@ function Home(props) {
 
         {size.width > 980 ? mainTitle : mainTitleMobile}
         {scrollStateMobile < 1200 && RenderCanvasByViewport()}
+        {size.width < 980 && <p className="scroll-text">Scroll Down</p>}
       </section>
     </>
   );

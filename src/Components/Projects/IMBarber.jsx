@@ -12,7 +12,7 @@ function IMBarber(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 980 ? "2% 4%" : "5% 0",
+        margin: size.width > 980 ? "2% 4%" : "3% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -51,7 +51,6 @@ function IMBarber(props) {
           style={{
             textAlign: "center",
             width: "100%",
-            marginRight: "1%",
           }}
           href={"https://imbarber.com"}
         >
@@ -63,7 +62,6 @@ function IMBarber(props) {
           style={{
             textAlign: "center",
             width: "100%",
-            marginLeft: "1%",
             color: "transparent",
           }}
           href={"https://github.com/alonilk2/IM.Barber"}

@@ -45,19 +45,23 @@ export const desktopCanvas = (
 
 export const mobileCanvas = (
   <Canvas
-    camera={{ position: [0, 2, 11] }}
+    camera={{ position: [0, 2, 9] }}
     style={{
-      zIndex: 0,
+      zIndex: 30,
       width: "100%",
       position: "absolute",
-      bottom: "20%",
-      height: "600px",
+      bottom: "35%",
+      height: "350px",
     }}
   >
+    <OrbitControls />
 
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
+    <EffectComposer>
+      <Bloom luminanceThreshold={0.1} intensity={3} height={400} />
+    </EffectComposer>
   </Canvas>
 );
 
@@ -72,9 +76,13 @@ export const mobileCanvasLandscape = (
       height: "600px",
     }}
   >
+    <OrbitControls />
 
     <Suspense fallback={<Loading />}>
       <BlackHole />
     </Suspense>
+    <EffectComposer>
+      <Bloom luminanceThreshold={0.1} intensity={3} height={400} />
+    </EffectComposer>
   </Canvas>
 );

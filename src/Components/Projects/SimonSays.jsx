@@ -11,7 +11,7 @@ function IMBarber(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 980 ? "2% 4%" : "5% 0",
+        margin: size.width > 980 ? "2% 4%" : "3% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",

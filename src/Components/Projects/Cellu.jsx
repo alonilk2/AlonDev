@@ -10,7 +10,7 @@ function Cellu(props) {
     <div
       className="col-3"
       style={{
-        margin: size.width > 980 ? "2% 5%" : "5% 0",
+        margin: size.width > 980 ? "2% 5%" : "3% 0",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -58,8 +58,8 @@ function Cellu(props) {
       <a
         style={{
           textAlign: "center",
-          width: "50%",
-          marginTop: "2%",
+          width: "90%",
+          marginTop: "1%",
           color: "transparent",
           zIndex: 6,
         }}

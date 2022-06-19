@@ -40,13 +40,13 @@ function About(props) {
           className="col-5 about-info"
           style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
         >
-          <Fade left when={props.state} >
+          <Fade right when={props.state}>
             <h1
               className="content-title-project hover-animate"
               style={{
                 zIndex: 6,
                 fontFamily: "GT Walsheim Pro",
-                fontStyle: 'italic',
+                fontStyle: "italic",
                 position: size.width > 980 && "absolute",
                 top: size.width > 980 && "0%",
                 left: size.width > 980 && "10%",
@@ -62,7 +62,7 @@ function About(props) {
             </h1>
           </Fade>
 
-          <Fade bottom when={props.state}>
+          <Fade left when={props.state}>
             <p
               style={{
                 fontSize: "18px",
@@ -73,11 +73,13 @@ function About(props) {
               }}
             >
               <span>
-                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
+                I'm a graduated
+                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                  {" "}
                   B.Sc Software Engineer
                 </span>{" "}
                 and{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
+                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
                   Full Stack Developer
                 </span>{" "}
                 experienced with front and back end applications design and
@@ -86,36 +88,32 @@ function About(props) {
                 <br />
                 <br />
                 My tech stack contains React.js, Node.js, Express.js, React
-                Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more.
-                I also have hands on experience in C, C++, Java and Python.
+                Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more. I also
+                have hands on experience in C, C++, Java and Python.
                 <br />
                 <br />
-                Coding is my passion. I'm willing to join a company where I
-                could contribute to and grow at, as a Full Stack / Front / Back
-                End Engineer.
-                <br />
-                <br />
-                So if you look for an {" "}
-                <span style={{ color: "#c41c1c", fontWeight: "500" }}>
-                   amazingly passionate developer{" "}
+                So if you look for an{" "}
+                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                  amazingly passionate developer{" "}
                 </span>
                 to join your team, I'll be more than happy to contact!
               </span>
             </p>
           </Fade>
         </div>
-        {size.width < 980 && (
-          <Fade bottom cascade>
+        <Fade right>
+          {size.width < 980 && (
             <a
               href={"https://alonilk2.github.io/map1/alonbarenboimcv.pdf"}
-              className="navbar-btn-txt content-title-visit resume-btn"
-              style={{padding: '0 2%'}}
+              className="navbar-btn-txt content-title-visit resume-btn button-red  "
+              style={{ padding: "0 2%" }}
             >
               Get My Resume
             </a>
-          </Fade>
-        )}{" "}
-        {imageCropper}
+          )}
+        </Fade>
+
+        {size.width < 980 ? <Fade left>{imageCropper}</Fade> : <>{ imageCropper }</>}
       </section>
     </>
   );
