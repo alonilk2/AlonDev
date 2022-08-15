@@ -39,10 +39,7 @@ function IMBarber(props) {
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          Online store and corporate website for private customer. 
-          Includes online store management system with Orders, Users and
-          Products management, Paypal Checkout, custom branding and SEO, all
-          made originally according to customer's requirements.
+          
         </p>
       </Fade>
       {IMBarberStackRow(props)}
@@ -51,26 +48,29 @@ function IMBarber(props) {
           style={{
             textAlign: "center",
             width: "100%",
+            marginRight: "1%",
           }}
           href={"https://imbarber.com"}
         >
           <button className="content-title-visit button-red delay-1 col ">
             Visit IM.Barber
           </button>
-        </a>{" "}
+        </a>
         <a
           style={{
             textAlign: "center",
             width: "100%",
             color: "transparent",
+            marginLeft: "1%",
           }}
           href={"https://github.com/alonilk2/IM.Barber"}
         >
           <button className=" button content-title-visit-git">
-            <img src={Github} className="github-btn-icon"></img>Github Repository
+            <img src={Github} className="github-btn-icon"></img>Github
+            Repository
           </button>
-        </a>{" "}
-      </div>{" "}
+        </a>
+      </div>
     </div>
   );
   const imageCropperMobile = (
