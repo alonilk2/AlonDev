@@ -9,7 +9,7 @@ import "@fontsource/encode-sans/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SocialLinks } from "./Components/SocialLinks";
 
-const PAGENUM = 7;
+const PAGENUM = 8;
 function App() {
   const [scrollState, setPageScrollState] = useScrollState(PAGENUM);
   const size = useWindowSize();
@@ -53,7 +53,7 @@ function App() {
           setPageScrollState={setPageScrollState}
         />
         {spaceBackground}
-        {scrollState > -6 && ScrollDownAnimation}
+        {scrollState > -8 && ScrollDownAnimation}
         {SocialLinks}
         <ScrollPages scrollState={scrollState} />
       </div>
@@ -62,7 +62,7 @@ function App() {
     return (
       <div className="App">
         <Navbar />
-        {scrollState > -6 && ScrollDownAnimation}
+        {scrollState > -8 && ScrollDownAnimation}
         {SocialLinks}
         <ScrollPages />
       </div>
@@ -71,7 +71,7 @@ function App() {
     return (
       <div className="App">
         <Navbar />
-        {scrollState > -6 && ScrollDownAnimationLandscape}
+        {scrollState > -8 && ScrollDownAnimationLandscape}
         <ScrollPages />
       </div>
     );

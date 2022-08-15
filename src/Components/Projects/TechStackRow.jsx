@@ -12,6 +12,10 @@ import PostgreIcon from "../../Images/psql.png";
 import ExpressIcon from "../../Images/Expressjs.png";
 import RestIcon from "../../Images/rest.png";
 import TsIcon from "../../Images/ts-logo-128.png";
+import SpringIcon from "../../Images/spring.svg";
+import HibernateIcon from "../../Images/hibernate.svg";
+import MysqlIcon from "../../Images/mysql.png";
+import MUIIcon from "../../Images/mui.svg";
 
 function Icon(icon, name, state, delay) {
   return (
@@ -66,6 +70,22 @@ export function IMBarberStackRow(props) {
         {Icon(SequelizeIcon, "Sequelize", props?.state, 500)}
         {Icon(PostgreIcon, "PostgreSQL", props?.state, 550)}
         {Icon(ExpressIcon, "Express", props?.state, 600)}
+      </div>
+    </Fade>
+  );
+}
+export function TorgateStackRow(props) {
+  return (
+    <Fade right when={props?.state} delay={350}>
+      <div
+        className="row project-info"
+        style={{ position: "unset", height: "unset" }}
+      >
+        {Icon(ReactIcon, "React.js", props?.state, 400)}
+        {Icon(SpringIcon, "Spring Boot", props?.state, 450)}
+        {Icon(HibernateIcon, "Hibernate", props?.state, 500)}
+        {Icon(MysqlIcon, "MySQL", props?.state, 550)}
+        {Icon(MUIIcon, "Material UI", props?.state, 600)}
       </div>
     </Fade>
   );

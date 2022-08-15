@@ -3,6 +3,7 @@ import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
 import { desktopCanvas, mobileCanvas, mobileCanvasLandscape } from "./3DCanvas";
 import useScrollState from "../Hooks/useScrollState";
+
 function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
@@ -10,7 +11,6 @@ function Home(props) {
   const [RemoveCol, setRemoveCol] = useState(false);
   const [scrollState, setPageScrollState, scrollStateMobile] = useScrollState();
   const initialRender = useRef(true);
-
 
   const triggerInitialAnimations = () => {
     setTimeout(() => {

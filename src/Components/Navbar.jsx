@@ -63,7 +63,7 @@ export default function NavBar(props) {
               Portfolio
             </Nav.Link>
             <Nav.Link
-              onClick={() => props.setPageScrollState(-7)}
+              onClick={() => props.setPageScrollState(-8)}
               className="navbar-btn-txt"
               style={{ color: scrollState === -7 ? "#c41c1c" : "" }}
             >
@@ -87,7 +87,7 @@ export default function NavBar(props) {
         <Offcanvas.Header>
           <h3 className="title custom-animation-gradient pos-mobile">
             Alon Barenboim.
-          </h3>{" "}
+          </h3>
         </Offcanvas.Header>
       </Container>
     </Navbar>

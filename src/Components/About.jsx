@@ -73,23 +73,22 @@ function About(props) {
               }}
             >
               <span>
-                I'm a graduated
                 <span style={{ color: "#c41c1c", fontWeight: "400" }}>
                   {" "}
-                  B.Sc Software Engineer
-                </span>{" "}
+                  Software Engineer
+                </span> graduate
                 and{" "}
                 <span style={{ color: "#c41c1c", fontWeight: "400" }}>
                   Full Stack Developer
-                </span>{" "}
-                experienced with front and back end applications design and
-                development, and equipped with tons of passion to create
+                </span>
+                , experienced with front and back end development of web and mobile applications,
+                and equipped with tons of passion to create
                 beautiful code and amazing UIs.
                 <br />
                 <br />
-                My tech stack contains React.js, Node.js, Express.js, React
+                My tech stack contains React.js, Node.js, Spring Boot, Express.js, React
                 Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more. I also
-                have hands on experience in C, C++, Java and Python.
+                have practical experience in C, C++, Java and Python.
                 <br />
                 <br />
                 So if you look for an{" "}
