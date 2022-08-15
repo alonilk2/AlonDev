@@ -39,7 +39,10 @@ function IMBarber(props) {
           className="description"
           style={{ position: "unset", height: "unset" }}
         >
-          
+          Online store and corporate website for private customer. Includes
+          online store management system with orders, users and products
+          management, PayPal Checkout, custom branding and SEO, all made
+          originally according to customer's requirements.
         </p>
       </Fade>
       {IMBarberStackRow(props)}
@@ -66,7 +69,7 @@ function IMBarber(props) {
           href={"https://github.com/alonilk2/IM.Barber"}
         >
           <button className=" button content-title-visit-git">
-            <img src={Github} className="github-btn-icon"></img>Github
+            <img src={Github} className="github-btn-icon" alt="github"></img>Github
             Repository
           </button>
         </a>
