@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4ba78f4b.css",
-    "main.js": "/static/js/main.64ff179e.js",
+    "main.js": "/static/js/main.77035ccb.js",
     "static/js/937.92f92d07.chunk.js": "/static/js/937.92f92d07.chunk.js",
     "static/js/787.6a1ba43d.chunk.js": "/static/js/787.6a1ba43d.chunk.js",
     "static/media/GTWalsheimPro-ThinOblique.eot": "/static/media/GTWalsheimPro-ThinOblique.1d1d21b9d649d16dfc99.eot",
@@ -83,12 +83,12 @@
     "static/media/mui.svg": "/static/media/mui.741a52f5f54e0b6073e48671571738ea.svg",
     "static/media/hibernate.svg": "/static/media/hibernate.b60d22ea89273c1fb65ee77356d4b5a7.svg",
     "main.4ba78f4b.css.map": "/static/css/main.4ba78f4b.css.map",
-    "main.64ff179e.js.map": "/static/js/main.64ff179e.js.map",
+    "main.77035ccb.js.map": "/static/js/main.77035ccb.js.map",
     "937.92f92d07.chunk.js.map": "/static/js/937.92f92d07.chunk.js.map",
     "787.6a1ba43d.chunk.js.map": "/static/js/787.6a1ba43d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ba78f4b.css",
-    "static/js/main.64ff179e.js"
+    "static/js/main.77035ccb.js"
   ]
 }
