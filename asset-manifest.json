@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f68e8a4.css",
-    "main.js": "/static/js/main.a41469cc.js",
+    "main.css": "/static/css/main.a72542ed.css",
+    "main.js": "/static/js/main.10d71e54.js",
     "static/js/787.6a1ba43d.chunk.js": "/static/js/787.6a1ba43d.chunk.js",
     "static/media/home-vector.png": "/static/media/home-vector.becb67fb2fafb62ef73a.png",
     "static/media/GTWalsheimPro-ThinOblique.eot": "/static/media/GTWalsheimPro-ThinOblique.1d1d21b9d649d16dfc99.eot",
@@ -82,12 +82,12 @@
     "static/media/spring.svg": "/static/media/spring.163d115dfcbe114ada371e05cc3a8f0c.svg",
     "static/media/mui.svg": "/static/media/mui.741a52f5f54e0b6073e48671571738ea.svg",
     "static/media/hibernate.svg": "/static/media/hibernate.b60d22ea89273c1fb65ee77356d4b5a7.svg",
-    "main.7f68e8a4.css.map": "/static/css/main.7f68e8a4.css.map",
-    "main.a41469cc.js.map": "/static/js/main.a41469cc.js.map",
+    "main.a72542ed.css.map": "/static/css/main.a72542ed.css.map",
+    "main.10d71e54.js.map": "/static/js/main.10d71e54.js.map",
     "787.6a1ba43d.chunk.js.map": "/static/js/787.6a1ba43d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f68e8a4.css",
-    "static/js/main.a41469cc.js"
+    "static/css/main.a72542ed.css",
+    "static/js/main.10d71e54.js"
   ]
 }
