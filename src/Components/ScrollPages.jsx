@@ -1,16 +1,12 @@
 import Home from "./Home";
-import IMBarber from "./Projects/IMBarber";
-import Cellu from "./Projects/Cellu";
-import Compound from "./Projects/Compound";
 import Reveal from "react-reveal/Reveal";
 import Contact from "./Contact";
 import About from "./About";
-import FiberLocator from "./Projects/FiberLocator";
 import { useEffect, useRef } from "react";
 import useWindowSize from "../Hooks/useWindowSize";
 import PageBar from "./PageBar";
-import SimonSays from "./Projects/SimonSays";
-import Torgate from "./Projects/Torgate";
+import ProjectsGallery from "./Projects/ProjectsGallery";
+
 export default function Pages(props) {
   let scrollState = props.scrollState;
   const size = useWindowSize();
@@ -35,12 +31,7 @@ const RenderPagesOnMobile = (
   <div style={{ display: "flex", flexDirection: "column" }}>
     <Home className="content-body-home" />
     <About className="content-body" />
-    <Torgate className="content-body" />
-    <IMBarber className="content-body" />
-    <Cellu className="content-body" />
-    <FiberLocator className="content-body" />
-    <SimonSays className="content-body" />
-    <Compound className="content-body" />
+    <ProjectsGallery className="content-body" />
     <Contact className="content-body" />
   </div>
 );
@@ -77,7 +68,7 @@ function RenderPagesOnUp(scrollState) {
         effectOut="animate__animated animate__fadeOutDown"
         when={scrollState === -2}
       >
-        <Torgate
+        <ProjectsGallery
           className="content-body"
           state={scrollState === -2}
           style={{ zIndex: scrollState === -2 ? 5 : 0 }}
@@ -88,65 +79,10 @@ function RenderPagesOnUp(scrollState) {
         effectOut="animate__animated animate__fadeOutDown"
         when={scrollState === -3}
       >
-        <IMBarber
+        <Contact
           className="content-body"
           state={scrollState === -3}
           style={{ zIndex: scrollState === -3 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-        when={scrollState === -4}
-      >
-        <Cellu
-          className="content-body"
-          state={scrollState === -4}
-          style={{ zIndex: scrollState === -4 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-        when={scrollState === -5}
-      >
-        <FiberLocator
-          className="content-body"
-          state={scrollState === -5}
-          style={{ zIndex: scrollState === -5 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-        when={scrollState === -6}
-      >
-        <SimonSays
-          className="content-body"
-          state={scrollState === -6}
-          style={{ zIndex: scrollState === -6 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-        when={scrollState === -7}
-      >
-        <Compound
-          className="content-body"
-          state={scrollState === -7}
-          style={{ zIndex: scrollState === -7 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInDown fadeInDown"
-        effectOut="animate__animated animate__fadeOutDown"
-        when={scrollState === -8}
-      >
-        <Contact
-          className="content-body"
-          state={scrollState === -8}
-          style={{ zIndex: scrollState === -8 ? 5 : 0 }}
         />
       </Reveal>
     </>
@@ -185,7 +121,7 @@ function RenderPagesOnDown(scrollState) {
         effectOut="animate__animated animate__fadeOutUp"
         when={scrollState === -2}
       >
-        <Torgate
+        <ProjectsGallery
           className="content-body"
           state={scrollState === -2}
           style={{ zIndex: scrollState === -2 ? 5 : 0 }}
@@ -196,65 +132,10 @@ function RenderPagesOnDown(scrollState) {
         effectOut="animate__animated animate__fadeOutUp"
         when={scrollState === -3}
       >
-        <IMBarber
+        <Contact
           className="content-body"
           state={scrollState === -3}
           style={{ zIndex: scrollState === -3 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInUp fadeInUp"
-        effectOut="animate__animated animate__fadeOutUp"
-        when={scrollState === -4}
-      >
-        <Cellu
-          className="content-body"
-          state={scrollState === -4}
-          style={{ zIndex: scrollState === -4 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInUp fadeInUp"
-        effectOut="animate__animated animate__fadeOutUp"
-        when={scrollState === -5}
-      >
-        <FiberLocator
-          className="content-body"
-          state={scrollState === -5}
-          style={{ zIndex: scrollState === -5 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInUp fadeInUp"
-        effectOut="animate__animated animate__fadeOutUp"
-        when={scrollState === -6}
-      >
-        <SimonSays
-          className="content-body"
-          state={scrollState === -6}
-          style={{ zIndex: scrollState === -6 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInUp fadeInUp"
-        effectOut="animate__animated animate__fadeOutUp"
-        when={scrollState === -7}
-      >
-        <Compound
-          className="content-body"
-          state={scrollState === -7}
-          style={{ zIndex: scrollState === -7 ? 5 : 0 }}
-        />
-      </Reveal>
-      <Reveal
-        effect="animate__animated animate__fadeInUp fadeInUp"
-        effectOut="animate__animated animate__fadeOutUp"
-        when={scrollState === -8}
-      >
-        <Contact
-          className="content-body"
-          state={scrollState === -8}
-          style={{ zIndex: scrollState === -8 ? 5 : 0 }}
         />
       </Reveal>
     </>

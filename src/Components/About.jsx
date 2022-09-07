@@ -1,9 +1,7 @@
 import "../App.css";
-import Roll from "react-reveal/Roll";
 
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
-import { sizeWidth } from "@mui/system";
 
 function About(props) {
   const size = useWindowSize();
@@ -11,11 +9,7 @@ function About(props) {
   const imageCropper = (
     <div
       className="col image-cropper cf4a"
-      style={{
-        borderRadius: "50%",
-        marginRight: "3%",
-        width: "unset",
-      }}
+      style={size.width > 980 ? styles.cropper : styles.cropperMobile} 
     >
       <img
         className="about-cropper"
@@ -46,12 +40,12 @@ function About(props) {
               style={{
                 zIndex: 6,
                 fontFamily: "GT Walsheim Pro",
-                fontStyle: "italic",
                 position: size.width > 980 && "absolute",
-                top: size.width > 980 && "0%",
-                left: size.width > 980 && "10%",
+                top: size.width > 980 && "8%",
+                left: size.width > 980 && "14%",
               }}
             >
+              <h5 style={{ margin: "0 5px 0 0", color: "#FF416C" }}>ABOUT</h5>
               <span>H</span>
               <span>i</span>
               <span>!</span> <span>I'</span>
@@ -68,33 +62,33 @@ function About(props) {
                 fontSize: "18px",
                 fontFamily: "GT Walsheim Pro",
                 fontWeight: 200,
-                margin: size.width > 980 ? "3% 5%" : "2% 0",
+                margin: size.width > 980 ? "7% 9%" : "2% 0",
                 width: size.width > 980 && "35%",
               }}
             >
               <span>
-                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
-                  {" "}
-                  Software Engineer
-                </span> graduate
-                and{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
+                <span style={{ color: '#FF416C', fontWeight: "400" }}>
+                  Software Engineer{" "}
+                </span>
+                graduate and{" "}
+                <span style={{ color: '#FF416C', fontWeight: "400" }}>
                   Full Stack Developer
                 </span>
-                , experienced with front and back end development of web and mobile applications,
-                and equipped with tons of passion to create
+                , experienced with front and back end development of web and
+                mobile applications, and equipped with tons of passion to create
                 beautiful code and amazing UIs.
                 <br />
                 <br />
-                My tech stack contains React.js, Node.js, Spring Boot, Express.js, React
-                Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more. I also
-                have practical experience in C, C++, Java and Python.
+                My tech stack contains React.js, Node.js, Spring Boot,
+                Express.js, React Native, SQL/NoSQL, TypeScript, MUI,
+                Sequlize.js and more. I also have practical experience in C,
+                C++, Java and Python.
                 <br />
                 <br />
                 So if you look for an{" "}
-                <span style={{ color: "#c41c1c", fontWeight: "400" }}>
-                  amazingly passionate developer{" "}
-                </span>
+                <span style={{ color: '#FF416C', fontWeight: "400" }}>
+                  amazingly passionate developer
+                </span>{" "}
                 to join your team, I'll be more than happy to contact!
               </span>
             </p>
@@ -112,10 +106,26 @@ function About(props) {
           )}
         </Fade>
 
-        {size.width < 980 ? <Fade left>{imageCropper}</Fade> : <>{ imageCropper }</>}
+        {size.width < 980 ? (
+          <Fade left>{imageCropper}</Fade>
+        ) : (
+          <>{imageCropper}</>
+        )}
       </section>
     </>
   );
+}
+
+const styles = {
+  cropper: {
+    borderRadius: "50%",
+    marginRight: "10%",
+    width: "unset",
+  },
+  cropperMobile: {
+    borderRadius: "50%",
+    width: "100%",
+  }
 }
 
 export default About;

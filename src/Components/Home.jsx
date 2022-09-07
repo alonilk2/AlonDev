@@ -1,15 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
-import { desktopCanvas, mobileCanvas, mobileCanvasLandscape } from "./3DCanvas";
-import useScrollState from "../Hooks/useScrollState";
+import homeVector from "../Images/home-vector.png";
 
 function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
   const [RemoveCol, setRemoveCol] = useState(false);
-  const [scrollState, setPageScrollState, scrollStateMobile] = useScrollState();
   const initialRender = useRef(true);
 
   const triggerInitialAnimations = () => {
@@ -59,8 +57,8 @@ function Home(props) {
   );
 
   const mainTitleMobile = (
-    <Fade bottom delay={6000} duration={2000}>
-      <div className="col" style={{ marginTop: "35%", zIndex: 20 }}>
+    <Fade left delay={6000} duration={2000}>
+      <div className="col" style={{ marginTop: "10%", zIndex: 20 }}>
         <h1 className="content-title linear-wipe hover-animate-static">
           FULL STACK ENGINEER
         </h1>
@@ -69,21 +67,22 @@ function Home(props) {
   );
 
   const mainTitle = (
-    <Fade bottom delay={6000} duration={2000}>
-      <div className="col" style={{ marginTop: "4%", zIndex: 20 }}>
-        <h1
-          className="content-title hover-animate-main"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
+    <Fade left delay={6000} duration={2000}>
+      <div className="col" style={styles.mainTitle}>
+        <h1 className="content-title hover-animate-main">
           <span>F</span>
           <span>U</span>
           <span>L</span>
           <span style={{ marginRight: "30px" }}>L</span>
+        </h1>
+        <h1 className="content-title hover-animate-main">
           <span>S</span>
           <span>T</span>
           <span>A</span>
           <span>C</span>
           <span style={{ marginRight: "30px" }}>K</span>
+        </h1>
+        <h1 className="content-title hover-animate-main">
           <span>D</span>
           <span>E</span>
           <span>V</span>
@@ -98,14 +97,6 @@ function Home(props) {
     </Fade>
   );
 
-  function RenderCanvasByViewport() {
-    if (size.width > 980) {
-      return desktopCanvas;
-    } else if (size.height > 500) {
-      return mobileCanvas;
-    } else return mobileCanvasLandscape;
-  }
-
   return (
     <>
       <section
@@ -119,13 +110,23 @@ function Home(props) {
         {!RemoveCol && (
           <div className="titleBeforeMovement">{titleBeforeMovement}</div>
         )}
-
-        {size.width > 980 ? mainTitle : mainTitleMobile}
-        {scrollStateMobile < 1200 && RenderCanvasByViewport()}
-        {size.width < 980 && <p className="scroll-text">Scroll Down</p>}
+        {size.width <= 980 && mainTitleMobile}
+        <Fade right delay={6000} duration={2000}>
+          <img className="home-vector" src={homeVector} alt="home" />
+        </Fade>
+        {size.width > 980 && mainTitle}
+        {size.width <= 980 && <p className="scroll-text">Scroll Down</p>}
       </section>
     </>
   );
 }
-
+const styles = {
+  mainTitle: {
+    zIndex: 20,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    paddingBottom: "3%"
+  },
+};
 export default Home;

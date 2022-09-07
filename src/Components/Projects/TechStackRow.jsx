@@ -23,7 +23,7 @@ function Icon(icon, name, state, delay) {
       <div className="col tech-col">
         <img className="row tech-logo" src={icon} alt={name} />
         <p className="row stack-title">{name}</p>
-      </div>{" "}
+      </div>
     </Fade>
   );
 }

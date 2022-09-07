@@ -87,7 +87,7 @@ export default function Contact(props) {
     <>
       <section
         className={props.className}
-        style={{ zIndex: props.state ? 4 : 0 }}
+        style={{ zIndex: props.state ? 4 : 0, margin: '0px' }}
       >
         <div
           className="content-body-project"

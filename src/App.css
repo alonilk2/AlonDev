@@ -6,13 +6,22 @@ html {
   overflow: hidden;
   letter-spacing: 1.1px;
 }
+#root {
+  overflow: hidden;
+}
 .react-reveal {
   overflow: visible;
 }
 .App {
   height: 100vh;
-  background-color: #000000;
-  font-family: 'GT Walsheim Pro', cursive;
+  background: rgb(202, 103, 255);
+  background: linear-gradient(
+    60deg,
+    rgba(202, 103, 255, 1) 0%,
+    rgba(124, 20, 248, 1) 100%
+  );
+  transition: top 1s ease-in-out;
+  font-family: "GT Walsheim Pro", cursive;
   font-weight: 200;
   position: relative;
 }
@@ -26,7 +35,18 @@ html {
 }
 
 .resume-btn {
-  background-color: #c41c1c;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   border-radius: 25px;
   padding: 0.8% 2% !important;
   color: black !important;
@@ -82,11 +102,10 @@ html {
 }
 
 .title {
-  font-size: 28px;
-    font-family: "GT Walsheim Pro", sans-serif !important;
-    font-weight: 300;
-    font-style: normal;
-    font-style: italic;
+  font-size: 26px;
+  font-family: "GT Walsheim Pro", sans-serif !important;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .btn {
@@ -106,8 +125,8 @@ html {
 }
 .css-19mk8g1-MuiInputBase-root-MuiFilledInput-root::after,
 .css-1gzyby-MuiInputBase-root-MuiFilledInput-root:after {
-  border-color: #c41c1c !important;
-  border-bottom: 3px solid #c41c1c !important;
+  border-color: #ff416c !important;
+  border-bottom: 3px solid #ff416c !important;
 }
 .css-10botns-MuiInputBase-input-MuiFilledInput-input {
   color: white;
@@ -168,7 +187,18 @@ html {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #c41c1c;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
@@ -199,6 +229,107 @@ html {
   border-radius: 10rem;
   z-index: -2;
 }
+.projects-list {
+  width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  flex: 4;
+  flex-wrap: wrap;
+}
+
+.project-container {
+  width: 28%;
+  background-color: #2f2f2f;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  font-family: "GT Walsheim Pro", cursive !important;
+  font-weight: 100;
+  border-radius: 20px;
+  border: 1px solid rgba(180, 180, 180, 0.14);
+}
+.circle-1 {
+  min-width: 900px;
+  min-height: 900px;
+  width: 65vw;
+  height: 65vw;
+  background-color: #111111;
+  border-radius: 50%;
+  transition: top 1s ease-in-out;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+}
+.nav-link {
+  color: white !important;
+}
+.project-container h1,
+.project-container h6 {
+  font-weight: 100 !important;
+}
+.darken,
+.darkener {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.btns-row {
+  display: flex;
+  height: 15%;
+}
+.project-name-date {
+  justify-self: flex-end;
+  position: absolute;
+  bottom: 20%;
+  padding: 0 2%;
+  width: 100%;
+  margin: 2% 0;
+
+}
+.project-name-date h1 {
+  overflow: visible;
+}
+.btn-git,
+.btn-enter {
+  flex: 1;
+  border: 0px solid;
+  height: 100%;
+  color: white;
+  font-family: "GT Walsheim Pro Ultra", cursive !important;
+}
+.btn-git {
+  background-color: #2f2f2f;
+}
+.btn-enter {
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.project-image-head {
+  width: 100%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+.darken {
+  background: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.65) 30%,
+    rgba(223, 181, 75, 0) 100%
+  );
+}
 .button-red:before {
   content: "";
   position: absolute;
@@ -206,7 +337,17 @@ html {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #c41c1c;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
@@ -215,6 +356,79 @@ html {
 .button-red:hover:before {
   width: 100%;
 }
+
+.button-red-box {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button-red-box:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 204, 255, 0);
+  z-index: -2;
+}
+.button-red-box:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #ff7070;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.button-red-box:hover:before {
+  width: 100%;
+}
+
+.button-git-box {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.button-git-box:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 204, 255, 0);
+  z-index: -2;
+}
+.button-git-box:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #747474;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.button-git-box:hover:before {
+  width: 100%;
+}
+
 .button-red-resume {
   display: inline-block;
   padding: 0.75rem 1.25rem;
@@ -265,9 +479,12 @@ html {
   flex-direction: row;
   background-color: #2f2f2f;
   width: 85%;
-  height: 75%;
+  height: 95%;
   justify-content: center;
-  margin-top: 1%;
+  border-radius: 20px;
+}
+.MuiPaper-root .btns-row {
+  height: 7%;
 }
 .contact-col {
   display: flex;
@@ -280,7 +497,7 @@ html {
 .contact-bubble {
   width: 65px;
   height: 65px;
-  background-color: #c41c1c;
+  background-color: #ff416c;
   color: white;
   border-radius: 50px;
   display: flex;
@@ -312,13 +529,13 @@ html {
   padding: 1%;
   margin: 2% 0;
   background-color: transparent;
-  border: 3px solid #c41c1c;
-  color: #c41c1c;
+  border: 3px solid #ff416c;
+  color: #ff416c;
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 2px;
   align-self: flex-end;
-  font-family: 'GT Walsheim Pro'
+  font-family: "GT Walsheim Pro";
 }
 .hover-animate-static > span {
   position: relative;
@@ -327,6 +544,7 @@ html {
   transition-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  margin-bottom: 0 !important;
 }
 .hover-animate-static > span:hover {
   position: relative;
@@ -336,13 +554,15 @@ html {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-.hover-animate > span {
+.hover-animate > span,
+.hover-animate > b > span {
   display: inline-block;
   animation: flip-reverse 1s;
   transition-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   overflow: visible;
+  color: white;
 }
 .hover-animate > span:hover {
   -webkit-animation: flip 1s;
@@ -354,17 +574,17 @@ html {
 
 @keyframes flip {
   25% {
-    color: #c41c1c;
+    color: #ff416c;
   }
   100% {
-    color: #c41c1c;
+    color: #ff416c;
     transform: rotateY(180deg);
   }
 }
 @keyframes flip-reverse {
   0% {
     transform: rotateY(180deg);
-    color: #c41c1c;
+    color: #ff416c;
   }
   100% {
     transform: rotateY(0deg);
@@ -372,15 +592,15 @@ html {
 }
 @keyframes flip-static {
   30% {
-    color: #c41c1c;
+    color: #ff416c;
   }
   100% {
-    color: #c41c1c;
+    color: #ff416c;
   }
 }
 @keyframes flip-reverse-static {
   0% {
-    color: #c41c1c;
+    color: #ff416c;
   }
   100% {
     color: #2f2f2f;
@@ -421,7 +641,7 @@ html {
 @keyframes flip-reverse-main {
   0% {
     transform: rotateY(180deg);
-    color: #c41c1c;
+    color: #ff416c;
   }
   100% {
     transform: rotateY(0deg);
@@ -449,7 +669,7 @@ html {
   color: white !important;
 }
 .MuiCircularProgress-colorPrimary {
-  color: #c41c1c !important;
+  color: #ff416c !important;
 }
 @keyframes flip-bubble {
   30% {
@@ -469,7 +689,7 @@ html {
     transform: rotateY(0deg);
   }
   100% {
-    background-color: #c41c1c;
+    background-color: #ff416c;
     color: white;
     transform: rotateY(-180deg);
   }
@@ -603,7 +823,7 @@ html {
 }
 
 .custom-animation-gradient {
-  color: #c41c1c;
+  color: #ff416c;
   animation: 1.5s ease-in 0s 1 normal forwards running custom-animation-gradient;
 }
 
@@ -653,11 +873,30 @@ html {
   width: 100%;
   position: absolute;
 }
-
+.home-vector {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  z-index: 25;
+  width: 40%;
+  z-index: 30;
+  object-fit: contain;
+}
+h1 {
+  line-height: 0.8 !important;
+}
+.vertical-h1 {
+  display: flex;
+  flex-direction: column;
+}
 .content-title {
-  font-size: 10vw;
+  font-size: 11vw;
   font-weight: 400;
-  font-family: "Oswald", "Courier New", Courier, monospace;
+  font-family: "GT Walsheim Pro Condensed", "Courier New", Courier, monospace;
+  font-weight: 700;
+  display: "flex";
+  justify-content: "flex-start";
+  margin-left: 5%;
 }
 .about-cropper {
   transform: scale(0.95);
@@ -678,7 +917,7 @@ html {
   height: 100%;
   width: 100%;
 
-  background: linear-gradient(to right, #c41c1c00 0%, #c41c1c7a 100%);
+  background: linear-gradient(to right, #ff416c00 0%, #ff416c7a 100%);
   mix-blend-mode: color;
 }
 .about-info {
@@ -690,9 +929,10 @@ html {
   margin-top: 5%;
 }
 .content-title-project {
-  font-size: 70px;
+  font-size: 55px;
   overflow: visible;
   margin: 3% 0%;
+  font-weight: 200;
 }
 
 .chevron {
@@ -781,7 +1021,7 @@ html {
 }
 .title1 {
   font-size: 130px;
-    font-family: "GT Walsheim Pro Ultra", sans-serif;
+  font-family: "GT Walsheim Pro Ultra", sans-serif;
   top: 15%;
   z-index: 15;
 }
@@ -838,7 +1078,7 @@ html {
   font-size: 1vw;
   background: #ffffff;
   border-radius: 50px;
-  font-family: 'GT Walsheim Pro', cursive;
+  font-family: "GT Walsheim Pro", cursive;
   color: #111111;
   width: 100%;
   white-space: nowrap;
@@ -853,7 +1093,7 @@ html {
   border: 2px solid white;
   color: white !important;
   border-radius: 50px;
-  font-family: 'GT Walsheim Pro', cursive;
+  font-family: "GT Walsheim Pro", cursive;
   color: #111111;
   font-weight: 300;
   width: 100%;
@@ -873,15 +1113,15 @@ html {
   background: -webkit-linear-gradient(
     to right,
     #e6c7ff00,
-    #c41c1cc0,
-    #c41c1cc0,
+    #ff416cc0,
+    #ff416cc0,
     #e6c7ff00
   );
   background: linear-gradient(
     to right,
     #e6c7ff00,
-    #c41c1cc0,
-    #c41c1cc0,
+    #ff416cc0,
+    #ff416cc0,
     #e6c7ff00
   );
   padding: 3%;
@@ -923,20 +1163,87 @@ html {
   font-weight: bolder;
   transform: translate(-50%, -20%);
   font-family: "Bebas Neue", "Courier New", Courier, monospace;
-  z-index: 3;
+  z-index: 1;
 }
 
-.horizontal-line-scope, .horizontal-line {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.horizontal-line-scope,
+.horizontal-line {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.MuiDialog-paper {
+  min-width: 800px !important;
+  height: 900px;
+  background: rgba(180, 180, 180, 0.35) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(180, 180, 180, 0.14);
+  color: rgba(255, 255, 255, 1) !important;
+  border-radius: 20px !important;
+}
+.carousel-item img {
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .horizontal-line-scope {
-  background: #c41c1c;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.css-1wnsr1i {
+  border-radius: 20px;
+  background-color: #141414 !important;
+  color: white;
+  height: 90%;
+  min-width: 50%;
+}
+.MuiBackdrop-root {
+  background-color: rgb(0 0 0 / 75%) !important;
+}
 .content-body-project {
   display: flex;
   flex-direction: row !important;
@@ -948,12 +1255,13 @@ html {
 .content-body {
   display: flex;
   flex-direction: row;
-  font-family: 'GT Walsheim Pro Ultra', sans-serif;
+  font-family: "GT Walsheim Pro", sans-serif;
   width: 100%;
-  height: 100%;
+  height: 85%;
   color: white;
-  overflow: hidden !important;
+  overflow: visible;
   padding-top: 2%;
+  flex-wrap: wrap;
 }
 
 .screenshot {
@@ -984,9 +1292,6 @@ html {
   text-align: center;
   background: white;
 
-
-
-
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FAFF89", endColorstr="#EA72AD", GradientType=1);
   color: #000;
   background-clip: text;
@@ -1002,16 +1307,17 @@ html {
 }
 
 .project-info {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
+  margin: 1% 0 !important;
+
   position: relative;
-  width: 100%;
+  width: 96.5%;
+  height: 86px !important;
 }
 .css-og3m0y::after,
 .css-17spqnz::after {
@@ -1046,12 +1352,21 @@ html {
   justify-content: flex-end;
   z-index: 5;
 }
-
+.btns-row button {
+  white-space: nowrap;
+}
 .description {
-  font-size: 1vw;
+  font-size: 1.15rem;
   font-weight: 100;
   width: 100%;
+  line-height: 1.2;
   margin-top: 0px !important;
+  top: 48%;
+}
+
+.project-modal-description-container {
+  position: relative;
+  height: 35%;
 }
 
 .stack-title {
@@ -1081,10 +1396,10 @@ html {
 }
 
 .social-links a {
-  color: rgb(182, 182, 182);
+  color: rgb(255, 255, 255);
 }
 .social-links a:hover {
-  color: #c41c1c;
+  color: #ff416c;
 }
 @media only screen and (max-width: 980px) {
   *,
@@ -1111,10 +1426,6 @@ html {
     padding: 0;
     height: 80px;
   }
-  .description {
-    width: 100%;
-    font-size: 20px;
-  }
   [class^="col"] {
     width: 100% !important;
   }
@@ -1139,7 +1450,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'GT Walsheim Pro', cursive !important;
+    font-family: "GT Walsheim Pro", cursive !important;
     font-size: 1em !important;
     min-width: 100%;
     font-weight: 400;
@@ -1151,6 +1462,32 @@ html {
     height: 100px;
     z-index: 15;
   }
+  .MuiDialogContent-root {
+    overflow-y: auto ;
+  }
+  .about-cropper {
+    width: 100%;
+  }
+  .MuiDialog-paper {
+    min-width: unset !important;
+    width: 100%;
+  }
+  .project-modal-description-container {
+    height: 60%;
+    overflow: hidden;
+    position: relative;
+  }
+  .description {
+    top: 30%;
+
+    width: 100%;
+    position: absolute;
+  }
+  .project-container {
+    width: 100%;
+    margin: 2% 0; 
+    overflow: hidden;
+  }
   .screenshot {
     width: 800px;
     object-fit: cover;
@@ -1159,7 +1496,8 @@ html {
     margin: auto;
   }
   .content-title {
-    font-size: 5rem;
+    font-size: 7rem;
+    text-align: left;
   }
   .scroll-text {
     color: rgba(255, 255, 255, 0.9);
@@ -1172,7 +1510,7 @@ html {
     max-width: 60px;
   }
   .social-links {
-    top: 0.7%;
+    top: 2%;
     right: 0;
     left: unset;
     border-radius: 10px 0px 0 10px;
@@ -1202,6 +1540,7 @@ html {
     font-size: 1em;
     letter-spacing: 0.05rem;
     margin: 2% 0;
+    width: 100% !important;
   }
 
   .content-body-project {
@@ -1221,7 +1560,7 @@ html {
   .content-body-home {
     display: flex;
     flex-direction: column;
-    font-family: 'GT Walsheim Pro Ultra', sans-serif;
+    font-family: "GT Walsheim Pro Ultra", sans-serif;
     width: 100%;
     height: 100%;
     color: white;
@@ -1231,7 +1570,7 @@ html {
   }
   .title1 {
     font-size: 90px;
-    font-family: 'GT Walsheim Pro Ultra', cursive !important;
+    font-family: "GT Walsheim Pro Ultra", cursive !important;
     position: absolute;
   }
   .App {
@@ -1254,8 +1593,12 @@ html {
     position: sticky;
   }
   .sticky-top {
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      #5000a9 60%
+    );
   }
   @keyframes moveTitle {
     0% {

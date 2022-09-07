@@ -4,6 +4,7 @@ function useScrollState(PAGENUM) {
   const [pageScrollState, setPageScrollState] = useState(0);
   const [pageScrollStateMobile, setPageScrollStateMobile] = useState(0);
   const limitSensitivity = useRef(false);
+  
   const handleScroll = (e) => {
     if (!limitSensitivity.current) {
       limitSensitivity.current = true;
@@ -20,6 +21,7 @@ function useScrollState(PAGENUM) {
       limitSensitivity.current = false;
     }, 800);
   };
+
   const handleScrollMobile = (e) => {
     setPageScrollStateMobile(e.target.documentElement.scrollTop);
   };
