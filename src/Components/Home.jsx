@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
-import homeVector from "../Images/home-vector.png";
+import homeVector from "../Images/home-vector.webp";
 
 function Home(props) {
   const size = useWindowSize();
