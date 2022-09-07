@@ -1429,6 +1429,12 @@ h1 {
   [class^="col"] {
     width: 100% !important;
   }
+  .MuiDialog-paper {
+    margin: 12px !important;
+  }
+  .btns-row button {
+    font-size: 16px;
+  }
   .project-buttons {
     flex-direction: column;
     padding: 5%;
@@ -1496,8 +1502,11 @@ h1 {
     margin: auto;
   }
   .content-title {
-    font-size: 7rem;
+    margin-top: 10%;
+    font-size: 5.5rem;
     text-align: left;
+    margin-left: 5px;
+    line-height: 1.0 !important;
   }
   .scroll-text {
     color: rgba(255, 255, 255, 0.9);

@@ -126,7 +126,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    paddingBottom: "3%"
+    paddingBottom: "3%",
   },
 };
 export default Home;
