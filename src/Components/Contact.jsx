@@ -91,7 +91,7 @@ export default function Contact(props) {
       >
         <div
           className="content-body-project"
-          style={{ justifyContent: "center", margin: size.width > 980 ? "0" : "7px" }}
+          style={{ justifyContent: "center", margin: size.width > 980 ? "0" : "3%" }}
         >
           <div className="contact-container">
             <div className="contact-col">

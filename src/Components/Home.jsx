@@ -7,7 +7,7 @@ function Home(props) {
   const size = useWindowSize();
   const [showTitle, setShowTitle] = useState(false);
   const [showTitle1, setShowTitle1] = useState(false);
-  const [RemoveCol, setRemoveCol] = useState(false);
+  const [showPreAnimation, setShowPreAnimation] = useState(false);
   const initialRender = useRef(true);
 
   const triggerInitialAnimations = () => {
@@ -24,7 +24,7 @@ function Home(props) {
       setShowTitle1(false);
     }, 5800);
     setTimeout(() => {
-      setRemoveCol(true);
+      setShowPreAnimation(true);
     }, 7000);
   };
 
@@ -58,7 +58,7 @@ function Home(props) {
 
   const mainTitleMobile = (
     <Fade left delay={6000} duration={2000}>
-      <div className="col" style={{ marginTop: "10%", zIndex: 20 }}>
+      <div style={{ marginTop: "10%", zIndex: 20 }}>
         <h1 className="content-title linear-wipe hover-animate-static">
           FULL STACK ENGINEER
         </h1>
@@ -107,7 +107,7 @@ function Home(props) {
           position: "relative",
         }}
       >
-        {!RemoveCol && (
+        {!showPreAnimation && (
           <div className="titleBeforeMovement">{titleBeforeMovement}</div>
         )}
         {size.width <= 980 && mainTitleMobile}
@@ -115,7 +115,6 @@ function Home(props) {
           <img className="home-vector" src={homeVector} alt="home" />
         </Fade>
         {size.width > 980 && mainTitle}
-        {size.width <= 980 && <p className="scroll-text">Scroll Down</p>}
       </section>
     </>
   );

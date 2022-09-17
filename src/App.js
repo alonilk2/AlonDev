@@ -38,7 +38,6 @@ function App() {
           className="circle-1"
         />
         <Navbar />
-        {scrollState > -8 && ScrollDownAnimation}
         {SocialLinks}
         <ScrollPages />
       </div>
@@ -52,7 +51,6 @@ function App() {
           style={{ top: 60 + scrollState * 80 + "%" }}
         />
         <Navbar />
-        {scrollState > -8 && ScrollDownAnimationLandscape}
         <ScrollPages />
       </div>
     );

@@ -12,7 +12,7 @@ function ProjectsGallery(props) {
         className={props.className}
         style={{
           zIndex: props.state ? 4 : 0,
-          padding: size.width < 980 && "0% 5%",
+          padding: size.width < 980 && "0% 3%",
           flexDirection: size.width < 980 && "column",
           justifyContent: "space-evenly",
         }}
