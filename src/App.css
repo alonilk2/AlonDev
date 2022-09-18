@@ -92,7 +92,10 @@ html {
   background: url(https://picsum.photos/1200/800?image=675) center center /
     cover no-repeat;
 }
-
+.left-menu {
+  display: flex;
+  align-items: center;
+}
 .header {
   height: 100px;
   display: flex;
@@ -106,6 +109,7 @@ html {
   font-family: "GT Walsheim Pro", sans-serif !important;
   font-weight: 300;
   font-style: normal;
+  margin-bottom: 0 !important;
 }
 
 .btn {
@@ -264,6 +268,15 @@ html {
   left: 2%;
 }
 .nav-link {
+  color: white !important;
+  transition: 1s ease-in-out;
+  
+}
+.nav-link:hover{
+  color: #ff416c !important;
+  
+}
+.button-red-resume:hover {
   color: white !important;
 }
 .project-container h1,
@@ -904,10 +917,11 @@ h1 {
 .about-cropper {
   border-radius: 50%;
   align-self: flex-start;
-  width: 35%;
+  width: 500px;
+  height: 500px;
   max-width: 550px;
   object-fit: contain;
-  
+  margin-top: 4.5%;
 }
 
 .myfilter {
@@ -1408,7 +1422,7 @@ h1 {
   font-family: "GT Walsheim Pro";
   font-weight: 200;
   width: 35%;
-  margin: 0 5%;
+  margin-left: 8%;
 }
 .social-links a {
   color: rgb(255, 255, 255);
@@ -1502,6 +1516,7 @@ h1 {
   .about-title{
     display: flex;
     flex-direction: row;
+    width: 100% !important;
   }
   .about-title .col {
     display: flex;
@@ -1509,7 +1524,8 @@ h1 {
 
   }
   .about-cropper {
-    width: 18%;
+    width: 170px;
+    height: 170px;
     position: inherit;
     align-self: center;
     margin: 0 2% 0 0;
@@ -1533,6 +1549,7 @@ h1 {
     width: 100%;
     margin: 2% 0; 
     overflow: hidden;
+    height: 420px;
   }
   .screenshot {
     width: 800px;
@@ -1542,8 +1559,8 @@ h1 {
     margin: auto;
   }
   .content-title {
-    margin-top: 10%;
-    font-size: 5.5rem;
+    margin: 10% 0;
+    font-size: 4.7rem;
     text-align: left;
     margin-left: 5px;
     line-height: 1.0 !important;
@@ -1667,4 +1684,28 @@ h1 {
       opacity: 0;
     }
   }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 980px) 
+  and (orientation: landscape) { 
+    .content-title {
+      margin: 0 0 !important;
+    }
+    .home-vector {
+      max-width: 50% !important;
+    }
+    .content-body-home {
+      flex-direction: row !important;
+    }
+    .content-body {
+      margin: 0% 0 !important;
+    }
+    .contact-container {
+      padding: 0 0 !important;
+    }
+    .titleBeforeMovement {
+      min-width: 100%;
+    }
 }

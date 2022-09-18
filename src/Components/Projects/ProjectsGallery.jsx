@@ -1,3 +1,4 @@
+import { Fade } from "react-reveal";
 import "../../App.css";
 import useWindowSize from "../../Hooks/useWindowSize";
 import ProjectBox from "./ProjectBox";
@@ -17,12 +18,25 @@ function ProjectsGallery(props) {
           justifyContent: "space-evenly",
         }}
       >
-        <ProjectBox {...ProjectsList.Torgate} />
-        <ProjectBox {...ProjectsList.IMBarber} />
-        <ProjectBox {...ProjectsList.Cellu} />
-        <ProjectBox {...ProjectsList.Fiberlocator} />
-        <ProjectBox {...ProjectsList.Simonsays} />
-        <ProjectBox {...ProjectsList.Compound} />
+        {size.width > 980 ? (
+          <>
+            <ProjectBox {...ProjectsList.Torgate} />
+            <ProjectBox {...ProjectsList.IMBarber} />
+            <ProjectBox {...ProjectsList.Cellu} />
+            <ProjectBox {...ProjectsList.Fiberlocator} />
+            <ProjectBox {...ProjectsList.Simonsays} />
+            <ProjectBox {...ProjectsList.Compound} />
+          </>
+        ) : (
+          <Fade left>
+            <ProjectBox {...ProjectsList.Torgate} />
+            <ProjectBox {...ProjectsList.IMBarber} />
+            <ProjectBox {...ProjectsList.Cellu} />
+            <ProjectBox {...ProjectsList.Fiberlocator} />
+            <ProjectBox {...ProjectsList.Simonsays} />
+            <ProjectBox {...ProjectsList.Compound} />
+          </Fade>
+        )}
       </section>
     </>
   );

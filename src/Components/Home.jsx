@@ -13,19 +13,19 @@ function Home(props) {
   const triggerInitialAnimations = () => {
     setTimeout(() => {
       setShowTitle(true);
-    }, 1200);
+    }, 1500);
     setTimeout(() => {
       setShowTitle(false);
-    }, 3000);
+    }, 2500);
     setTimeout(() => {
       setShowTitle1(true);
-    }, 3800);
+    }, 3500);
     setTimeout(() => {
       setShowTitle1(false);
-    }, 5800);
+    }, 4500);
     setTimeout(() => {
       setShowPreAnimation(true);
-    }, 7000);
+    }, 5500);
   };
 
   useEffect(() => {
@@ -57,9 +57,9 @@ function Home(props) {
   );
 
   const mainTitleMobile = (
-    <Fade left delay={6000} duration={2000}>
+    <Fade left delay={5500} duration={2000}>
       <div style={{ marginTop: "10%", zIndex: 20 }}>
-        <h1 className="content-title linear-wipe hover-animate-static">
+        <h1 className="content-title">
           FULL STACK ENGINEER
         </h1>
       </div>
@@ -67,7 +67,7 @@ function Home(props) {
   );
 
   const mainTitle = (
-    <Fade left delay={6000} duration={2000}>
+    <Fade left delay={5500} duration={2000}>
       <div className="col" style={styles.mainTitle}>
         <h1 className="content-title hover-animate-main">
           <span>F</span>
@@ -111,7 +111,7 @@ function Home(props) {
           <div className="titleBeforeMovement">{titleBeforeMovement}</div>
         )}
         {size.width <= 980 && mainTitleMobile}
-        <Fade right delay={6000} duration={2000}>
+        <Fade right delay={5500} duration={2000}>
           <img className="home-vector" src={homeVector} alt="home" />
         </Fade>
         {size.width > 980 && mainTitle}

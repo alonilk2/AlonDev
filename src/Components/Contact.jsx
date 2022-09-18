@@ -73,11 +73,11 @@ export default function Contact(props) {
         content: content,
       })
       .then(
-        (response) => {
+        () => {
           setSuccess(true);
           setLoading(false);
         },
-        (error) => {
+        () => {
           setSuccess(false);
           setLoading(false);
         }
@@ -87,11 +87,14 @@ export default function Contact(props) {
     <>
       <section
         className={props.className}
-        style={{ zIndex: props.state ? 4 : 0, margin: '0px' }}
+        style={{ zIndex: props.state ? 4 : 0, margin: "0px" }}
       >
         <div
           className="content-body-project"
-          style={{ justifyContent: "center", margin: size.width > 980 ? "0" : "3%" }}
+          style={{
+            justifyContent: "center",
+            margin: size.width > 980 ? "0" : "3%",
+          }}
         >
           <div className="contact-container">
             <div className="contact-col">
