@@ -13,8 +13,9 @@
 This project made using the following technologies:
 
 1) React.js 18
-2) Redux
-3) MaterialUI
-4) Three.js
-5) Mailgun API
+2) Javascript ES6+
+3) Redux
+4) MaterialUI
+5) Three.js
+6) Sendgrid API
 
