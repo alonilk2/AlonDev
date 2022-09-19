@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8bd661f0.css",
-    "main.js": "/static/js/main.7df4c526.js",
+    "main.css": "/static/css/main.169a8ae5.css",
+    "main.js": "/static/js/main.8c7444c2.js",
     "static/js/787.6a1ba43d.chunk.js": "/static/js/787.6a1ba43d.chunk.js",
     "static/media/GTWalsheimPro-ThinOblique.eot": "/static/media/GTWalsheimPro-ThinOblique.1d1d21b9d649d16dfc99.eot",
     "static/media/GTWalsheimPro-ThinOblique.ttf": "/static/media/GTWalsheimPro-ThinOblique.c155d623c5a53660a13b.ttf",
@@ -82,12 +82,12 @@
     "static/media/spring.svg": "/static/media/spring.163d115dfcbe114ada371e05cc3a8f0c.svg",
     "static/media/mui.svg": "/static/media/mui.741a52f5f54e0b6073e48671571738ea.svg",
     "static/media/hibernate.svg": "/static/media/hibernate.b60d22ea89273c1fb65ee77356d4b5a7.svg",
-    "main.8bd661f0.css.map": "/static/css/main.8bd661f0.css.map",
-    "main.7df4c526.js.map": "/static/js/main.7df4c526.js.map",
+    "main.169a8ae5.css.map": "/static/css/main.169a8ae5.css.map",
+    "main.8c7444c2.js.map": "/static/js/main.8c7444c2.js.map",
     "787.6a1ba43d.chunk.js.map": "/static/js/787.6a1ba43d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8bd661f0.css",
-    "static/js/main.7df4c526.js"
+    "static/css/main.169a8ae5.css",
+    "static/js/main.8c7444c2.js"
   ]
 }
