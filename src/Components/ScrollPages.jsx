@@ -39,19 +39,17 @@ const RenderPagesOnMobile = (
 function RenderPagesOnUp(scrollState) {
   return (
     <>
-      {scrollState > -2 && (
-        <Reveal
-          effect="animate__animated animate__fadeInDown fadeInDown"
-          effectOut="animate__animated animate__fadeOutDown"
-          when={scrollState === 0}
-        >
-          <Home
-            className="content-body"
-            state={scrollState === 0}
-            style={{ zIndex: scrollState === 0 ? 5 : 0 }}
-          />
-        </Reveal>
-      )}
+      <Reveal
+        effect="animate__animated animate__fadeInDown fadeInDown"
+        effectOut="animate__animated animate__fadeOutDown"
+        when={scrollState === 0}
+      >
+        <Home
+          className="content-body"
+          state={scrollState === 0}
+          style={{ zIndex: scrollState === 0 ? 5 : 0 }}
+        />
+      </Reveal>
       <Reveal
         effect="animate__animated animate__fadeInDown fadeInDown"
         effectOut="animate__animated animate__fadeOutDown"
@@ -92,19 +90,17 @@ function RenderPagesOnUp(scrollState) {
 function RenderPagesOnDown(scrollState) {
   return (
     <>
-      {scrollState > -2 && (
-        <Reveal
-          effect="animate__animated animate__fadeInUp fadeInUp"
-          effectOut="animate__animated animate__fadeOutUp"
-          when={scrollState === 0}
-        >
-          <Home
-            className="content-body"
-            state={scrollState === 0}
-            style={{ zIndex: scrollState === 0 ? 5 : 0 }}
-          />
-        </Reveal>
-      )}
+      <Reveal
+        effect="animate__animated animate__fadeInUp fadeInUp"
+        effectOut="animate__animated animate__fadeOutUp"
+        when={scrollState === 0}
+      >
+        <Home
+          className="content-body"
+          state={scrollState === 0}
+          style={{ zIndex: scrollState === 0 ? 5 : 0 }}
+        />
+      </Reveal>
       <Reveal
         effect="animate__animated animate__fadeInUp fadeInUp"
         effectOut="animate__animated animate__fadeOutUp"

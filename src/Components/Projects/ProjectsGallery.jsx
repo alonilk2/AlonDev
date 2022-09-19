@@ -28,7 +28,7 @@ function ProjectsGallery(props) {
             <ProjectBox {...ProjectsList.Compound} />
           </>
         ) : (
-          <Fade left>
+          <Fade left fraction={0.5}>
             <ProjectBox {...ProjectsList.Torgate} />
             <ProjectBox {...ProjectsList.IMBarber} />
             <ProjectBox {...ProjectsList.Cellu} />

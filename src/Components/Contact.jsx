@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import useWindowSize from "../Hooks/useWindowSize";
 import Fade from "react-reveal/Fade";
 
-function ContactWaysRow() {
+const ContactWaysRow = () => {
   return (
     <div className="bubble-row">
       <a href="tel:0587897938" className="col bubble-col">
@@ -30,9 +30,9 @@ function ContactWaysRow() {
       </a>
     </div>
   );
-}
+};
 
-function Map(size) {
+const Map = (size) => {
   return (
     <div className="div" style={{ padding: size.width <= 980 ? "4%" : 0 }}>
       {size.width > 980 ? (
@@ -53,9 +53,9 @@ function Map(size) {
       )}
     </div>
   );
-}
+};
 
-export default function Contact(props) {
+const Contact = (props) => {
   const [fullName, setFullName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
@@ -85,26 +85,26 @@ export default function Contact(props) {
   };
   return (
     <>
-      <section
-        className={props.className}
-        style={{ zIndex: props.state ? 4 : 0, margin: "0px" }}
-      >
-        <div
-          className="content-body-project"
-          style={{
-            justifyContent: "center",
-            margin: size.width > 980 ? "0" : "3%",
-          }}
+      <Fade bottom when={props.state}>
+        <section
+          className={props.className}
+          style={{ zIndex: props.state ? 4 : 0, margin: "0px" }}
         >
-          <div className="contact-container">
-            <div className="contact-col">
-              {success && (
-                <div className="success">
-                  Your message has been sent successfully. Thank you!
-                </div>
-              )}
+          <div
+            className="content-body-project"
+            style={{
+              justifyContent: "center",
+              margin: size.width > 980 ? "0" : "3%",
+            }}
+          >
+            <div className="contact-container">
+              <div className="contact-col">
+                {success && (
+                  <div className="success">
+                    Your message has been sent successfully. Thank you!
+                  </div>
+                )}
 
-              <Fade left when={props.state}>
                 <h1
                   className="content-title-project hover-animate"
                   style={{ position: "unset", height: "unset", zIndex: 6 }}
@@ -118,62 +118,64 @@ export default function Contact(props) {
                   <span>t </span> <span> m</span>
                   <span>e</span>
                 </h1>
-              </Fade>
-              {ContactWaysRow()}
+                {ContactWaysRow()}
 
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <TextField
-                  id="filled-basic"
-                  label="Full Name"
-                  variant="filled"
-                  onChange={(e) => {
-                    console.log(e.target.value);
-                    setFullName(e.target.value);
-                  }}
-                />
-                <TextField
-                  id="filled-basic"
-                  label="Email"
-                  variant="filled"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <TextField
-                id="filled-basic"
-                label="Subject"
-                variant="filled"
-                onChange={(e) => setSubject(e.target.value)}
-              />
-              <TextField
-                id="filled-multiline-static"
-                label="Message"
-                multiline
-                rows={4}
-                variant="filled"
-                onChange={(e) => setContent(e.target.value)}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <div style={{ margin: "2% 2% 0% 0%" }}>
-                  {loading && <CircularProgress />}
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <TextField
+                    id="filled-basic"
+                    label="Full Name"
+                    variant="filled"
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      setFullName(e.target.value);
+                    }}
+                  />
+                  <TextField
+                    id="filled-basic"
+                    label="Email"
+                    variant="filled"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
-                <button
-                  className="contact-submit-btn button"
-                  onClick={handleSubmit}
+                <TextField
+                  id="filled-basic"
+                  label="Subject"
+                  variant="filled"
+                  onChange={(e) => setSubject(e.target.value)}
+                />
+                <TextField
+                  id="filled-multiline-static"
+                  label="Message"
+                  multiline
+                  rows={4}
+                  variant="filled"
+                  onChange={(e) => setContent(e.target.value)}
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-end",
+                  }}
                 >
-                  Submit
-                </button>
+                  <div style={{ margin: "2% 2% 0% 0%" }}>
+                    {loading && <CircularProgress />}
+                  </div>
+                  <button
+                    className="contact-submit-btn button"
+                    onClick={handleSubmit}
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
+              {Map(size)}
             </div>
-            {Map(size)}
           </div>
-        </div>
-      </section>
+        </section>
+      </Fade>
     </>
   );
-}
+};
+
+export default Contact;
