@@ -1,4 +1,4 @@
-import { Fade } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 import "../../App.css";
 import useWindowSize from "../../Hooks/useWindowSize";
 import ProjectBox from "./ProjectBox";
@@ -28,7 +28,7 @@ function ProjectsGallery(props) {
             <ProjectBox {...ProjectsList.Compound} />
           </>
         ) : (
-          <Fade left fraction={0.5}>
+          <Fade bottom fraction={0.5}>
             <ProjectBox {...ProjectsList.Torgate} />
             <ProjectBox {...ProjectsList.IMBarber} />
             <ProjectBox {...ProjectsList.Cellu} />

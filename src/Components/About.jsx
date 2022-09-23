@@ -1,6 +1,7 @@
 import "../App.css";
 import Fade from "react-reveal/Fade";
 import useWindowSize from "../Hooks/useWindowSize";
+import { Zoom } from "react-reveal";
 
 function About(props) {
   const size = useWindowSize();
@@ -34,7 +35,7 @@ function About(props) {
         className="col-5 about-info"
         style={{ margin: size.width > 980 ? "5%" : "5% 0" }}
       >
-        <Fade left when={props.state}>
+        <Zoom when={props.state}>
           <div className="about-title">
             {size.width <= 980 && (
               <>
@@ -51,15 +52,15 @@ function About(props) {
           <div className="about-description">
             {size.width > 980 && title}
             <span>
-              Software Engineering graduate and Full Stack Developer,
-              experienced with front and back end development of web and mobile
+              Graduate Software Engineer and Full Stack Developer,
+              highly experienced with both front and back end development of web and mobile
               applications, and equipped with tons of passion to create
               beautiful code and amazing UIs.
               <br />
               <br />
-              My tech stack contains React.js, Node.js, Spring Boot, Express.js,
-              React Native, SQL/NoSQL, TypeScript, MUI, Sequlize.js and more. I
-              also have practical experience in C, C++, Java and Python.
+              My tech stack contains React.js, React Native, Node.js, Spring Boot, Express.js,
+              SQL/NoSQL, TypeScript, MaterialUI and more. <br />I
+              also have comprehensive experience in C, C++, Java and Python.
               <br />
               <br />
               So if you look for an{" "}
@@ -69,7 +70,7 @@ function About(props) {
               to join your team, I'll be more than happy to contact!
             </span>
           </div>
-        </Fade>
+        </Zoom>
       </div>
       {size.width > 980 && (
         <img
@@ -100,7 +101,7 @@ const styles = {
     fontFamily: "GT Walsheim Pro",
   },
   cover: { objectFit: "cover" },
-  bolder: { color: "#FF416C", fontWeight: "400" },
+  bolder: { color: "#ff4b2b", fontWeight: "400" },
   padding2: { padding: "0 2%" }
 };
 

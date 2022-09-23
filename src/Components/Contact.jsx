@@ -5,7 +5,7 @@ import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import useWindowSize from "../Hooks/useWindowSize";
-import Fade from "react-reveal/Fade";
+import { Zoom } from "react-reveal";
 
 const ContactWaysRow = () => {
   return (
@@ -37,16 +37,12 @@ const Map = (size) => {
     <div className="div" style={{ padding: size.width <= 980 ? "4%" : 0 }}>
       {size.width > 980 ? (
         <img
-          src={
-            "https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
-          }
+          src="https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=8&size=450x400&scale=2&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
           alt="Map"
         />
       ) : (
         <img
-          src={
-            "https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
-          }
+          src="https://maps.googleapis.com/maps/api/staticmap?markers=color:purple%7Clabel:A%7CNof%20Hagalil,%20Israel&zoom=9&size=550x600&scale=1&key=AIzaSyDovloIuIIwjhtE_h70uCzYedVl7KeOifo&map_id=edd7e6c59663c968"
           style={{ width: "100%" }}
           alt="Map"
         />
@@ -85,11 +81,11 @@ const Contact = (props) => {
   };
   return (
     <>
-      <Fade bottom when={props.state}>
-        <section
-          className={props.className}
-          style={{ zIndex: props.state ? 4 : 0, margin: "0px" }}
-        >
+      <section
+        className={props.className}
+        style={{ zIndex: props.state ? 4 : 0, margin: "0px" }}
+      >
+        <Zoom when={props.state} cascade>
           <div
             className="content-body-project"
             style={{
@@ -104,31 +100,31 @@ const Contact = (props) => {
                     Your message has been sent successfully. Thank you!
                   </div>
                 )}
+                <>
+                  <h5 style={styles.subtitle}>CONTACT</h5>
 
-                <h1
-                  className="content-title-project hover-animate"
-                  style={{ position: "unset", height: "unset", zIndex: 6 }}
-                >
-                  <span>C</span>
-                  <span>o</span>
-                  <span>n</span>
-                  <span>t</span>
-                  <span>a</span>
-                  <span>c</span>
-                  <span>t </span> <span> m</span>
-                  <span>e</span>
-                </h1>
+                  <h1
+                    className="content-title-project hover-animate"
+                    style={styles.title}
+                  >
+                    <span>C</span>
+                    <span>o</span>
+                    <span>n</span>
+                    <span>t</span>
+                    <span>a</span>
+                    <span>c</span>
+                    <span>t </span> <span> m</span>
+                    <span>e</span>
+                  </h1>
+                </>
                 {ContactWaysRow()}
 
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div style={styles.flexRow}>
                   <TextField
                     id="filled-basic"
                     label="Full Name"
                     variant="filled"
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      setFullName(e.target.value);
-                    }}
+                    onChange={(e) => setFullName(e.target.value)}
                   />
                   <TextField
                     id="filled-basic"
@@ -158,24 +154,29 @@ const Contact = (props) => {
                     justifyContent: "flex-end",
                   }}
                 >
-                  <div style={{ margin: "2% 2% 0% 0%" }}>
+                  <div style={styles.loading}>
                     {loading && <CircularProgress />}
                   </div>
-                  <button
-                    className="contact-submit-btn button"
-                    onClick={handleSubmit}
-                  >
-                    Submit
-                  </button>
+
+                  <div class="module-border-wrap">
+                    <button className="module" onClick={handleSubmit}>
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
               {Map(size)}
             </div>
           </div>
-        </section>
-      </Fade>
+        </Zoom>
+      </section>
     </>
   );
 };
-
+const styles = {
+  subtitle: { margin: "0 5px 0 0", color: "#ff4b2b" },
+  flexRow: { display: "flex", flexDirection: "row" },
+  title: { margin: "1% 0 4% 0", zIndex: 6 },
+  loading: { margin: "2% 2% 0% 0%" },
+};
 export default Contact;

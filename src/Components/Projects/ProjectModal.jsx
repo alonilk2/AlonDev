@@ -99,7 +99,7 @@ export default function ProjectModal(props) {
 }
 
 const styles = {
-  subtitle: { margin: "0 5px 0 0", color: "#FF416C" },
+  subtitle: { margin: "0 5px 0 0", color: "#ff4b2b" },
   mainTitle: {
     zIndex: 6,
     fontFamily: "GT Walsheim Pro",

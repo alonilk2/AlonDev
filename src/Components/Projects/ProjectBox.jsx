@@ -22,7 +22,9 @@ export default function ProjectBox(props) {
           <h6>{props.date}</h6>
           <h1>{props.name}</h1>
           <Divider />
-          <span>{props.stack}</span>
+          <div className="tech-stack">{props.stack.split(', ').map((tech)=>{
+            return <div className="tech-bubble">{tech}</div>
+          })}</div>
         </div>
 
         <div className="darken"></div>
@@ -32,5 +34,6 @@ export default function ProjectBox(props) {
         <button className="button-red-box btn-enter" onClick={handleDetails}>Details</button>
       </div>
     </div>
+
   );
 }

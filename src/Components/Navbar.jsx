@@ -5,21 +5,19 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Container from "react-bootstrap/Container";
 import useWindowSize from "../Hooks/useWindowSize";
 
-const alonTitle = <h1
-  className="title custom-animation-gradient hover-animate"
-  style={{
-    position: "unset",
-    height: "unset",
-    whiteSpace: "nowrap",
-  }}
->
-  <b style={{ fontWeight: 600 }}>
-    <span>A</span>
-    <span>l</span>
-    <span>o</span>
-    <span>n</span>
-  </b>
-  <b style={{ fontWeight: 100 }}>
+const alonTitle = (
+  <h1
+    className="title custom-animation-gradient hover-animate"
+    style={{
+      position: "unset",
+      height: "unset",
+      whiteSpace: "nowrap",
+    }}
+  >
+    <span style={{ fontWeight: 600 }}>A</span>
+    <span style={{ fontWeight: 600 }}>l</span>
+    <span style={{ fontWeight: 600 }}>o</span>
+    <span style={{ fontWeight: 600 }}>n</span>
     <span>B</span>
     <span>a</span>
     <span>r</span>
@@ -29,8 +27,8 @@ const alonTitle = <h1
     <span>o</span>
     <span>i</span>
     <span>m.</span>
-  </b>
-</h1>;
+  </h1>
+);
 
 export default function NavBar(props) {
   const size = useWindowSize();
@@ -47,9 +45,7 @@ export default function NavBar(props) {
     <Navbar expand="lg" variant="dark">
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto navbar-container">
-          <div className="col-3 left-menu">
-            {showTitle && alonTitle}
-          </div>
+          <div className="col-3 left-menu">{showTitle && alonTitle}</div>
           <div className="col right-menu">
             <Nav.Link
               onClick={() => props.setPageScrollState(-1)}
@@ -91,9 +87,7 @@ export default function NavBar(props) {
   const mobileNavbar = (
     <Navbar sticky="top" expand="lg" variant="dark">
       <Container fluid>
-        <Offcanvas.Header>
-          {alonTitle}
-        </Offcanvas.Header>
+        <Offcanvas.Header>{alonTitle}</Offcanvas.Header>
       </Container>
     </Navbar>
   );
