@@ -619,17 +619,17 @@ html {
 
 @keyframes flip {
   25% {
-    color:  #c41c1c;
+    color:  #ff4b2b;
   }
   100% {
-    color:  #c41c1c;
+    color:  #ff4b2b;
     transform: rotateY(180deg);
   }
 }
 @keyframes flip-reverse {
   0% {
     transform: rotateY(180deg);
-    color:  #c41c1c;
+    color:  #ff4b2b;
   }
   100% {
     transform: rotateY(0deg);
@@ -637,15 +637,15 @@ html {
 }
 @keyframes flip-static {
   30% {
-    color:  #c41c1c;
+    color:  #ff4b2b;
   }
   100% {
-    color:  #c41c1c;
+    color:  #ff4b2b;
   }
 }
 @keyframes flip-reverse-static {
   0% {
-    color:  #c41c1c;
+    color:  #ff4b2b;
   }
   100% {
     color: #2f2f2f;
@@ -1460,7 +1460,7 @@ h1 {
   color: rgb(255, 255, 255);
 }
 .social-links a:hover {
-  color:  #c41c1c;
+  color:  #ff4b2b;
 }
 
 @media only screen and (max-width: 980px) {
@@ -1645,7 +1645,7 @@ h1 {
   }
   .about-subtitle {
     margin: 0 5px 5px 0;
-    color:  #c41c1c;
+    color:  #ff4b2b;
     font-size: 19px;
   }
   .content-body-project {
